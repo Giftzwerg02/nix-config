@@ -1,0 +1,1 @@
+(package! plantuml-mode)
