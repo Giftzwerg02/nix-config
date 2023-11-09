@@ -1,15 +1,14 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   imports = [
-    inputs.nix-doom-emacs.hmModule 
+    inputs.nix-doom-emacs.hmModule
   ];
 
   nixpkgs = {
@@ -28,6 +27,17 @@
 
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";
+
+  home.packages = with pkgs; [ dconf ];
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
 
   programs.git = {
     enable = true;
@@ -260,7 +270,7 @@
       extraPackages = with pkgs; [
         luajitPackages.lua-lsp
         rnix-lsp
-        
+
         xclip
         wl-clipboard
       ];
