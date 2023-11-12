@@ -132,7 +132,9 @@
 
   programs.dconf.enable = true;
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)

@@ -28,7 +28,9 @@
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";
 
-  home.packages = with pkgs; [ dconf ];
+  home.packages = with pkgs; [
+    dconf
+  ];
 
   dconf = {
     enable = true;
