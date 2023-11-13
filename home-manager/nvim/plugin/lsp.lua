@@ -65,6 +65,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 require('neodev').setup()
 
 local lsp = require('lspconfig')
+local lspconfigs = require('lspconfig.configs')
 
 lsp.lua_ls.setup {
   on_attach = on_attach,
@@ -89,6 +90,24 @@ lsp.pyright.setup {
 lsp.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities
+}
+
+lspconfigs["jdt-language-server"] = {
+  default_config = {
+    cmd = { 'jdt-language-server' },
+    filetypes = { 'java' },
+    root_dir = lsp.util.root_pattern('.git', 'java'),
+    settings = {}
+  }
+}
+
+lsp["jdt-language-server"].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { 
+    'jdt-language-server',
+    '-data', '~/jdtls'
+  }
 }
 
 local rt = require("rust-tools")
