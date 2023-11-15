@@ -224,20 +224,6 @@
             ${toLuaFile ./nvim/plugin/lsp.lua}
           '';
         }
-
-        # local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-        #                 local workspace_dir = '~/jdtls/' .. project_name
-        #                 local config = {
-        #                   cmd = { 
-        #                     '${pkgs.jdt-language-server}/bin/jdt-language-server',
-        #                     '-data', workspace_dir
-        #                   },
-        #                  root_dir = vim.fn.getcwd(), 
-        #                 }
-        #
-        #                 require('jdtls').start_or_attach(config)
-
-
         lualine-nvim
         neodev-nvim
         vim-fugitive
