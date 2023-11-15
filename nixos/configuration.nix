@@ -175,10 +175,7 @@
     ripgrep
     openfortivpn
     imagemagick
-    lf
-    pistol
     xdragon
-    just
 
     # Gui (eww) Utils
     pavucontrol
