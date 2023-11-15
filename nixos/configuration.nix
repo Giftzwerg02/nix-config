@@ -32,7 +32,8 @@
     ];
     config = {
       allowUnfree = true;
-    };
+   };
+
   };
 
   nix = {
@@ -192,7 +193,7 @@
     firefox-devedition
     xournalpp
     bitwarden
-    discord
+    unstable.webcord-vencord
     unstable.obsidian
     zathura
     signal-desktop
