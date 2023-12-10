@@ -32,6 +32,9 @@
     ];
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
    };
 
   };
@@ -53,8 +56,19 @@
     };
   };
 
+  boot.extraModulePackages = with pkgs; [
+    config.boot.kernelPackages.v4l2loopback
+  ];
+
+  boot.extraModprobeConfig = ''
+    options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
+  '';
+
 
   networking.hostName = "pc";
+
+  # Use latest Kernel
+  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -128,6 +142,7 @@
     };
     nvidia = {
       modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
   };
 
@@ -138,6 +153,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    linuxPackages.v4l2loopback
+
     # Core (Undertale reference!)
     wget
     kitty
@@ -153,6 +170,7 @@
     zip
     unzip
     openssl
+    openssl_1_1
 
     # Cli Utils deez nuts 
     pamixer
@@ -183,14 +201,17 @@
     vlc
     flameshot
     lxappearance
+    obs-studio
 
     # Dev and Work (as if)
     # neovim-nightly
     unstable.neovim
-    firefox-devedition
+    #firefox-devedition
+    firefox
     xournalpp
     bitwarden
     unstable.webcord-vencord
+    unstable.armcord
     unstable.obsidian
     zathura
     signal-desktop
@@ -203,6 +224,10 @@
     remmina
     unstable.onedrive
     umlet
+    pandoc
+    unstable.mermaid-filter
+    pandoc-for-homework 
+    pdftk 
 
     # Compilers
     clang
@@ -231,13 +256,16 @@
     # Gamer Girl :3
     prismlauncher # mc launcher
     unstable.atlauncher # mc launcher 2
+    heroic
+    wineWowPackages.staging
+    lutris
   ];
 
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote
   '';
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -269,6 +297,7 @@
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
 
   # thunar settings
   services.gvfs.enable = true;

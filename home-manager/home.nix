@@ -25,21 +25,29 @@
     };
   };
 
-  home.username = "benjamin";
-  home.homeDirectory = "/home/benjamin";
-
-  home.packages = with pkgs; [
-    dconf
-  ];
-
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
+  stylix.image = pkgs.fetchurl {
+    url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
+    sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
+  };
+  stylix = {
+    polarity = "dark";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    cursor = {
+      name = "capitaine-cursors";
+      package = pkgs.capitaine-cursors;
+      size = 40;
+    };
+    fonts = {
+      sizes = {
+        applications = 12;
+        desktop = 8;
       };
     };
   };
+
+  home.username = "benjamin";
+  home.homeDirectory = "/home/benjamin";
 
   programs.git = {
     enable = true;
@@ -57,79 +65,7 @@
     };
   };
 
-  qt = {
-    enable = true;
-    platformTheme = "gtk";
-    style.name = "adwaita-dark";
-  };
-
-  gtk = {
-    enable = true;
-    cursorTheme.package = pkgs.breeze-gtk;
-    cursorTheme.name = "Breeze-Dark";
-    theme = {
-      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
-        size = "compact";
-        tweaks = [ "rimless" "black" ];
-        variant = "macchiato";
-      };
-    };
-    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    iconTheme.name = "Adwaita";
-  };
-
-  home.pointerCursor = {
-    name = "capitaine-cursors";
-    package = pkgs.capitaine-cursors;
-    size = 24;
-  };
-
-  programs.zathura = {
-    enable = true;
-    options = {
-      # catppuccin macchiato theme: https://github.com/catppuccin/zathura/blob/main/src/catppuccin-macchiato
-      default-fg = "#CAD3F5";
-      default-bg = "#24273A";
-
-      completion-bg = "#363A4F";
-      completion-fg = "#CAD3F5";
-      completion-highlight-bg = "#575268";
-      completion-highlight-fg = "#CAD3F5";
-      completion-group-bg = "#363A4F";
-      completion-group-fg = "#8AADF4";
-
-      statusbar-fg = "#CAD3F5";
-      statusbar-bg = "#363A4F";
-
-      notification-bg = "#363A4F";
-      notification-fg = "#CAD3F5";
-      notification-error-bg = "#363A4F";
-      notification-error-fg = "#ED8796";
-      notification-warning-bg = "#363A4F";
-      notification-warning-fg = "#FAE3B0";
-
-      inputbar-fg = "#CAD3F5";
-      inputbar-bg = "#363A4F";
-
-      recolor-lightcolor = "#24273A";
-      recolor-darkcolor = "#CAD3F5";
-
-      index-fg = "#CAD3F5";
-      index-bg = "#24273A";
-      index-active-fg = "#CAD3F5";
-      index-active-bg = "#363A4F";
-
-      render-loading-bg = "#24273A";
-      render-loading-fg = "#CAD3F5";
-
-      highlight-color = "#575268";
-      highlight-fg = "#F5BDE6";
-      highlight-active-color = "#F5BDE6";
-    };
-  };
-
+  
   programs.i3status-rust.enable = true;
 
   programs.zsh = {
@@ -244,10 +180,6 @@
           config = "require('which-key').setup()";
         }
         gitsigns-nvim
-        {
-          plugin = onedark-nvim;
-          config = "colorscheme onedark";
-        }
         indent-blankline-nvim
         comment-nvim
         {
@@ -281,37 +213,7 @@
     '';
     };
 
-  services.dunst = {
-    enable = true;
-    settings = {
-      global = {
-        context = "ctrl+shift+period";
-        mouse_middle_click = "do_action";
-        frame_color = "#8AADF4";
-        separator_color = "frame";
-      };
-
-      urgency_low = {
-        background = "#24273A";
-        foreground = "#CAD3F5";
-        timeout = 10;
-      };
-
-      urgency_normal = {
-        background = "#24273A";
-        foreground = "#CAD3F5";
-        timeout = 20;
-      };
-
-      urgency_critical = {
-        background = "#24273A";
-        foreground = "#CAD3F5";
-        frame_color = "#F5A97F";
-        timeout = 0;
-      };
-    };
-  };
-
+  services.dunst.enable = true;
 
   xdg.mimeApps = {
     enable = true;

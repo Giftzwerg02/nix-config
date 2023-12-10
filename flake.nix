@@ -3,7 +3,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
@@ -15,12 +15,16 @@
 
     # Doom emacs
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
+    # Stylix
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -73,6 +77,9 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
+
+          # Stylix
+          stylix.homeManagerModules.stylix
         ];
       };
     };
