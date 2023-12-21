@@ -35,7 +35,6 @@
       permittedInsecurePackages = [
         "openssl-1.1.1w"
       ];
-
    };
 
   };
@@ -54,6 +53,7 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+      allow-dirty = false;
     };
   };
 
