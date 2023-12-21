@@ -53,10 +53,13 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+
+      # Force clean git-directory before rebuilding
       allow-dirty = false;
     };
   };
 
+  # Weird-ass stuff for obs-virtual-cam
   boot.extraModulePackages = with pkgs; [
     config.boot.kernelPackages.v4l2loopback
   ];
