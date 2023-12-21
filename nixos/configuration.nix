@@ -159,9 +159,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    linuxPackages.v4l2loopback
-    burpsuite
-
     # Core (Undertale reference!)
     wget
     kitty
@@ -267,6 +264,10 @@
     heroic
     wineWowPackages.staging
     lutris
+
+    # extras
+    # Used for obs virtual cam
+    linuxPackages.v4l2loopback
   ];
 
   environment.etc."ppp/options".text = ''
