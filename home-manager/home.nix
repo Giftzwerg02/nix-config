@@ -41,8 +41,10 @@
     fonts = {
       sizes = {
         applications = 12;
-        desktop = 8;
+        desktop = 12;
+        popups = 8;
       };
+      
     };
   };
 
@@ -67,6 +69,11 @@
 
   
   programs.i3status-rust.enable = true;
+
+  programs.carapace = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;

@@ -35,6 +35,7 @@
       permittedInsecurePackages = [
         "openssl-1.1.1w"
       ];
+
    };
 
   };
@@ -105,11 +106,13 @@
   };
 
   console.keyMap = "de";
-
+  
+  programs.adb.enable = true;
+  
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
     packages = with pkgs; [ ];
   };
   users.defaultUserShell = pkgs.zsh;
@@ -154,6 +157,7 @@
 
   environment.systemPackages = with pkgs; [
     linuxPackages.v4l2loopback
+    burpsuite
 
     # Core (Undertale reference!)
     wget
@@ -194,6 +198,7 @@
     openfortivpn
     imagemagick
     xdragon
+    toggle-redshift
 
     # Gui (eww) Utils
     pavucontrol

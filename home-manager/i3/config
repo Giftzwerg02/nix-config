@@ -66,6 +66,9 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+p exec "rofi -show drun -show-icons"
 
+# toggle nightlight (redshift)
+bindsym $mod+Shift+a exec "toggle-redshift"
+
 # screenshot
 bindsym $mod+Shift+s exec "flameshot gui"
 
