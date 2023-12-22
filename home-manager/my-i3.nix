@@ -43,6 +43,10 @@ in
 
           startup = [
             { command = "i3"; }
+<<<<<<< HEAD
+=======
+            # { command = "i3lock --nofork"; }
+>>>>>>> 56c84df (i3 hm config)
             { command = "nm-applet"; }
             { command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers; }
             { command = "flameshot"; }
