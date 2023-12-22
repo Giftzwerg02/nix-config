@@ -69,7 +69,7 @@
   };
 
 
-  my-i3-config.enable = true;
+  my-i3-config.enable = false;
 
   xsession.windowManager.i3 =
     let
