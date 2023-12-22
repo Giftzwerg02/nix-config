@@ -409,7 +409,7 @@
     ".config/onedrive/business_shared_folders".text = ''
       TU_Giftzwerg02 
     '';
-    ".config/i3".source = ../i3;
+    # ".config/i3".source = ../i3;
   };
 
   home.sessionVariables = {
