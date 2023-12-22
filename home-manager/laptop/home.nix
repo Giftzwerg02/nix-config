@@ -9,6 +9,7 @@
 }: {
   imports = [
     inputs.nix-doom-emacs.hmModule
+    ../my-i3.nix
   ];
 
   nixpkgs = {
@@ -67,6 +68,10 @@
     };
   };
 
+  # my-i3-config = {
+  #   enable = true;
+  #
+  # }
   
   programs.i3status-rust.enable = true;
 
@@ -248,7 +253,7 @@
     ".config/onedrive/business_shared_folders".text = ''
       TU_Giftzwerg02 
     '';
-    ".config/i3".source = ../i3;
+    # ".config/i3".source = ../i3;
   };
 
   home.sessionVariables = {
