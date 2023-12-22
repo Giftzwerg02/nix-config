@@ -69,6 +69,7 @@
 
   xsession.windowManager.i3 =
     let
+      modifier = "Mod4";
       refresh_i3status = "killall -SIGUSR1 i3status";
       ws1 = "1";
       ws2 = "2";
@@ -84,7 +85,7 @@
     {
       enable = true;
       config = {
-        modifier = "Mod4";
+        modifier = ${modifier}; 
 
         fonts = [ "pango:fira 7" ];
 
