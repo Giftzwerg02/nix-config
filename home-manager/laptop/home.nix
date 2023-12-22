@@ -71,7 +71,7 @@
   my-i3-config = {
     enable = true;
     wallpapers = [ ../imgs/background-laptop.jpg ];
-  }
+  };
   
   programs.i3status-rust.enable = true;
 
