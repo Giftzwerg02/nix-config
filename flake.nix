@@ -89,6 +89,18 @@
           stylix.homeManagerModules.stylix
         ];
       };
+
+      "benjamin@laptop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/laptop/home.nix
+
+          # Stylix
+          stylix.homeManagerModules.stylix
+        ];
+      };
     };
   };
 }
