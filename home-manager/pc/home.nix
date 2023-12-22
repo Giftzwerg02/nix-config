@@ -87,7 +87,7 @@
       config = {
         modifier = "${modifier}"; 
 
-        fonts = [ "pango:fira 7" ];
+        # fonts = [ "pango:fira 7" ];
 
         startup = [
           { command = "i3"; }
