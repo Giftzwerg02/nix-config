@@ -8,7 +8,7 @@ in
       enable = lib.mkEnableOption "enable i3 config";
       wallpapers = lib.mkOption
         {
-          type = with types; listOf str;
+          type = with lib.types; listOf str;
           description = "provide a list of paths for each wallpaper for each monitor";
           default = [ "none" ];
         };
