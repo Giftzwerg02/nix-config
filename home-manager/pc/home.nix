@@ -67,6 +67,9 @@
     };
   };
 
+
+  my-i3-config.enable = true;
+
   xsession.windowManager.i3 =
     let
       modifier = "Mod4";
@@ -83,7 +86,7 @@
       ws10 = "10";
     in
     {
-      enable = true;
+      enable = false;
       config = {
         modifier = "${modifier}"; 
 
