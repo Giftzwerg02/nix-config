@@ -85,7 +85,7 @@
     {
       enable = true;
       config = {
-        modifier = ${modifier}; 
+        modifier = "${modifier}"; 
 
         fonts = [ "pango:fira 7" ];
 
