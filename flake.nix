@@ -87,9 +87,6 @@
 
           # Stylix
           stylix.homeManagerModules.stylix
-
-          # my-i3
-          homeManagerModules.my-i3-config
         ];
       };
 
@@ -102,9 +99,6 @@
 
           # Stylix
           stylix.homeManagerModules.stylix
-
-          # my-i3
-          
         ];
       };
     };
