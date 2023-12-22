@@ -63,7 +63,14 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          ./nixos/pc/configuration.nix
+        ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/laptop/configuration.nix
         ];
       };
     };
@@ -76,7 +83,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.nix
+          ./home-manager/pc/home.nix
 
           # Stylix
           stylix.homeManagerModules.stylix
