@@ -83,7 +83,7 @@
       ws10 = "10";
     in
     {
-      enable = true;
+      enable = false;
       config = {
         modifier = "${modifier}"; 
 
