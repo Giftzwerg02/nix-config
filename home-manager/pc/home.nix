@@ -73,9 +73,9 @@
     {
       enable = true;
       wallpapers = [
-        "pictures/wallpapers/middle.jpg"
-        "pictures/wallpapers/left.jpg"
-        "pictures/wallpapers/right.jpg"
+        ../imgs/middle.jpg
+        ../imgs/left.jpg
+        ../imgs/right.jpg
       ];
     };
 
