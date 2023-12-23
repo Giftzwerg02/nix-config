@@ -80,8 +80,6 @@
     };
 
 
-  programs.i3status-rust.enable = true;
-
   programs.carapace = {
     enable = true;
     enableZshIntegration = true;
