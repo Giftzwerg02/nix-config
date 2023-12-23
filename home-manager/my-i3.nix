@@ -220,14 +220,6 @@ in
               format = " $timestamp.datetime(f:'%a %d/%m %R') ";
               interval = 60;
             }
-
-            {
-              icons = "none";
-            }
-
-            {
-              theme = "plain";
-            }
           ];
         };
       };
