@@ -15,7 +15,11 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = 
+  let 
+    bar_name = "bottom";
+  in 
+  lib.mkIf cfg.enable {
 
     xsession.windowManager.i3 =
       let
@@ -170,7 +174,7 @@ in
 
 
           bars = [{
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
+            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
           }];
 
         };
@@ -179,7 +183,7 @@ in
     programs.i3status-rust = {
       enable = true;
       bars = {
-        bottom = {
+        ${bar_name} = {
           blocks = [
             {
               alert = 10.0;
