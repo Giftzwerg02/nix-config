@@ -9,17 +9,7 @@
 }: {
   imports = [
     inputs.nix-doom-emacs.hmModule
-    ./i3
-    ./stylix
-    ./git
-    ./kitty
-    ./carapace
-    ./zsh
-    ./zoxide
-    ./doom-emacs
-    ./neovim
-    ./dunst
-    ./mimeApps
+    ./you-definitely-want-this.nix
   ];
 
   nixpkgs = {
@@ -36,36 +26,17 @@
     };
   };
 
-  my-stylix-config.enable = true; 
+  setup-this-thing = {
+    enable = true;
+    wallpapers = [
+      ./imgs/middle.png
+      ./imgs/left.png
+      ./imgs/right.png
+    ];
+  };
 
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";
-
-  my-git-config.enable = true; 
-  my-kitty-config.enable = true;
-
-  my-i3-config =
-    {
-      enable = true;
-      wallpapers = [
-        ./imgs/middle.jpg
-        ./imgs/left.jpg
-        ./imgs/right.jpg
-      ];
-    };
-
-  my-carapace-config.enable = true;
-
-  my-zsh-config.enable = true;
-  my-zoxide-config.enable = true;
-
-  my-doom-emacs-config.enable = true;
-
-  my-neovim-config.enable = true;
-
-  my-dunst-config.enable = true;
-
-  my-mimeApps-config.enable = true;
 
   programs.home-manager.enable = true;
 
