@@ -83,7 +83,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/pc/home.nix
+          ./home-manager/pc.nix
 
           # Stylix
           stylix.homeManagerModules.stylix
@@ -95,7 +95,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/laptop/home.nix
+          ./home-manager/laptop.nix
 
           # Stylix
           stylix.homeManagerModules.stylix

@@ -9,7 +9,7 @@
 }: {
   imports = [
     inputs.nix-doom-emacs.hmModule
-    ../my-i3.nix
+    ./i3
   ];
 
   nixpkgs = {
