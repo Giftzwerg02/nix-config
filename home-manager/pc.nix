@@ -29,9 +29,9 @@
   setup-this-thing = {
     enable = true;
     wallpapers = [
-      ./imgs/middle.png
-      ./imgs/left.png
-      ./imgs/right.png
+      ./imgs/middle.jpg
+      ./imgs/left.jpg
+      ./imgs/right.jpg
     ];
   };
 
