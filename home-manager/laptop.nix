@@ -70,7 +70,7 @@
 
   my-i3-config = {
     enable = true;
-    wallpapers = [ ../imgs/background-laptop.jpg ];
+    wallpapers = [ ./imgs/background-laptop.jpg ];
   };
   
   programs.i3status-rust.enable = true;
@@ -111,12 +111,12 @@
 
   programs.doom-emacs = {
     enable = true;
-    doomPrivateDir = ../doom.d;
+    doomPrivateDir = ./doom.d;
     # Only init/packages so we only rebuild when those change.
     doomPackageDir =
       let
         filteredPath = builtins.path {
-          path = ../doom.d;
+          path = ./doom.d;
           name = "doom-private-dir-filtered";
           filter = path: type:
             builtins.elem (baseNameOf path) [ "init.el" "packages.el" ];
@@ -169,7 +169,7 @@
           type = "lua";
           plugin = nvim-lspconfig;
           config = ''
-            ${toLuaFile ../nvim/plugin/lsp.lua}
+            ${toLuaFile ./nvim/plugin/lsp.lua}
           '';
         }
         lualine-nvim
@@ -183,7 +183,7 @@
         {
           type = "lua";
           plugin = nvim-cmp;
-          config = toLuaFile ../nvim/plugin/cmp.lua;
+          config = toLuaFile ./nvim/plugin/cmp.lua;
         }
         cmp-nvim-lsp
         {
@@ -197,7 +197,7 @@
         {
           type = "lua";
           plugin = telescope-nvim;
-          config = toLuaFile ../nvim/plugin/telescope.lua;
+          config = toLuaFile ./nvim/plugin/telescope.lua;
         }
         telescope-fzf-native-nvim
         {
@@ -213,15 +213,15 @@
             p.tree-sitter-tsx
             p.tree-sitter-rust
           ]));
-          config = toLuaFile ../nvim/plugin/treesitter.lua;
+          config = toLuaFile ./nvim/plugin/treesitter.lua;
         }
         nvim-autopairs
       ];
 
       extraLuaConfig = ''
 
-      ${builtins.readFile ../nvim/options.lua}
-      ${builtins.readFile ../nvim/plugin/other.lua}
+      ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./nvim/plugin/other.lua}
     '';
     };
 
@@ -253,7 +253,6 @@
     ".config/onedrive/business_shared_folders".text = ''
       TU_Giftzwerg02 
     '';
-    # ".config/i3".source = ../i3;
   };
 
   home.sessionVariables = {
