@@ -6,12 +6,6 @@ in
   options = {
     my-doom-emacs-config = {
       enable = lib.mkEnableOption "enable doom-emacs config";
-      option = lib.mkOption
-        {
-          type = type;
-          description = "";
-          default = default;
-        };
     };
   };
 
