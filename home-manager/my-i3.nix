@@ -184,6 +184,9 @@ in
       enable = true;
       bars = {
         ${bar_name} = {
+          theme = "ctp-mocha";
+          icons = "awesome6";
+
           blocks = [
             {
               alert = 10.0;
