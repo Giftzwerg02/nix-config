@@ -78,7 +78,6 @@ in
           servers = {
             rnix-lsp.enable = true;
           };
-          capabilities = "require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())";
           onAttach = ''          
               local nmap = function(keys, func, desc)
                 if desc then
