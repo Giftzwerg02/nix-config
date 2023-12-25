@@ -10,9 +10,17 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # programs.nixvim = {
-    #   enable = true;
-    # };
+    programs.nixvim = {
+      enable = true;
+
+      plugins = {
+        rust-tools.enable = true;
+        lualine.enable = true;
+        lsp.servers = {
+          rnix.enable = true;
+        };
+      };
+    };
 
 
     # programs.neovim =
