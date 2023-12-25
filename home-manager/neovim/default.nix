@@ -168,36 +168,7 @@ in
             };
           };
           keymaps = {
-            "<leader>?" = {
-              action = "oldfiles";
-              desc = "[?] Find recently opened files";
-            };
-
-            "<leader><space>" = {
-              action = "buffers";
-              desc = "[ ] Find existing buffers";
-            };
-
-            "<leader>/" = {
-              action = "current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })";
-              desc = "[/] Fuzzily search in current buffer";
-            };
-
-            "<leader>gf" = {
-              action = "git_files";
-              desc = "Search [G]it [F]iles";
-            };
-
-            "<leader>sf" = {
-              action = "find_files";
-              desc = "[S]earch [F]iles";
-            };
-
-            "<leader>sh" = {
-              action = "help_tags";
-              desc = "[S]earch [H]elp";
-            };
-
+           
             "<leader>sw" = {
               action = "grep_string";
               desc = "[S]earch current [W]ord";
