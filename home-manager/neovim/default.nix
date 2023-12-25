@@ -13,12 +13,61 @@ in
     programs.nixvim = {
       enable = true;
 
+      clipboard = {
+        register = "unnamedplus";
+        providers = {
+          wl-copy.enable = true;
+          xclip.enable = true;
+        };
+      };
+
       plugins = {
         rust-tools.enable = true;
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
         cmp_luasnip.enable = true;
+        cmp-nvim-lsp.enable = true;
+        which-key.enable = true;
+        gitsigns.enable = true;
+        indent-blankline.enable = true;
+        comment-nvim.enable = true;
+
+        telescope = {
+          enable = true;
+          defaults = {
+            mappings = {
+              i = {
+                "<C-u>" = false;
+                "<C-d>" = false;
+              };
+            };
+          };
+          extensions = {
+            fzf-native = {
+              enable = true;
+              overrideGenericSorter = true;
+              overrideFileSorter = true;
+              caseMode = "smart_case";
+            };
+          };
+          keymaps = {
+            "<leader>?" = { 
+              action = "oldfiles";
+              desc = "[?] Find recently opened files";
+            };
+
+            "<leader><space>" = {
+              action = "buffers";
+              desc = "[ ] Find existing buffers";
+            };
+
+            "<leader>/" = {
+              action = "current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })";
+              desc = "[/] Fuzzily search in current buffer";
+            };
+          };
+        };
 
         nvim-cmp = {
           enable = true;
@@ -120,58 +169,7 @@ in
     };
 
 
-    # programs.neovim =
-    #   let
-    #     toLuaFile = file: "\n${builtins.readFile file}\n";
-    #   in
-    #   {
-    #     enable = true;
-    #     package = pkgs.neovim-nightly;
-    #
-    #     viAlias = true;
-    #     vimAlias = true;
-    #     vimdiffAlias = true;
-    #
-    #     extraPackages = with pkgs; [
-    #       luajitPackages.lua-lsp
-    #       rnix-lsp
-    #
-    #       xclip
-    #       wl-clipboard
-    #     ];
-    #
-    #     plugins = with pkgs.vimPlugins; [
-    #       rust-tools-nvim
-    #       nvim-jdtls
-    #       {
-    #         type = "lua";
-    #         plugin = nvim-lspconfig;
-    #         config = ''
-    #           ${toLuaFile ./nvim/plugin/lsp.lua}
-    #         '';
-    #       }
-    #       lualine-nvim
-    #       neodev-nvim
-    #       vim-fugitive
-    #       vim-rhubarb
-    #       vim-sleuth
-    #       luasnip
-    #       friendly-snippets
-    #       cmp_luasnip
-    #       {
-    #         type = "lua";
-    #         plugin = nvim-cmp;
-    #         config = toLuaFile ./nvim/plugin/cmp.lua;
-    #       }
-    #       cmp-nvim-lsp
-    #       {
-    #         type = "lua";
-    #         plugin = which-key-nvim;
-    #         config = "require('which-key').setup()";
-    #       }
-    #       gitsigns-nvim
-    #       indent-blankline-nvim
-    #       comment-nvim
+
     #       {
     #         type = "lua";
     #         plugin = telescope-nvim;
