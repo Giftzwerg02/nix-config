@@ -63,19 +63,18 @@ in
               '';
               modes = [ "i" "s" ];
             };
-
-            sources = [
-              { name = "nvim_lsp"; }
-              { name = "luasnip"; }
-            ];
-
-
           };
+
           snippet.expand = ''
             function(args)
               luasnip.lsp_expand(args.body)
             end
           '';
+
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "luasnip"; }
+          ];
         };
 
         lsp = {
