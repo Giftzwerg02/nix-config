@@ -13,6 +13,44 @@ in
     programs.nixvim = {
       enable = true;
 
+      options = {
+        vim.g.mapleader = " ";
+        vim.g.maplocalleader = " ";
+      };
+
+      autoCmd = [
+        {
+          event = "TextYankPost";
+          group = "YankHighlight";
+          callback = "vim.highlight.on_yank";
+        }
+
+        {
+          event = "LspAttach";
+          group = "UserLspConfig";
+          callback = {
+            __raw = ''
+              function(args)
+                local client = vim.lsp.get_client_by_id(args.data.client_id)
+                if client.server_capabilities.inlayHintProvider then
+                  vim.lsp.inlay_hint(0, true)
+                  vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "grey" })
+                end
+              end
+            '';
+          };
+        }
+      ];
+
+      autoGroups = {
+        "YankHighlight" = { clear = true; };
+        "UserLspConfig" = {};
+      };
+
+      keymaps = {
+
+      };
+
       clipboard = {
         register = "unnamedplus";
         providers = {
@@ -32,6 +70,7 @@ in
         gitsigns.enable = true;
         indent-blankline.enable = true;
         comment-nvim.enable = true;
+        nvim-autopairs.enable = true;
 
         telescope = {
           enable = true;
@@ -52,7 +91,7 @@ in
             };
           };
           keymaps = {
-            "<leader>?" = { 
+            "<leader>?" = {
               action = "oldfiles";
               desc = "[?] Find recently opened files";
             };
@@ -66,6 +105,42 @@ in
               action = "current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })";
               desc = "[/] Fuzzily search in current buffer";
             };
+
+            "<leader>gf" = {
+              action = "git_files";
+              desc = "Search [G]it [F]iles";
+            };
+
+            "<leader>sf" = {
+              action = "find_files";
+              desc = "[S]earch [F]iles";
+            };
+
+            "<leader>sh" = {
+              action = "help_tags";
+              desc = "[S]earch [H]elp";
+            };
+
+            "<leader>sw" = {
+              action = "grep_string";
+              desc = "[S]earch current [W]ord";
+            };
+
+            "<leader>sg" = {
+              action = "live_grep";
+              desc = "[S]earch by [G]rep";
+            };
+
+            "<leader>sd" = {
+              action = "diagnostics";
+              desc = "[S]earch [D]iagnostics";
+            };
+
+            "<leader>sr" = {
+              action = "resume";
+              desc = "[S]earch [R]resume";
+            };
+
           };
         };
 
@@ -122,6 +197,70 @@ in
           ];
         };
 
+        treesitter = {
+          enable = true;
+          ensureInstalled = [
+            "vim"
+            "bash"
+            "lua"
+            "python"
+            "json"
+            "typescript"
+            "tsx"
+            "rust"
+            "latex"
+          ];
+          folding = true;
+          indent = true;
+        };
+        treesitter-textobjects = {
+          enable = true;
+          select = {
+            enable = true;
+            lookahead = true;
+            keymaps = {
+              "aa" = "@parameter.outer";
+              "ia" = "@parameter.inner";
+              "af" = "@function.outer";
+              "if" = "@function.inner";
+              "ac" = "@class.outer";
+              "ic" = "@class.inner";
+            };
+          };
+          move = {
+            enable = true;
+            gotoNextStart = {
+              "]m" = "@function.outer";
+              "]]" = "@class.outer";
+            };
+
+            gotoNextEnd = {
+              "]M" = "@function.outer";
+              "][" = "@class.outer";
+            };
+
+
+            gotoPreviousStart = {
+              "[m" = "@function.outer";
+              "[[" = "@class.outer";
+            };
+
+            gotoPreviousEnd = {
+              "[M" = "@function.outer";
+              "[]" = "@class.outer";
+            };
+          };
+          swap = {
+            enable = true;
+            swapNext = {
+              "<leader>a" = "@parameter.inner";
+            };
+            swapPrevious = {
+              "<leader>A" = "@parameter.inner";
+            };
+          };
+        };
+
         lsp = {
           enable = true;
           servers = {
@@ -170,31 +309,7 @@ in
 
 
 
-    #       {
-    #         type = "lua";
-    #         plugin = telescope-nvim;
-    #         config = toLuaFile ./nvim/plugin/telescope.lua;
-    #       }
-    #       telescope-fzf-native-nvim
-    #       {
-    #         type = "lua";
-    #         plugin = (nvim-treesitter.withPlugins (p: [
-    #           p.tree-sitter-nix
-    #           p.tree-sitter-vim
-    #           p.tree-sitter-bash
-    #           p.tree-sitter-lua
-    #           p.tree-sitter-python
-    #           p.tree-sitter-json
-    #           p.tree-sitter-typescript
-    #           p.tree-sitter-tsx
-    #           p.tree-sitter-rust
-    #           p.tree-sitter-latex
-    #         ]));
-    #         config = toLuaFile ./nvim/plugin/treesitter.lua;
-    #       }
-    #       nvim-autopairs
-    #     ];
-    #
+
     #     extraLuaConfig = ''
     #       ${builtins.readFile ./nvim/options.lua}
     #       ${builtins.readFile ./nvim/plugin/other.lua}
