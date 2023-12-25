@@ -17,7 +17,7 @@ in
         rust-tools.enable = true;
         lualine.enable = true;
         lsp.servers = {
-          rnix.enable = true;
+          rnix-lsp.enable = true;
         };
       };
     };
