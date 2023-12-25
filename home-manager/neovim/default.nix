@@ -69,12 +69,13 @@ in
               { name = "luasnip"; }
             ];
 
-            snippet.expand = ''
-              function(args)
-                luasnip.lsp_expand(args.body)
-              end
-            '';
+
           };
+          snippet.expand = ''
+            function(args)
+              luasnip.lsp_expand(args.body)
+            end
+          '';
         };
 
         lsp = {
@@ -127,9 +128,7 @@ in
               end, { desc = 'Format current buffer with LSP' })
             end
           '';
-          keymaps = {
-            
-          };
+          keymaps = { };
         };
       };
     };
