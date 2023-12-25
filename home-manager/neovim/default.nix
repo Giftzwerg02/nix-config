@@ -14,9 +14,90 @@ in
       enable = true;
 
       globals = {
-        vim.o.mapleader = " ";
-        vim.g.maplocalleader = " ";
+        mapleader = " ";
+        maplocalleader = " ";
       };
+
+      options = {
+        hlsearch = true;
+        mouse = "a";
+        breakindent = true;
+        undofile = true;
+        ignorecase = true;
+        smartcase = true;
+        updatetime = 250;
+        timeout = true;
+        timeoutlen = 300;
+        completeopt = "menuone,noselect";
+        termguicolors = true;
+      };
+
+      extraConfigLua = ''
+        vim.wo.relativenumber = true
+        vim.wo.number = true
+      '';
+
+      keymaps = [
+        {
+          mode = "n";
+          key = "k";
+          action = "v:count == 0 ? 'gk' : 'k'";
+          options = {
+            expr = true;
+            silent = true;
+          };
+        }
+
+        {
+          mode = "n";
+          key = "j";
+          action = "v:count == 0 ? 'gj' : 'j'";
+          options = {
+            expr = true;
+            silent = true;
+          };
+        }
+
+        {
+          mode = "n";
+          key = "[d";
+          action = "vim.diagnostic.goto_prev";
+          lua = true;
+          options = {
+            desc = "Go to previous diagnostic message";
+          };
+        }
+
+        {
+          mode = "n";
+          key = "]d";
+          action = "vim.diagnostic.goto_next";
+          lua = true;
+          options = {
+            desc = "Go to next diagnostic message";
+          };
+        }
+
+        {
+          mode = "n";
+          key = "<leader>e";
+          action = "vim.diagnostic.open_float";
+          lua = true;
+          options = {
+            desc = "Open floating diagnostic message";
+          };
+        }
+
+        {
+          mode = "n";
+          key = "<leader>q";
+          action = "vim.diagnostic.setloclist";
+          lua = true;
+          options = {
+            desc = "Open diagnostics list";
+          };
+        }
+      ];
 
       autoCmd = [
         {
