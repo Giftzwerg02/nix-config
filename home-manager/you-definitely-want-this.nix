@@ -42,7 +42,7 @@ in
     my-carapace-config.enable = true;
     my-zsh-config.enable = true;
     my-zoxide-config.enable = true;
-    my-doom-emacs-config.enable = true;
+    my-doom-emacs-config.enable = false;
     my-neovim-config.enable = true;
     my-dunst-config.enable = true;
     my-mimeApps-config.enable = true;
