@@ -14,7 +14,7 @@ in
       enable = true;
 
       globals = {
-        vim.g.mapleader = " ";
+        vim.o.mapleader = " ";
         vim.g.maplocalleader = " ";
       };
 
