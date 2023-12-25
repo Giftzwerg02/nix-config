@@ -169,6 +169,16 @@ in
           };
           keymaps = {
            
+            "<leader>sf" = {
+              action = "find_files";
+              desc = "[S]earch [F]iles";
+            };
+
+            "<leader>sh" = {
+              action = "help_tags";
+              desc = "[S]earch [H]elp";
+            };
+
             "<leader>sw" = {
               action = "grep_string";
               desc = "[S]earch current [W]ord";
