@@ -47,10 +47,6 @@ in
         "UserLspConfig" = {};
       };
 
-      keymaps = {
-
-      };
-
       clipboard = {
         register = "unnamedplus";
         providers = {
