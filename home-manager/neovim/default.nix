@@ -44,7 +44,7 @@ in
                   else
                     fallback()
                   end
-                end
+                end)
               '';
               modes = [ "i" "s" ];
             };
@@ -59,7 +59,7 @@ in
                   else
                     fallback()
                   end
-                end
+                end)
               '';
               modes = [ "i" "s" ];
             };
