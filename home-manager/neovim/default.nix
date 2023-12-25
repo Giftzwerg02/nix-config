@@ -10,9 +10,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.nixvim = {
-      enable = true;
-    };
+    # programs.nixvim = {
+    #   enable = true;
+    # };
 
 
     # programs.neovim =
