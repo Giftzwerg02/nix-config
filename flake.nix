@@ -16,6 +16,11 @@
     # Doom emacs
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # Stylix
     stylix.url = "github:danth/stylix";
   };

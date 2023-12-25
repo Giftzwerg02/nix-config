@@ -9,6 +9,7 @@
 }: {
   imports = [
     inputs.nix-doom-emacs.hmModule
+    inputs.nixvim.homeManagerModules.nixvim
     ./you-definitely-want-this.nix
   ];
 
