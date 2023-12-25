@@ -13,7 +13,7 @@ in
     programs.nixvim = {
       enable = true;
 
-      options = {
+      globals = {
         vim.g.mapleader = " ";
         vim.g.maplocalleader = " ";
       };
