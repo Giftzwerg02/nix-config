@@ -16,8 +16,11 @@ in
       plugins = {
         rust-tools.enable = true;
         lualine.enable = true;
-        lsp.servers = {
-          rnix-lsp.enable = true;
+        lsp = {
+          enable = true;
+          servers = {
+            rnix-lsp.enable = true;
+          };
         };
       };
     };
