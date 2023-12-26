@@ -292,7 +292,6 @@ in
             "rust"
             "latex"
           ];
-          folding = true;
           indent = true;
         };
         treesitter-textobjects = {
