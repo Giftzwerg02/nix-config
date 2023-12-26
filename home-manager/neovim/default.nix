@@ -17,6 +17,7 @@ in
          catppuccin = {
 	    enable = true;
 	    flavour = "mocha";
+	    integrations.telescope.enabled = true;
 	 };
       };
 
