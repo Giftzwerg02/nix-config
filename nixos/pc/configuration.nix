@@ -278,6 +278,7 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
+    nerdfonts
     ubuntu_font_family
     liberation_ttf
     fira-code
