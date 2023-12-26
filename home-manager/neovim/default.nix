@@ -168,35 +168,10 @@ in
             };
           };
           keymaps = {
-           
-            "<leader>sf" = {
-              action = "find_files";
-              desc = "[S]earch [F]iles";
-            };
-
-            "<leader>sh" = {
-              action = "help_tags";
-              desc = "[S]earch [H]elp";
-            };
-
-            "<leader>sw" = {
-              action = "grep_string";
-              desc = "[S]earch current [W]ord";
-            };
-
-            "<leader>sg" = {
-              action = "live_grep";
-              desc = "[S]earch by [G]rep";
-            };
-
-            "<leader>sd" = {
-              action = "diagnostics";
-              desc = "[S]earch [D]iagnostics";
-            };
-
-            "<leader>sr" = {
-              action = "resume";
-              desc = "[S]earch [R]resume";
+            
+            "<leader>/" = {
+              action = "current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })";
+              desc = "[/] Fuzzily search in current buffer";
             };
 
           };
