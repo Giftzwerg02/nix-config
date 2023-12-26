@@ -35,7 +35,7 @@
       permittedInsecurePackages = [
         "openssl-1.1.1w"
       ];
-   };
+    };
 
   };
 
@@ -109,13 +109,13 @@
   };
 
   console.keyMap = "de";
-  
+
   programs.adb.enable = true;
-  
+
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox" ];
     packages = with pkgs; [ ];
   };
   users.defaultUserShell = pkgs.zsh;
@@ -138,7 +138,14 @@
     videoDrivers = [ "nvidia" ];
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    virtualbox = {
+      host = {
+        enable = true;
+      };
+    };
+  };
 
   hardware = {
     opengl = {
@@ -233,8 +240,8 @@
     umlet
     pandoc
     unstable.mermaid-filter
-    pandoc-for-homework 
-    pdftk 
+    pandoc-for-homework
+    pdftk
 
     # Compilers
     clang
