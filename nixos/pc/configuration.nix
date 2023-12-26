@@ -159,6 +159,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    libreoffice
+
     # Core (Undertale reference!)
     wget
     kitty
