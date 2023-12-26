@@ -15,7 +15,7 @@ in
 
       colorschemes = {
          catppuccin = {
-	    enable = true;
+	    enable = false;
 	    flavour = "mocha";
 	    integrations.telescope.enabled = true;
 	 };
