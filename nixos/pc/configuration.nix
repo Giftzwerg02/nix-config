@@ -217,7 +217,7 @@
     bitwarden
     unstable.webcord-vencord
     unstable.armcord
-    unstable.obsidian
+    # unstable.obsidian
     zathura
     signal-desktop
     xfce.thunar
