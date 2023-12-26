@@ -35,13 +35,15 @@ in
       extraConfigLua = ''
         vim.wo.relativenumber = true
         vim.wo.number = true
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
+
+        -- Maybe remove this as it is ugly and not that necessary
+        vim.keymap.set('n', '<leader>/', function()
+          -- You can pass additional configuration to telescope to change theme, layout, etc.
+          require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+            winblend = 10,
+            previewer = false,
+          })
+        end, { desc = '[/] Fuzzily search in current buffer' })
       '';
 
       keymaps = [
@@ -132,7 +134,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 
       autoGroups = {
         "YankHighlight" = { clear = true; };
-        "UserLspConfig" = {};
+        "UserLspConfig" = { };
       };
 
       clipboard = {
@@ -345,6 +347,9 @@ end, { desc = '[/] Fuzzily search in current buffer' })
           enable = true;
           servers = {
             rnix-lsp.enable = true;
+            tsserver.enable = true;
+            lua-ls.enable = true;
+            pyright.enable = true;
           };
           onAttach = ''          
               local nmap = function(keys, func, desc)
