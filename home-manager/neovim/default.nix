@@ -13,6 +13,13 @@ in
     programs.nixvim = {
       enable = true;
 
+      colorschemes = {
+         catppuccin = {
+	    enable = true;
+	    flavour = "mocha";
+	 };
+      };
+
       globals = {
         mapleader = " ";
         maplocalleader = " ";
