@@ -35,6 +35,13 @@ in
       extraConfigLua = ''
         vim.wo.relativenumber = true
         vim.wo.number = true
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
       '';
 
       keymaps = [
@@ -168,10 +175,50 @@ in
             };
           };
           keymaps = {
-            
-            "<leader>/" = {
-              action = "current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })";
-              desc = "[/] Fuzzily search in current buffer";
+            "<leader>?" = {
+              action = "oldfiles";
+              desc = "[?] Find recently opened files";
+            };
+
+            "<leader><space>" = {
+              action = "buffers";
+              desc = "[ ] Find existing buffers";
+            };
+
+
+            "<leader>gf" = {
+              action = "git_files";
+              desc = "Search [G]it [F]iles";
+            };
+
+            "<leader>sf" = {
+              action = "find_files";
+              desc = "[S]earch [F]iles";
+            };
+
+            "<leader>sh" = {
+              action = "help_tags";
+              desc = "[S]earch [H]elp";
+            };
+
+            "<leader>sw" = {
+              action = "grep_string";
+              desc = "[S]earch current [W]ord";
+            };
+
+            "<leader>sg" = {
+              action = "live_grep";
+              desc = "[S]earch by [G]rep";
+            };
+
+            "<leader>sd" = {
+              action = "diagnostics";
+              desc = "[S]earch [D]iagnostics";
+            };
+
+            "<leader>sr" = {
+              action = "resume";
+              desc = "[S]earch [R]resume";
             };
 
           };
