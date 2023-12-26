@@ -13,14 +13,6 @@ in
     programs.nixvim = {
       enable = true;
 
-      colorschemes = {
-         catppuccin = {
-	    enable = false;
-	    flavour = "mocha";
-	    integrations.telescope.enabled = true;
-	 };
-      };
-
       globals = {
         mapleader = " ";
         maplocalleader = " ";
@@ -156,6 +148,7 @@ in
         indent-blankline.enable = true;
         comment-nvim.enable = true;
         nvim-autopairs.enable = true;
+	vimtex.enable = true;
 
         telescope = {
           enable = true;
