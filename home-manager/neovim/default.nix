@@ -119,7 +119,14 @@ in
         {
           event = "TextYankPost";
           group = "YankHighlight";
-          callback = "vim.highlight.on_yank";
+	  pattern = "*";
+          callback = {
+		__raw = ''
+			function()
+	  			vim.highlight.on_yank()
+			end
+		'';
+	  };
         }
 
         # {
