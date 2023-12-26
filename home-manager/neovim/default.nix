@@ -129,22 +129,6 @@ in
 		'';
 	  };
         }
-
-        # {
-        #   event = "LspAttach";
-        #   group = "UserLspConfig";
-        #   callback = {
-        #     __raw = ''
-        #       function(args)
-        #         local client = vim.lsp.get_client_by_id(args.data.client_id)
-        #         if client.server_capabilities.inlayHintProvider then
-        #           vim.lsp.inlay_hint(0, true)
-        #           vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "grey" })
-        #         end
-        #       end
-        #     '';
-        #   };
-        # }
       ];
 
       autoGroups = {
@@ -201,7 +185,6 @@ in
               action = "buffers";
               desc = "[ ] Find existing buffers";
             };
-
 
             "<leader>gf" = {
               action = "git_files";
@@ -401,18 +384,8 @@ in
                 vim.lsp.buf.format()
               end, { desc = 'Format current buffer with LSP' })
           '';
-          keymaps = { };
         };
       };
     };
-
-
-
-
-    #     extraLuaConfig = ''
-    #       ${builtins.readFile ./nvim/options.lua}
-    #       ${builtins.readFile ./nvim/plugin/other.lua}
-    #     '';
-    #   };
   };
 }
