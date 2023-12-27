@@ -5,19 +5,7 @@
   outputs,
   inputs,
   ...
-}: let
-  cfg = config.global-setup;
-in {
-  imports = [];
-  options = {
-    global-setup = {
-      enable = lib.mkEnableOption "enable global config";
-    };
-  };
-  config = {
-    global-setup = lib.mkIf cfg.enable {
-      
-
+}: {
       # Use latest Kernel
       config.boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
@@ -135,6 +123,4 @@ in {
       };
 
       hardware.opentabletdriver.enable = true;
-    };
-  };
 }

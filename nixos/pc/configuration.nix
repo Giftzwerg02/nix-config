@@ -58,8 +58,6 @@ nixpkgs = {
         };
       };
 
-  global-setup.enable = true;
-
   boot.extraModulePackages = [
     # Weird-ass stuff for obs-virtual-cam
     config.boot.kernelPackages.v4l2loopback
