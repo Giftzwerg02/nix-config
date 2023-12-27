@@ -59,15 +59,22 @@
     };
   };
 
-  # Weird-ass stuff for obs-virtual-cam
   boot.extraModulePackages = with pkgs; [
+    # Weird-ass stuff for obs-virtual-cam
     config.boot.kernelPackages.v4l2loopback
+
+    # Dolphin Emulator
+    config.boot.kernelPackages.gcadapter-oc-kmod
   ];
 
   boot.extraModprobeConfig = ''
     options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
   '';
 
+  boot.kernelModules = [ "kvm-intel" "v4l2loopback" "gcadapter_oc" ];
+
+  # Dolphin Emulator
+  services.udev.packages = [ pkgs.dolphinEmu ];
 
   networking.hostName = "pc";
 
