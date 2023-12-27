@@ -138,8 +138,6 @@
     xournalpp
     bitwarden
     unstable.webcord-vencord
-    unstable.armcord
-    unstable.obsidian
     zathura
     signal-desktop
     xfce.thunar
