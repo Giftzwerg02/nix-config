@@ -1,11 +1,12 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     inputs.nix-doom-emacs.hmModule
@@ -31,7 +32,7 @@
 
   setup-this-thing = {
     enable = true;
-    wallpapers = [ ./imgs/background-laptop.jpg ];
+    wallpapers = [./imgs/background-laptop.jpg];
   };
 
   programs.home-manager.enable = true;

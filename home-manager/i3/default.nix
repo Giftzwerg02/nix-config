@@ -1,28 +1,29 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.my-i3-config;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.my-i3-config;
+in {
   options = {
     my-i3-config = {
       enable = lib.mkEnableOption "enable i3 config";
-      wallpapers = lib.mkOption
+      wallpapers =
+        lib.mkOption
         {
-          type = with lib.types; listOf (oneOf [ str path ]);
+          type = with lib.types; listOf (oneOf [str path]);
           description = "provide a list of paths for each wallpaper for each monitor";
-          default = [ "none" ];
+          default = ["none"];
         };
     };
   };
 
-  config = 
-  let 
+  config = let
     bar_name = "bottom";
-  in 
-  lib.mkIf cfg.enable {
-
-    xsession.windowManager.i3 =
-      let
+  in
+    lib.mkIf cfg.enable {
+      xsession.windowManager.i3 = let
         modifier = "Mod4";
         refresh_i3status = "killall -SIGUSR1 i3status";
         ws1 = "1";
@@ -35,17 +36,16 @@ in
         ws8 = "8";
         ws9 = "9";
         ws10 = "10";
-      in
-      {
+      in {
         enable = true;
         config = {
           modifier = "${modifier}";
 
           startup = [
-            { command = "i3"; }
-            { command = "nm-applet"; }
-            { command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers; }
-            { command = "flameshot"; }
+            {command = "i3";}
+            {command = "nm-applet";}
+            {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
+            {command = "flameshot";}
           ];
 
           keybindings = {
@@ -117,7 +117,6 @@ in
             # focus the parent container
             "${modifier}+a" = "focus parent";
 
-
             # switch to workspace
             "${modifier}+1" = "workspace number ${ws1}";
             "${modifier}+2" = "workspace number ${ws2}";
@@ -149,7 +148,6 @@ in
             "${modifier}+Shift+r" = "restart";
 
             "${modifier}+r" = "mode \"resize\"";
-
           };
 
           modes = {
@@ -172,63 +170,60 @@ in
             };
           };
 
-
-          bars = [{
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
-          }];
-
-        };
-      };
-
-    programs.i3status-rust = {
-      enable = true;
-      bars = {
-        ${bar_name} = {
-          theme = "ctp-mocha";
-          icons = "awesome6";
-
-          blocks = [
+          bars = [
             {
-              alert = 10.0;
-              block = "disk_space";
-              info_type = "available";
-              interval = 60;
-              path = "/";
-              warning = 20.0;
-            }
-
-            {
-              block = "memory";
-              format = " $icon $mem_used_percents ";
-              format_alt = " $icon $swap_used_percents ";
-            }
-
-            {
-              block = "cpu";
-              interval = 1;
-            }
-
-            {
-              block = "load";
-              format = " $icon $1m ";
-              interval = 1;
-            }
-
-            {
-              block = "sound";
-            }
-
-            {
-              block = "time";
-              format = " $timestamp.datetime(f:'%a %d/%m %R') ";
-              interval = 60;
+              statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
             }
           ];
         };
       };
+
+      programs.i3status-rust = {
+        enable = true;
+        bars = {
+          ${bar_name} = {
+            theme = "ctp-mocha";
+            icons = "awesome6";
+
+            blocks = [
+              {
+                alert = 10.0;
+                block = "disk_space";
+                info_type = "available";
+                interval = 60;
+                path = "/";
+                warning = 20.0;
+              }
+
+              {
+                block = "memory";
+                format = " $icon $mem_used_percents ";
+                format_alt = " $icon $swap_used_percents ";
+              }
+
+              {
+                block = "cpu";
+                interval = 1;
+              }
+
+              {
+                block = "load";
+                format = " $icon $1m ";
+                interval = 1;
+              }
+
+              {
+                block = "sound";
+              }
+
+              {
+                block = "time";
+                format = " $timestamp.datetime(f:'%a %d/%m %R') ";
+                interval = 60;
+              }
+            ];
+          };
+        };
+      };
     };
-
-  };
-
-
 }

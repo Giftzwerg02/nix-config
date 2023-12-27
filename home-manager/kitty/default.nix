@@ -1,8 +1,11 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.my-kitty-config;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.my-kitty-config;
+in {
   options = {
     my-kitty-config = {
       enable = lib.mkEnableOption "enable kitty config";

@@ -1,8 +1,11 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.setup-this-thing;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.setup-this-thing;
+in {
   imports = [
     ./i3
     ./stylix
@@ -20,13 +23,13 @@ in
   options = {
     setup-this-thing = {
       enable = lib.mkEnableOption "enable global stuff config";
-      wallpapers = lib.mkOption
+      wallpapers =
+        lib.mkOption
         {
-          type = with lib.types; listOf (oneOf [ str path ]);
+          type = with lib.types; listOf (oneOf [str path]);
           description = "provide a list of paths for each wallpaper for each monitor";
-          default = [ "none" ];
+          default = ["none"];
         };
-
     };
   };
 
@@ -34,11 +37,10 @@ in
     my-stylix-config.enable = true;
     my-git-config.enable = true;
     my-kitty-config.enable = true;
-    my-i3-config =
-      {
-        enable = true;
-        wallpapers = cfg.wallpapers;
-      };  
+    my-i3-config = {
+      enable = true;
+      wallpapers = cfg.wallpapers;
+    };
     my-carapace-config.enable = true;
     my-zsh-config.enable = true;
     my-zoxide-config.enable = true;

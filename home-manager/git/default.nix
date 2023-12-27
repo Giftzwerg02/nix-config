@@ -1,8 +1,11 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.my-git-config;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.my-git-config;
+in {
   options = {
     my-git-config = {
       enable = lib.mkEnableOption "enable git config";

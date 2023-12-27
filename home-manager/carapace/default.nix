@@ -1,8 +1,11 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.my-carapace-config;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.my-carapace-config;
+in {
   options = {
     my-carapace-config = {
       enable = lib.mkEnableOption "enable carapace config";

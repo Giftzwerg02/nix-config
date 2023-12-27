@@ -1,8 +1,11 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.my-zoxide-config;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.my-zoxide-config;
+in {
   options = {
     my-zoxide-config = {
       enable = lib.mkEnableOption "enable zoxide config";

@@ -1,8 +1,11 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.my-zsh-config;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.my-zsh-config;
+in {
   options = {
     my-zsh-config = {
       enable = lib.mkEnableOption "enable zsh config";
@@ -27,7 +30,7 @@ in
       };
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "thefuck" ];
+        plugins = ["git" "thefuck"];
         theme = "robbyrussell";
       };
       syntaxHighlighting.enable = true;

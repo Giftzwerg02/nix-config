@@ -1,8 +1,11 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.my-neovim-config;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.my-neovim-config;
+in {
   options = {
     my-neovim-config = {
       enable = lib.mkEnableOption "enable neovim config";
@@ -30,8 +33,8 @@ in
         timeoutlen = 300;
         completeopt = "menuone,noselect";
         termguicolors = true;
-	tabstop = 4;
-	shiftwidth = 4;
+        tabstop = 4;
+        shiftwidth = 4;
       };
 
       extraConfigLua = ''
@@ -114,20 +117,20 @@ in
         {
           event = "TextYankPost";
           group = "YankHighlight";
-	  pattern = "*";
+          pattern = "*";
           callback = {
-		__raw = ''
-			function()
-	  			vim.highlight.on_yank()
-			end
-		'';
-	  };
+            __raw = ''
+              function()
+              			vim.highlight.on_yank()
+              end
+            '';
+          };
         }
       ];
 
       autoGroups = {
-        "YankHighlight" = { clear = true; };
-        "UserLspConfig" = { };
+        "YankHighlight" = {clear = true;};
+        "UserLspConfig" = {};
       };
 
       clipboard = {
@@ -150,7 +153,7 @@ in
         indent-blankline.enable = true;
         comment-nvim.enable = true;
         nvim-autopairs.enable = true;
-	vimtex.enable = true;
+        vimtex.enable = true;
 
         telescope = {
           enable = true;
@@ -215,7 +218,6 @@ in
               action = "resume";
               desc = "[S]earch [R]resume";
             };
-
           };
         };
 
@@ -245,7 +247,7 @@ in
                   end
                 end)
               '';
-              modes = [ "i" "s" ];
+              modes = ["i" "s"];
             };
 
             "<S-Tab>" = {
@@ -260,15 +262,15 @@ in
                   end
                 end)
               '';
-              modes = [ "i" "s" ];
+              modes = ["i" "s"];
             };
           };
 
           snippet.expand = "luasnip";
 
           sources = [
-            { name = "nvim_lsp"; }
-            { name = "luasnip"; }
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
           ];
         };
 
@@ -313,7 +315,6 @@ in
               "][" = "@class.outer";
             };
 
-
             gotoPreviousStart = {
               "[m" = "@function.outer";
               "[[" = "@class.outer";
@@ -338,47 +339,47 @@ in
         lsp = {
           enable = true;
           servers = {
-	    	nil_ls.enable = true;
-			nixd.enable = true;
+            nil_ls.enable = true;
+            nixd.enable = true;
             tsserver.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
           };
-          onAttach = ''          
-              local nmap = function(keys, func, desc)
-                if desc then
-                  desc = 'LSP: ' .. desc
-                end
-
-                vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+          onAttach = ''
+            local nmap = function(keys, func, desc)
+              if desc then
+                desc = 'LSP: ' .. desc
               end
 
-              nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-              nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+              vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+            end
 
-              nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-              nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-              nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-              nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-              nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-              nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+            nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+            nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-              -- See `:help K` for why this keymap
-              nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-              nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+            nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+            nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+            nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+            nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+            nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+            nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-              -- Lesser used LSP functionality
-              nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-              nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-              nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-              nmap('<leader>wl', function()
-                print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-              end, '[W]orkspace [L]ist Folders')
+            -- See `:help K` for why this keymap
+            nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+            nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-              -- Create a command `:Format` local to the LSP buffer
-              vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-                vim.lsp.buf.format()
-              end, { desc = 'Format current buffer with LSP' })
+            -- Lesser used LSP functionality
+            nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+            nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+            nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+            nmap('<leader>wl', function()
+              print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+            end, '[W]orkspace [L]ist Folders')
+
+            -- Create a command `:Format` local to the LSP buffer
+            vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+              vim.lsp.buf.format()
+            end, { desc = 'Format current buffer with LSP' })
           '';
         };
       };

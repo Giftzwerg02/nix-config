@@ -1,21 +1,25 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.cfgname;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.cfgname;
+in {
   options = {
     cfgname = {
       enable = lib.mkEnableOption "enable cfgname config";
-      option = lib.mkOption
+      option =
+        lib.mkOption
         {
-          type = type; 
+          type = type;
           description = "";
-          default = default; 
+          default = default;
         };
     };
   };
 
-  config = lib.mkIf cfg.enable {
-
-  };
+  config =
+    lib.mkIf cfg.enable {
+    };
 }
