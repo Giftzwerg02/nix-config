@@ -1,11 +1,12 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -35,14 +36,13 @@
       permittedInsecurePackages = [
         "openssl-1.1.1w"
       ];
-   };
-
+    };
   };
 
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
@@ -68,7 +68,6 @@
     options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
   '';
 
-
   networking.hostName = "laptop";
 
   # Use latest Kernel
@@ -79,7 +78,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # NTFS
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -109,14 +108,14 @@
   };
 
   console.keyMap = "de";
-  
+
   programs.adb.enable = true;
-  
+
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
-    packages = with pkgs; [ ];
+    extraGroups = ["networkmanager" "wheel" "adbusers"];
+    packages = with pkgs; [];
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -129,9 +128,9 @@
     };
     windowManager.i3 = {
       enable = true;
-      extraPackages = with pkgs; [ i3status i3lock i3blocks ];
+      extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
-    videoDrivers = [ "intel" "nvidia" ];
+    videoDrivers = ["intel" "nvidia"];
   };
 
   virtualisation.docker.enable = true;
@@ -172,7 +171,7 @@
     openssl
     openssl_1_1
 
-    # Cli Utils deez nuts 
+    # Cli Utils deez nuts
     pamixer
     killall
     htop
@@ -227,8 +226,8 @@
     umlet
     pandoc
     unstable.mermaid-filter
-    pandoc-for-homework 
-    pdftk 
+    pandoc-for-homework
+    pdftk
 
     # Compilers
     clang
@@ -288,9 +287,9 @@
   security.polkit.enable = true;
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
+    wantedBy = ["graphical-session.target"];
+    wants = ["graphical-session.target"];
+    after = ["graphical-session.target"];
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -301,7 +300,7 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   xdg.portal.config.common.default = "gtk";
 
   # thunar settings
@@ -358,7 +357,7 @@
 
   hardware.opentabletdriver.enable = true;
 
-  networking.nameservers = [ "1.1.1.1" "8.8.8.8" "192.168.1.1" ];
-  
+  networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
+
   system.stateVersion = "23.11"; # Did you read the comment?
 }
