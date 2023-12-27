@@ -1,11 +1,12 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -22,12 +23,12 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
-	../global.nix
+    ../global.nix
   ];
 
   global-setup.enable = true;
 
-  boot.extraModulePackages = with pkgs; [
+  boot.extraModulePackages = [
     # Weird-ass stuff for obs-virtual-cam
     config.boot.kernelPackages.v4l2loopback
 
@@ -39,22 +40,21 @@
     options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
   '';
 
-  boot.kernelModules = [ "kvm-intel" "v4l2loopback" "gcadapter_oc" ];
+  boot.kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc"];
 
   # Dolphin Emulator
-  services.udev.packages = [ pkgs.dolphinEmu ];
+  services.udev.packages = [pkgs.dolphinEmu];
 
   networking.hostName = "pc";
 
   # NTFS
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
 
-  
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox" ];
-    packages = with pkgs; [ ];
+    extraGroups = ["networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox"];
+    packages = with pkgs; [];
   };
 
   services.xserver = {
@@ -65,14 +65,14 @@
       };
 
       setupCommands = ''
-        	 ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --pos 3000x704 --crtc 2 --mode 1920x1080 --rate 59.93 --output DVI-D-0 --pos 0x0 --crtc 1 --mode 1920x1080 --rate 60.00 --rotate left --output HDMI-0 --pos 1080x704 --crtc 0 --primary --mode 1920x1080 --rate 60.00
-        	 '';
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --pos 3000x704 --crtc 2 --mode 1920x1080 --rate 59.93 --output DVI-D-0 --pos 0x0 --crtc 1 --mode 1920x1080 --rate 60.00 --rotate left --output HDMI-0 --pos 1080x704 --crtc 0 --primary --mode 1920x1080 --rate 60.00
+      '';
     };
     windowManager.i3 = {
       enable = true;
-      extraPackages = with pkgs; [ i3status i3lock i3blocks ];
+      extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = ["nvidia"];
   };
 
   virtualisation = {
@@ -83,10 +83,6 @@
       };
     };
   };
-
-  
-
-
 
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)
@@ -105,7 +101,7 @@
     unzip
     openssl
 
-    # Cli Utils deez nuts 
+    # Cli Utils deez nuts
     pamixer
     killall
     htop
@@ -205,9 +201,6 @@
     ipcp-accept-remote
   '';
 
-  
-  
-  
   programs.gamemode.enable = true;
   programs.steam = {
     enable = true;
@@ -225,26 +218,26 @@
     jack.enable = true;
   };
 
-
   programs.ssh.startAgent = true;
 
-  networking.nameservers = [ "1.1.1.1" "8.8.8.8" "192.168.1.1" ];
+  networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
   networking.defaultGateway = {
     address = "192.168.1.1";
     interface = "enp0s31f6";
   };
   networking.interfaces = {
-    enp0s31f6.ipv4.addresses = [{
-      address = "192.168.1.184";
-      prefixLength = 24;
-    }];
+    enp0s31f6.ipv4.addresses = [
+      {
+        address = "192.168.1.184";
+        prefixLength = 24;
+      }
+    ];
   };
   networking.nat = {
     enable = true;
-    internalInterfaces = [ "enp0s31f6" ];
+    internalInterfaces = ["enp0s31f6"];
     externalInterface = "enp0s31f6";
   };
 
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
