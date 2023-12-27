@@ -173,8 +173,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    joycond
-
     # Core (Undertale reference!)
     wget
     kitty
