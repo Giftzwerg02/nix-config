@@ -22,6 +22,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ../global.nix
   ];
 
   nixpkgs = {
@@ -33,9 +34,6 @@
     ];
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
     };
   };
 
@@ -59,65 +57,13 @@
     };
   };
 
-  # Weird-ass stuff for obs-virtual-cam
-  boot.extraModulePackages = with pkgs; [
-    config.boot.kernelPackages.v4l2loopback
-  ];
-
-  boot.extraModprobeConfig = ''
-    options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
-  '';
-
   networking.hostName = "laptop";
-
-  # Use latest Kernel
-  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
-
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # NTFS
-  boot.supportedFilesystems = ["ntfs"];
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Vienna";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "de_AT.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_AT.UTF-8";
-    LC_IDENTIFICATION = "de_AT.UTF-8";
-    LC_MEASUREMENT = "de_AT.UTF-8";
-    LC_MONETARY = "de_AT.UTF-8";
-    LC_NAME = "de_AT.UTF-8";
-    LC_NUMERIC = "de_AT.UTF-8";
-    LC_PAPER = "de_AT.UTF-8";
-    LC_TELEPHONE = "de_AT.UTF-8";
-    LC_TIME = "de_AT.UTF-8";
-  };
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "at";
-    xkbVariant = "nodeadkeys";
-  };
-
-  console.keyMap = "de";
-
-  programs.adb.enable = true;
 
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = ["networkmanager" "wheel" "adbusers"];
-    packages = with pkgs; [];
+    extraGroups = ["networkmanager" "wheel"];
   };
-  users.defaultUserShell = pkgs.zsh;
 
   services.xserver = {
     enable = true;
@@ -135,24 +81,6 @@
 
   virtualisation.docker.enable = true;
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-    nvidia = {
-      modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
-    };
-  };
-
-  programs.dconf.enable = true;
-
-  programs.zsh = {
-    enable = true;
-  };
-
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)
     wget
@@ -169,7 +97,6 @@
     zip
     unzip
     openssl
-    openssl_1_1
 
     # Cli Utils deez nuts
     pamixer
@@ -259,103 +186,7 @@
     heroic
     wineWowPackages.staging
     lutris
-
-    # extras
-    # Used for obs virtual cam
-    linuxPackages.v4l2loopback
   ];
-
-  environment.etc."ppp/options".text = ''
-    ipcp-accept-remote
-  '';
-
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    ubuntu_font_family
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-    font-awesome
-    siji
-  ];
-
-  security.polkit.enable = true;
-  systemd.user.services.polkit-gnome-authentication-agent-1 = {
-    description = "polkit-gnome-authentication-agent-1";
-    wantedBy = ["graphical-session.target"];
-    wants = ["graphical-session.target"];
-    after = ["graphical-session.target"];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-  };
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  xdg.portal.config.common.default = "gtk";
-
-  # thunar settings
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  location.provider = "manual";
-  location.latitude = 48.210033;
-  location.longitude = 16.363449;
-  services.redshift = {
-    enable = true;
-    brightness = {
-      day = "1";
-      night = "0.85";
-    };
-    temperature = {
-      day = 3000;
-      night = 2000;
-    };
-  };
-
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-  };
-
-  programs.gamemode.enable = true;
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  # I don't want the onedrive service to be enabled by default
-  # Henceforth, I have only added onedrive as a package
-  # services.onedrive.enable = true;
-  # services.onedrive.package = unstable.onedrive;
-
-  programs.ssh.startAgent = true;
-  services.openssh.enable = true;
-
-  hardware.opentabletdriver.enable = true;
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 

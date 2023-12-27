@@ -26,37 +26,37 @@
     ../global.nix
   ];
 
-nixpkgs = {
-        overlays = [
-          outputs.overlays.additions
-          outputs.overlays.modifications
-          outputs.overlays.unstable-packages
-          inputs.neovim-nightly-overlay.overlays.default
-        ];
-        config = {
-          allowUnfree = true;
-        };
-      };
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.unstable-packages
+      inputs.neovim-nightly-overlay.overlays.default
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
 
-      nix = {
-        # This will add each flake input as a registry
-        # To make nix3 commands consistent with your flake
-        registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
+  nix = {
+    # This will add each flake input as a registry
+    # To make nix3 commands consistent with your flake
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
-        # This will additionally add your inputs to the system's legacy channels
-        # Making legacy nix commands consistent as well, awesome!
-        nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+    # This will additionally add your inputs to the system's legacy channels
+    # Making legacy nix commands consistent as well, awesome!
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
-        settings = {
-          # Enable flakes and new 'nix' command
-          experimental-features = "nix-command flakes";
-          # Deduplicate and optimize nix store
-          auto-optimise-store = true;
+    settings = {
+      # Enable flakes and new 'nix' command
+      experimental-features = "nix-command flakes";
+      # Deduplicate and optimize nix store
+      auto-optimise-store = true;
 
-          # Force clean git-directory before rebuilding
-          allow-dirty = false;
-        };
-      };
+      # Force clean git-directory before rebuilding
+      allow-dirty = false;
+    };
+  };
 
   boot.extraModulePackages = [
     # Weird-ass stuff for obs-virtual-cam
@@ -237,18 +237,6 @@ nixpkgs = {
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
-
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  programs.ssh.startAgent = true;
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
   networking.defaultGateway = {
