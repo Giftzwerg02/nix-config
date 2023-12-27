@@ -173,8 +173,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    libreoffice
-
     # Core (Undertale reference!)
     wget
     kitty
@@ -249,6 +247,7 @@
     unstable.mermaid-filter
     pandoc-for-homework
     pdftk
+    libreoffice
 
     # Compilers
     clang
@@ -280,6 +279,7 @@
     heroic
     wineWowPackages.staging
     lutris
+    dolphinEmu
 
     # extras
     # Used for obs virtual cam
