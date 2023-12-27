@@ -338,7 +338,8 @@ in
         lsp = {
           enable = true;
           servers = {
-	    nil_ls.enable = true;
+	    	nil_ls.enable = true;
+			nixd.enable = true;
             tsserver.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
