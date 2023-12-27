@@ -174,7 +174,6 @@
 
   environment.systemPackages = with pkgs; [
     joycond
-    joycond-cemuhook
 
     # Core (Undertale reference!)
     wget
