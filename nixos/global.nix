@@ -7,7 +7,7 @@
   ...
 }: {
       # Use latest Kernel
-      config.boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+      boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
       # Bootloader
       boot.loader.systemd-boot.enable = true;
