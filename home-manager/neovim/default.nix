@@ -30,6 +30,8 @@ in
         timeoutlen = 300;
         completeopt = "menuone,noselect";
         termguicolors = true;
+	tabstop = 4;
+	shiftwidth = 4;
       };
 
       extraConfigLua = ''
@@ -336,7 +338,7 @@ in
         lsp = {
           enable = true;
           servers = {
-            rnix-lsp.enable = true;
+	    nil_ls.enable = true;
             tsserver.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
