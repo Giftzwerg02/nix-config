@@ -185,7 +185,6 @@
     zip
     unzip
     openssl
-    openssl_1_1
 
     # Cli Utils deez nuts 
     pamixer
