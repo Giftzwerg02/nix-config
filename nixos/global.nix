@@ -15,11 +15,11 @@ in {
     };
   };
   config = {
-    global-setup = with config; lib.mkIf cfg.enable {
+    global-setup = lib.mkIf cfg.enable {
       
 
       # Use latest Kernel
-      boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+      config.boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
       # Bootloader
       boot.loader.systemd-boot.enable = true;
