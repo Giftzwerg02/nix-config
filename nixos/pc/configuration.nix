@@ -257,5 +257,7 @@
     externalInterface = "enp0s31f6";
   };
 
+  services.teamviewer.enable = true;
+
   system.stateVersion = "23.05"; # Did you read the comment?
 }
