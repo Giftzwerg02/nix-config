@@ -153,7 +153,12 @@ in {
         indent-blankline.enable = true;
         comment-nvim.enable = true;
         nvim-autopairs.enable = true;
-        vimtex.enable = true;
+
+        vimtex = {
+			enable = true;
+			viewMethod = "zathura";
+		};
+
 
         telescope = {
           enable = true;
