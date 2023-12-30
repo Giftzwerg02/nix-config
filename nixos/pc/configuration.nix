@@ -115,6 +115,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+  unstable.discord-screenaudio
     # Core (Undertale reference!)
     wget
     kitty
