@@ -170,6 +170,7 @@
     #firefox-devedition
     firefox
     xournalpp
+	gnome.adwaita-icon-theme
     bitwarden
     unstable.webcord-vencord
     unstable.armcord
