@@ -186,6 +186,10 @@ in {
             icons = "awesome6";
 
             blocks = [
+			  {
+			    block = "battery";
+			  }
+
               {
                 alert = 10.0;
                 block = "disk_space";
