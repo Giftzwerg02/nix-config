@@ -349,6 +349,7 @@ in {
             tsserver.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
+			svelte.enable = true;
           };
           onAttach = ''
             local nmap = function(keys, func, desc)
