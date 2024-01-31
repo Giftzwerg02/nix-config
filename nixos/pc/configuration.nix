@@ -163,6 +163,7 @@
     flameshot
     lxappearance
     obs-studio
+	unstable.spotube
 
     # Dev and Work (as if)
     # neovim-nightly
