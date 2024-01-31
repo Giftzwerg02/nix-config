@@ -106,7 +106,7 @@
     enable = true;
     brightness = {
       day = "1";
-      night = "0.85";
+      night = "1";
     };
     temperature = {
       day = 3000;
