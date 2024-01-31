@@ -35,6 +35,18 @@ in {
       };
       syntaxHighlighting.enable = true;
       enableAutosuggestions = true;
+	  initExtra = /*bash*/ ''
+	  		function search_fzf() {
+				p=$(fd . . | fzf)
+				if [ -d "''${p}" ]; then
+					cd ''${p}
+				else
+					cd $(dirname ''${p})
+				fi
+			}			
+
+			bindkey '^f' search_fzf
+	  '';
     };
   };
 }
