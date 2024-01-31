@@ -45,6 +45,8 @@ function search_fzf() {
   fi
 }			
 
+zle -N search_fzf
+
 bindkey '^f' search_fzf
 	  '';
     };
