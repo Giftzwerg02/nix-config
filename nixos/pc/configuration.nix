@@ -107,6 +107,10 @@
 
   virtualisation = {
     docker.enable = true;
+	docker.rootless = {
+		enable = true;
+		setSocketVariable = true;
+	};
     virtualbox = {
       host = {
         enable = true;
