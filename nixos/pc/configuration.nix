@@ -119,6 +119,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+  	xautoclick
   unstable.discord-screenaudio
     # Core (Undertale reference!)
     wget
