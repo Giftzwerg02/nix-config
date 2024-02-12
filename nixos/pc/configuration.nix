@@ -232,7 +232,7 @@
     wineWowPackages.staging
     lutris
     dolphinEmu
-	r2modman
+	unstable.r2modman
 
     # extras
     # Used for obs virtual cam
