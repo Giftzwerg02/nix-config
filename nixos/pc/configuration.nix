@@ -229,6 +229,7 @@
     wineWowPackages.staging
     lutris
     dolphinEmu
+	r2modman
 
     # extras
     # Used for obs virtual cam
