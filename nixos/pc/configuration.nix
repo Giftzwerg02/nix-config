@@ -124,6 +124,7 @@
   environment.systemPackages = with pkgs; [
   	xautoclick
   unstable.discord-screenaudio
+  	unstable.discord
     # Core (Undertale reference!)
     wget
     kitty
