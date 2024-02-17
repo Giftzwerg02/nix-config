@@ -33,8 +33,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "at";
-    xkbVariant = "nodeadkeys";
+    layout = "en";
+    # xkbVariant = "nodeadkeys";
   };
 
   console.keyMap = "de";
