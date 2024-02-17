@@ -33,7 +33,7 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "en";
+    layout = "us";
     # xkbVariant = "nodeadkeys";
   };
 
