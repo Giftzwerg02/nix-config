@@ -54,7 +54,6 @@ in {
   	lib.mkIf cfg.enable {
     programs.nixvim = {
       enable = true;
-	  package = pkgs.neovim-unwrapped;
 
       globals = {
         mapleader = " ";
