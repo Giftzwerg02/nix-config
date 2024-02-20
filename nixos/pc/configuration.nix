@@ -210,6 +210,7 @@
     python311
     python311Packages.pip
     unstable.rustc
+	rustfmt
     unstable.cargo
     unstable.rust-analyzer
     nodejs_20
