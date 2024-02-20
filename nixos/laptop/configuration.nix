@@ -30,7 +30,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-      inputs.neovim-nightly-overlay.overlays.default
+      # inputs.neovim-nightly-overlay.overlays.default
     ];
     config = {
       allowUnfree = true;
@@ -132,7 +132,7 @@
 
     # Dev and Work (as if)
     # neovim-nightly
-    unstable.neovim
+    # unstable.neovim
     #firefox-devedition
     firefox
     xournalpp
