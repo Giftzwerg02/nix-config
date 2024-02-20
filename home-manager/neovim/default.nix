@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.my-neovim-config;
@@ -53,6 +54,7 @@ in {
   	lib.mkIf cfg.enable {
     programs.nixvim = {
       enable = true;
+	  package = pkgs.neovim-unwrapped;
 
       globals = {
         mapleader = " ";
