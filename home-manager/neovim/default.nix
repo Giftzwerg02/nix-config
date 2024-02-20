@@ -119,9 +119,9 @@ in {
           group = "YankHighlight";
           pattern = "*";
           callback = {
-            __raw = ''
+            __raw = /* lua */ ''
               function()
-              			vim.highlight.on_yank()
+              	vim.highlight.on_yank()
               end
             '';
           };
@@ -142,7 +142,6 @@ in {
       };
 
       plugins = {
-        rust-tools.enable = true;
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
@@ -229,19 +228,19 @@ in {
         nvim-cmp = {
           enable = true;
           mapping = {
-            "<C-n>" = "cmp.mapping.select_next_item()";
-            "<C-p>" = "cmp.mapping.select_prev_item()";
-            "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-            "<C-f>" = "cmp.mapping.scroll_docs(4)";
-            "<C-Space>" = "cmp.mapping.complete {}";
-            "<CR>" = ''
+            "<C-n>" = /* lua */ "cmp.mapping.select_next_item()";
+            "<C-p>" = /* lua */ "cmp.mapping.select_prev_item()";
+            "<C-d>" = /* lua */ "cmp.mapping.scroll_docs(-4)";
+            "<C-f>" = /* lua */ "cmp.mapping.scroll_docs(4)";
+            "<C-Space>" = /* lua */ "cmp.mapping.complete {}";
+            "<CR>" = /* lua */ ''
               cmp.mapping.confirm {
                 behavior = cmp.ConfirmBehavior.Replace,
                 select = true,
               }
             '';
             "<Tab>" = {
-              action = ''
+              action = /* lua */ ''
                 cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_next_item()
@@ -256,7 +255,7 @@ in {
             };
 
             "<S-Tab>" = {
-              action = ''
+              action = /* lua */ ''
                 cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_prev_item()
@@ -341,6 +340,7 @@ in {
           };
         };
 
+		rustaceanvim.enable = true;
         lsp = {
           enable = true;
           servers = {
@@ -351,7 +351,7 @@ in {
             pyright.enable = true;
 			svelte.enable = true;
           };
-          onAttach = ''
+          onAttach = /* lua */ ''
             local nmap = function(keys, func, desc)
               if desc then
                 desc = 'LSP: ' .. desc
