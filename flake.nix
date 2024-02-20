@@ -11,7 +11,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # Neovim Nightly Overlay
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Doom emacs
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
