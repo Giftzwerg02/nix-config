@@ -382,7 +382,9 @@ in {
 		rustaceanvim = {
 			enable = true;
 			server = {
-				onAttach = lspKeymapsOnAttach;
+				onAttach = '' 
+					function(client, bufnr) ${lspKeymapsOnAttach} end
+				'';
 			};
 		};
         lsp = {
