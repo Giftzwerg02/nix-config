@@ -64,9 +64,6 @@
   boot.extraModulePackages = [
     # Weird-ass stuff for obs-virtual-cam
     config.boot.kernelPackages.v4l2loopback
-
-    # Dolphin Emulator
-    config.boot.kernelPackages.gcadapter-oc-kmod
   ];
 
   boot.extraModprobeConfig = ''
@@ -74,9 +71,6 @@
   '';
 
   boot.kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc"];
-
-  # Dolphin Emulator
-  services.udev.packages = [pkgs.dolphinEmu];
 
   networking.hostName = "pc";
 
@@ -233,7 +227,6 @@
     heroic
     wineWowPackages.staging
     lutris
-    dolphinEmu
 	unstable.r2modman
 
     # extras
