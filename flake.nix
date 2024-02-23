@@ -21,11 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-	# Devenv
-	devenv = {
-		url = "github:cachix/devenv";
-	};
-
     # Stylix
     stylix.url = "github:danth/stylix";
   };
@@ -35,7 +30,6 @@
     nixpkgs,
     home-manager,
     stylix,
-	devenv,
     ...
   } @ inputs: let
     inherit (self) outputs;

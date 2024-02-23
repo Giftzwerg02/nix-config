@@ -158,7 +158,6 @@
     imagemagick
     xdragon
     toggle-redshift
-	devenv
 
     # Gui (eww) Utils
     pavucontrol
