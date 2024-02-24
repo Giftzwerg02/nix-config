@@ -232,7 +232,15 @@
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
+
+	gobject-introspection
+	pango
+	libjpeg
+	openjpeg
+	libffi
   ];
+
+
 
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote
