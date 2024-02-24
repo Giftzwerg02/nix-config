@@ -76,7 +76,7 @@ in {
         shiftwidth = 4;
       };
 
-      extraConfigLua = ''
+      extraConfigLua = /* lua */ ''
         vim.wo.relativenumber = true
         vim.wo.number = true
 
@@ -237,16 +237,6 @@ in {
               desc = "[S]earch [F]iles";
             };
 
-            "<leader>sh" = {
-              action = "help_tags";
-              desc = "[S]earch [H]elp";
-            };
-
-            "<leader>sw" = {
-              action = "grep_string";
-              desc = "[S]earch current [W]ord";
-            };
-
             "<leader>sg" = {
               action = "live_grep";
               desc = "[S]earch by [G]rep";
@@ -382,11 +372,12 @@ in {
 		rustaceanvim = {
 			enable = true;
 			server = {
-				onAttach = '' 
+				onAttach = /* lua */ '' 
 					function(client, bufnr) ${lspKeymapsOnAttach} end
 				'';
 			};
 		};
+
         lsp = {
           enable = true;
           servers = {
