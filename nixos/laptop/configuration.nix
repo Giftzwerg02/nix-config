@@ -184,6 +184,8 @@
     heroic
     wineWowPackages.staging
     lutris
+
+	chromium
   ];
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
