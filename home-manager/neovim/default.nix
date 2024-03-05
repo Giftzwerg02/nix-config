@@ -319,6 +319,7 @@ in {
             "tsx"
             "rust"
             "latex"
+			"gleam"
           ];
           indent = true;
         };
@@ -386,6 +387,7 @@ in {
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
+			gleam.enable = true;
           };
           onAttach = lspKeymapsOnAttach;
 		};
