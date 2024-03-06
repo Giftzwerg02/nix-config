@@ -320,6 +320,7 @@ in {
             "rust"
             "latex"
 			"gleam"
+			"java"
           ];
           indent = true;
         };
@@ -402,6 +403,11 @@ in {
 			rootDir = {
 				__raw = /* lua */ ''
 					require('jdtls.setup').find_root({ 'pom.xml' })
+				'';
+			};
+			extraOptions = {
+				on_attach = /* lua */ ''
+					function(client, bufnr) ${lspKeymapsOnAttach} end
 				'';
 			};
 			# data = "/home/benjamin/.cache/jdtls/workspace";
