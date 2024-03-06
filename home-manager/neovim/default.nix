@@ -406,9 +406,11 @@ in {
 				'';
 			};
 			extraOptions = {
-				on_attach = /* lua */ ''
-					function(client, bufnr) ${lspKeymapsOnAttach} end
-				'';
+				on_attach = {
+					__raw = /* lua */ ''
+						function(client, bufnr) ${lspKeymapsOnAttach} end
+					'';
+				};
 			};
 			# data = "/home/benjamin/.cache/jdtls/workspace";
 			# configuration = "/home/benjamin/.cache/jdtls/config";
