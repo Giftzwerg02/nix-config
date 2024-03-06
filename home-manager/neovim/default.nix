@@ -89,7 +89,7 @@ in {
           })
         end, { desc = '[/] Fuzzily search in current buffer' })
 
-		local cmd = { "~/.npm-packages/bin/ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" }
+		local cmd = { "/home/benjamin/.npm-packages/bin/ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" }
 
 		require('lspconfig').angularls.setup {
 			cmd = cmd,
