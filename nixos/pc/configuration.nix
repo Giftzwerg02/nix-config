@@ -220,7 +220,6 @@
     nodePackages_latest.pyright
     nodePackages_latest.typescript-language-server
 	unstable.jdt-language-server
-	nodePackages."@angular/language-server"
 
     # Gamer Girl :3
     prismlauncher # mc launcher

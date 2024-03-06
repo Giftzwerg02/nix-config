@@ -88,6 +88,18 @@ in {
             previewer = false,
           })
         end, { desc = '[/] Fuzzily search in current buffer' })
+
+		local cmd = { "~/.npm-packages/bin/ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" }
+
+		require('lspconfig').angularls.setup {
+			cmd = cmd,
+			on_new_config = function(new_config,new_root_dir)
+				new_config.cmd = cmd
+			end,
+			on_attach = function(client, bufnr)
+				${lspKeymapsOnAttach}
+			end,
+		}
       '';
 
       keymaps = [
