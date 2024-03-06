@@ -216,11 +216,6 @@
     texlive.combined.scheme-full
     R
 
-	## gleamstuff
-	unstable.gleam
-	unstable.erlang
-	rebar3
-
     # LSPs
     nodePackages_latest.pyright
     nodePackages_latest.typescript-language-server
