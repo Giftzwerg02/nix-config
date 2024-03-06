@@ -395,7 +395,7 @@ in {
 		nvim-jdtls = {
 			enable = true;
 			cmd = [
-				"${unstable.jdt-language-server}/bin/jdtls"
+				"${pkgs.jdt-language-server}/bin/jdtls"
 				"-data" "/home/benjamin/.cache/jdtls/workspace"
 				"-configuration" "/home/benjamin/.cache/jdtls/config"
 			];
