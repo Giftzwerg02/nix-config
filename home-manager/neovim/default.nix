@@ -392,20 +392,26 @@ in {
           onAttach = lspKeymapsOnAttach;
 		};
 
-		lint = {
+		nvim-jdtls = {
 			enable = true;
-			lintersByFt = {
-				nix = ["statix"];
-				lua = ["selene"];
-				python = ["flake8"];
-				javascript = ["eslint_d"];
-				javascriptreact = ["eslint_d"];
-				typescript = ["eslint_d"];
-				typescriptreact = ["eslint_d"];
-				json = ["jsonlint"];
-				java = ["checkstyle"];
-			};
-		};		
+			data = "/home/benjamin/.cache/jdtls/workspace";
+			configuration = "/home/benjamin/.cache/jdtls/config";
+		};
+
+		# lint = {
+		# 	enable = true;
+		# 	lintersByFt = {
+		# 		nix = ["statix"];
+		# 		lua = ["selene"];
+		# 		python = ["flake8"];
+		# 		javascript = ["eslint_d"];
+		# 		javascriptreact = ["eslint_d"];
+		# 		typescript = ["eslint_d"];
+		# 		typescriptreact = ["eslint_d"];
+		# 		json = ["jsonlint"];
+		# 		java = ["checkstyle"];
+		# 	};
+		# };		
 
       };
     };
