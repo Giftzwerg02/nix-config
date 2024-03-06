@@ -399,6 +399,11 @@ in {
 				"-data" "/home/benjamin/.cache/jdtls/workspace"
 				"-configuration" "/home/benjamin/.cache/jdtls/config"
 			];
+			rootDir = {
+				__raw = /* lua */ ''
+					require('jdtls.setup').find_root({ 'pom.xml' })
+				'';
+			};
 			# data = "/home/benjamin/.cache/jdtls/workspace";
 			# configuration = "/home/benjamin/.cache/jdtls/config";
 		};
