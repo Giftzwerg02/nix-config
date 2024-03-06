@@ -394,8 +394,13 @@ in {
 
 		nvim-jdtls = {
 			enable = true;
-			data = "/home/benjamin/.cache/jdtls/workspace";
-			configuration = "/home/benjamin/.cache/jdtls/config";
+			cmd = [
+				"${unstable.jdt-language-server}/bin/jdtls"
+				"-data" "/home/benjamin/.cache/jdtls/workspace"
+				"-configuration" "/home/benjamin/.cache/jdtls/config"
+			];
+			# data = "/home/benjamin/.cache/jdtls/workspace";
+			# configuration = "/home/benjamin/.cache/jdtls/config";
 		};
 
 		# lint = {
