@@ -404,6 +404,14 @@ in {
 			templ = {
 				enable = true;
 			};
+			html = {
+				enable = true;
+				filetypes = [ "html" "templ" ];
+			};
+			htmx = {
+				enable = true;
+				filetypes = [ "html" "templ" ];
+			};
           };
           onAttach = lspKeymapsOnAttach;
 		};
