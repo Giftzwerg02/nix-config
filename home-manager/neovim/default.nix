@@ -331,8 +331,9 @@ in {
             "tsx"
             "rust"
             "latex"
-			"gleam"
 			"java"
+			"go"
+			"templ"
           ];
           indent = true;
         };
