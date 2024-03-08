@@ -401,6 +401,7 @@ in {
             pyright.enable = true;
 			svelte.enable = true;
 			gopls.enable = true;
+			templ.enable = true;
           };
           onAttach = lspKeymapsOnAttach;
 		};
