@@ -269,50 +269,49 @@ in {
 
         cmp = {
           enable = true;
-          cmdline."it".mapping = {
-            "<C-n>" = /* lua */ "cmp.mapping.select_next_item()";
-            "<C-p>" = /* lua */ "cmp.mapping.select_prev_item()";
-            "<C-d>" = /* lua */ "cmp.mapping.scroll_docs(-4)";
-            "<C-f>" = /* lua */ "cmp.mapping.scroll_docs(4)";
-            "<C-Space>" = /* lua */ "cmp.mapping.complete {}";
-            "<CR>" = /* lua */ ''
-              cmp.mapping.confirm {
-                behavior = cmp.ConfirmBehavior.Replace,
-                select = true,
-              }
-            '';
-            "<Tab>" = /* lua */ ''
-                cmp.mapping(function(fallback)
-                  if cmp.visible() then
-                    cmp.select_next_item()
-                  elseif require("luasnip").expand_or_locally_jumpable() then
-                    require("luasnip").expand_or_jump()
-                  else
-                    fallback()
-                  end
-                end, {"i", "s"})
-              '';
+          cmdline."/" = {
+		  	mapping = {
+				"<C-n>" = /* lua */ "cmp.mapping.select_next_item()";
+				"<C-p>" = /* lua */ "cmp.mapping.select_prev_item()";
+				"<C-d>" = /* lua */ "cmp.mapping.scroll_docs(-4)";
+				"<C-f>" = /* lua */ "cmp.mapping.scroll_docs(4)";
+				"<C-Space>" = /* lua */ "cmp.mapping.complete {}";
+				"<CR>" = /* lua */ ''
+				  cmp.mapping.confirm {
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = true,
+				  }
+				'';
+				"<Tab>" = /* lua */ ''
+					cmp.mapping(function(fallback)
+					  if cmp.visible() then
+						cmp.select_next_item()
+					  elseif require("luasnip").expand_or_locally_jumpable() then
+						require("luasnip").expand_or_jump()
+					  else
+						fallback()
+					  end
+					end, {"i", "s"})
+				  '';
 
-            "<S-Tab>" = /* lua */ ''
-                cmp.mapping(function(fallback)
-                  if cmp.visible() then
-                    cmp.select_prev_item()
-                  elseif require("luasnip").locally_jumpable(-1) then
-                    require("luasnip").jump(-1)
-                  else
-                    fallback()
-                  end
-                end, {"i", "s"})
-              '';
-          };
-
-		  cmdline."it".snippet.expand = "luasnip";
-
-          cmdline."it".sources = [
-            {name = "nvim_lsp";}
-            {name = "luasnip";}
-          ];
-
+				"<S-Tab>" = /* lua */ ''
+					cmp.mapping(function(fallback)
+					  if cmp.visible() then
+						cmp.select_prev_item()
+					  elseif require("luasnip").locally_jumpable(-1) then
+						require("luasnip").jump(-1)
+					  else
+						fallback()
+					  end
+					end, {"i", "s"})
+				  '';
+			  };
+			  snippet.expand = "luasnip";
+          	  cmdline."it".sources = [
+				{name = "nvim_lsp";}
+				{name = "luasnip";}
+			  ];
+		  };
         };
 
         treesitter = {
