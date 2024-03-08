@@ -266,7 +266,7 @@ in {
           };
         };
 
-        nvim-cmp = {
+        cmp = {
           enable = true;
           mapping = {
             "<C-n>" = /* lua */ "cmp.mapping.select_next_item()";
