@@ -280,7 +280,7 @@ in {
                 select = true,
               }
             '';
-            "<Tab>".__raw = /* lua */ ''
+            "<Tab>" = /* lua */ ''
                 cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_next_item()
@@ -292,7 +292,7 @@ in {
                 end, {"i", "s"})
               '';
 
-            "<S-Tab>".__raw = /* lua */ ''
+            "<S-Tab>" = /* lua */ ''
                 cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_prev_item()
