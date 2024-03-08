@@ -275,7 +275,7 @@ in {
 				"<C-p>" = /* lua */ "cmp.mapping.select_prev_item()";
 				"<C-d>" = /* lua */ "cmp.mapping.scroll_docs(-4)";
 				"<C-f>" = /* lua */ "cmp.mapping.scroll_docs(4)";
-				"<C-Space>" = /* lua */ "cmp.mapping.complete {}";
+				"<C-Space>" = /* lua */ "cmp.mapping.complete()";
 				"<CR>" = /* lua */ ''
 				  cmp.mapping.confirm {
 					behavior = cmp.ConfirmBehavior.Replace,
