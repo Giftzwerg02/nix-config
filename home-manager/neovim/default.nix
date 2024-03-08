@@ -310,13 +310,6 @@ in {
               modes = ["i" "s"];
             };
           };
-
-          snippet.expand = "luasnip";
-
-          sources = [
-            {name = "nvim_lsp";}
-            {name = "luasnip";}
-          ];
         };
 
         treesitter = {
