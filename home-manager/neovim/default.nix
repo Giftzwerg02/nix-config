@@ -55,12 +55,6 @@ in {
     programs.nixvim = {
       enable = true;
 
-	  filetype = [
-	  	{
-			extension = ".templ";
-		}
-	  ];
-
       globals = {
         mapleader = " ";
         maplocalleader = " ";
@@ -85,6 +79,7 @@ in {
       extraConfigLua = /* lua */ ''
         vim.wo.relativenumber = true
         vim.wo.number = true
+		vim.filetype.add(".templ")
 
         -- Maybe remove this as it is ugly and not that necessary
         vim.keymap.set('n', '<leader>/', function()
