@@ -268,7 +268,7 @@ in {
 
         cmp = {
           enable = true;
-          mapping = {
+          cmdline."it".mapping = {
             "<C-n>" = /* lua */ "cmp.mapping.select_next_item()";
             "<C-p>" = /* lua */ "cmp.mapping.select_prev_item()";
             "<C-d>" = /* lua */ "cmp.mapping.scroll_docs(-4)";
@@ -310,6 +310,14 @@ in {
               modes = ["i" "s"];
             };
           };
+
+		  cmdline."it".snippet.expand = "luasnip";
+
+          cmdline."it".sources = [
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+          ];
+
         };
 
         treesitter = {
