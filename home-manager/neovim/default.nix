@@ -55,9 +55,11 @@ in {
     programs.nixvim = {
       enable = true;
 
-	  filetype = {
-	  	extension = [".templ"];
-	  };
+	  filetype = [
+	  	{
+			extension = ".templ";
+		}
+	  ];
 
       globals = {
         mapleader = " ";
