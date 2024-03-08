@@ -280,8 +280,7 @@ in {
                 select = true,
               }
             '';
-            "<Tab>" = {
-              action = /* lua */ ''
+            "<Tab>".__raw = /* lua */ ''
                 cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_next_item()
@@ -290,13 +289,10 @@ in {
                   else
                     fallback()
                   end
-                end)
+                end, {"i", "s"})
               '';
-              modes = ["i" "s"];
-            };
 
-            "<S-Tab>" = {
-              action = /* lua */ ''
+            "<S-Tab>".__raw = /* lua */ ''
                 cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_prev_item()
@@ -305,10 +301,8 @@ in {
                   else
                     fallback()
                   end
-                end)
+                end, {"i", "s"})
               '';
-              modes = ["i" "s"];
-            };
           };
 
 		  cmdline."it".snippet.expand = "luasnip";
