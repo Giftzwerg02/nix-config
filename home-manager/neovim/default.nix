@@ -206,7 +206,7 @@ in {
 
         vimtex = {
 			enable = true;
-			viewMethod = "zathura";
+			settings.view_method = "zathura";
 		};
 
 
