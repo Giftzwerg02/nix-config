@@ -116,8 +116,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-  	xautoclick
-  unstable.discord-screenaudio
+  	unstable.discord-screenaudio
   	unstable.discord
     # Core (Undertale reference!)
     wget
@@ -148,7 +147,6 @@
     feh
     mpv
     tldr
-    networkmanager_dmenu
     unstable.eza
     bat
     fd
@@ -166,30 +164,21 @@
     flameshot
     lxappearance
     obs-studio
-	unstable.spotube
 
     # Dev and Work (as if)
-    # neovim-nightly
-    # unstable.neovim
-    #firefox-devedition
     firefox
     xournalpp
 	gnome.adwaita-icon-theme
     bitwarden
-    unstable.webcord-vencord
-    unstable.armcord
     # unstable.obsidian
     zathura
     signal-desktop
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
-    libsForQt5.kdeconnect-kde
     thunderbird
     jetbrains.idea-ultimate
     remmina
-    unstable.onedrive
-    umlet
     pandoc
     unstable.mermaid-filter
     pandoc-for-homework
@@ -209,21 +198,18 @@
     unstable.rust-analyzer
     nodejs_20
     unstable.bun
-    plantuml
     unstable.typst
     unstable.typstfmt
     unstable.typst-lsp
     texlive.combined.scheme-full
-    R
+	unstable.go
 
     # LSPs
     nodePackages_latest.pyright
     nodePackages_latest.typescript-language-server
-	unstable.jdt-language-server
 
     # Gamer Girl :3
     prismlauncher # mc launcher
-    unstable.atlauncher # mc launcher 2
     heroic
     wineWowPackages.staging
     lutris
@@ -232,15 +218,7 @@
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
-
-	gobject-introspection
-	pango
-	libjpeg
-	openjpeg
-	libffi
   ];
-
-
 
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote
@@ -271,8 +249,6 @@
     internalInterfaces = ["enp0s31f6"];
     externalInterface = "enp0s31f6";
   };
-
-  services.teamviewer.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
 }

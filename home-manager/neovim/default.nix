@@ -400,49 +400,10 @@ in {
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
-			gleam.enable = true;
+			gopls.enable = true;
           };
           onAttach = lspKeymapsOnAttach;
 		};
-
-		nvim-jdtls = {
-			enable = true;
-			cmd = [
-				"${pkgs.jdt-language-server}/bin/jdtls"
-				"-data" "/home/benjamin/.cache/jdtls/workspace"
-				"-configuration" "/home/benjamin/.cache/jdtls/config"
-			];
-			rootDir = {
-				__raw = /* lua */ ''
-					require('jdtls.setup').find_root({ 'pom.xml' })
-				'';
-			};
-			extraOptions = {
-				on_attach = {
-					__raw = /* lua */ ''
-						function(client, bufnr) ${lspKeymapsOnAttach} end
-					'';
-				};
-			};
-			# data = "/home/benjamin/.cache/jdtls/workspace";
-			# configuration = "/home/benjamin/.cache/jdtls/config";
-		};
-
-		# lint = {
-		# 	enable = true;
-		# 	lintersByFt = {
-		# 		nix = ["statix"];
-		# 		lua = ["selene"];
-		# 		python = ["flake8"];
-		# 		javascript = ["eslint_d"];
-		# 		javascriptreact = ["eslint_d"];
-		# 		typescript = ["eslint_d"];
-		# 		typescriptreact = ["eslint_d"];
-		# 		json = ["jsonlint"];
-		# 		java = ["checkstyle"];
-		# 	};
-		# };		
-
       };
     };
   };
