@@ -203,6 +203,7 @@
     unstable.typst-lsp
     texlive.combined.scheme-full
 	unstable.go
+	unstable.templ
 
     # LSPs
     nodePackages_latest.pyright
