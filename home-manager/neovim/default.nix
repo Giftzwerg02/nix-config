@@ -269,7 +269,7 @@ in {
 
         cmp = {
           enable = true;
-          cmdline."/" = {
+          settings = {
 		  	mapping = {
 				"<C-n>" = /* lua */ "cmp.mapping.select_next_item()";
 				"<C-p>" = /* lua */ "cmp.mapping.select_prev_item()";
