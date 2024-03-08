@@ -306,7 +306,11 @@ in {
 					end, {"i", "s"})
 				  '';
 			  };
-			  snippet.expand = "luasnip";
+			  snippet.expand = /* lua */ ''
+				function(args)
+					require("luasnip").lsp_expand(args.body)
+				end
+			  '';
           	  sources = [
 				{name = "nvim_lsp";}
 				{name = "luasnip";}
