@@ -79,7 +79,7 @@ in {
       extraConfigLua = /* lua */ ''
         vim.wo.relativenumber = true
         vim.wo.number = true
-		vim.filetype.add(".templ")
+		vim.filetype.add({ extension = { templ = "templ" }})
 
         -- Maybe remove this as it is ugly and not that necessary
         vim.keymap.set('n', '<leader>/', function()
