@@ -404,11 +404,6 @@ in {
 			gopls.enable = true;
 			templ = {
 				enable = true;
-				cmd = [ "templ" "lsp" ];
-				filetypes = [ "templ" ];
-				rootDir = /* lua */ ''
-					require("lspconfig.util").root_pattern("go.mod", ".git")
-				'';
 			};
           };
           onAttach = lspKeymapsOnAttach;
