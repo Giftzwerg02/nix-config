@@ -406,7 +406,7 @@ in {
 				enable = true;
 				cmd = [ "templ" "lsp" ];
 				filetypes = [ "templ" ];
-				root_dir = /* lua */ ''
+				rootDir = /* lua */ ''
 					require("lspconfig.util").root_pattern("go.mod", ".git")
 				'';
 			};
