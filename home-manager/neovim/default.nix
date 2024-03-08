@@ -402,7 +402,14 @@ in {
             pyright.enable = true;
 			svelte.enable = true;
 			gopls.enable = true;
-			templ.enable = true;
+			templ = {
+				enable = true;
+				cmd = [ "templ" "lsp" ];
+				filetypes = [ "templ" ];
+				root_dir = /* lua */ ''
+					require("lspconfig.util").root_pattern("go.mod", ".git")
+				'';
+			};
           };
           onAttach = lspKeymapsOnAttach;
 		};
