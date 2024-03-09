@@ -204,6 +204,7 @@
     texlive.combined.scheme-full
 	unstable.go
 	unstable.templ
+	air
 
     # LSPs
     nodePackages_latest.pyright
