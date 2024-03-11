@@ -205,6 +205,7 @@
 	unstable.go
 	unstable.templ
 	air
+	unstable.openapi-generator-cli
 
     # LSPs
     nodePackages_latest.pyright
