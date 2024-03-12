@@ -116,6 +116,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    subversion
   	unstable.discord-screenaudio
   	unstable.discord
     # Core (Undertale reference!)
