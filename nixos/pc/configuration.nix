@@ -207,6 +207,7 @@
 	unstable.templ
 	air
 	unstable.openapi-generator-cli
+	jdk21
 
     # LSPs
     nodePackages_latest.pyright
