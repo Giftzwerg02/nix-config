@@ -207,6 +207,7 @@
 	unstable.templ
 	air
 	unstable.openapi-generator-cli
+	maven
 
     # LSPs
     nodePackages_latest.pyright
