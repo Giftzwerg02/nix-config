@@ -224,6 +224,8 @@
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
+
+	teamviewer
   ];
 
   environment.etc."ppp/options".text = ''
