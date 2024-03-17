@@ -208,6 +208,7 @@
 	air
 	unstable.openapi-generator-cli
 	jdk21
+	maven
 
     # LSPs
     nodePackages_latest.pyright
