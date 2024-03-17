@@ -225,8 +225,9 @@
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
 
-	teamviewer
   ];
+
+    services.teamviewer.enable = true;
 
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote
