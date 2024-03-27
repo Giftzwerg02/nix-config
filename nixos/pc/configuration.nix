@@ -190,7 +190,6 @@
     clang
     libgccjit
 	gcc
-    gcc-unwrapped
     libstdcxx5
     python311
     python311Packages.pip
