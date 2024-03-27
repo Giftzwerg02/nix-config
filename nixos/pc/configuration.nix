@@ -189,6 +189,7 @@
     # Compilers
     clang
     libgccjit
+	gcc
     gcc-unwrapped
     libstdcxx5
     python311
