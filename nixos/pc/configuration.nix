@@ -227,7 +227,7 @@
 
 	p7zip
 	protontricks
-	zenity
+	gnome.zenity
 
   ];
 
