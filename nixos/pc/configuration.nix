@@ -225,6 +225,10 @@
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
 
+	p7zip
+	protontricks
+	zenity
+
   ];
 
     services.teamviewer.enable = true;
