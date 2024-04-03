@@ -55,6 +55,8 @@ in {
     programs.nixvim = {
       enable = true;
 
+	  
+
       globals = {
         mapleader = " ";
         maplocalleader = " ";
@@ -75,6 +77,10 @@ in {
         tabstop = 4;
         shiftwidth = 4;
       };
+
+	  extraPlugins = [
+	  	pkgs.vimPlugins.go-nvim
+	  ];
 
       extraConfigLua = /* lua */ ''
         vim.wo.relativenumber = true
@@ -101,6 +107,8 @@ in {
 				${lspKeymapsOnAttach}
 			end,
 		}
+
+		require('go').setup()
       '';
 
       keymaps = [
