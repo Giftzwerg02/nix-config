@@ -229,6 +229,8 @@
 	protontricks
 	gnome.zenity
 
+	anydesk
+
   ];
 
     services.teamviewer.enable = true;
