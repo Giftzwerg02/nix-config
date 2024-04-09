@@ -229,7 +229,7 @@
 	protontricks
 	gnome.zenity
 
-	unstable.anydesk
+	rustdesk
 
   ];
 
