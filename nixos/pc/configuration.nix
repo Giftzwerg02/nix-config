@@ -231,7 +231,7 @@
 
 	rustdesk
 
-	unstable.nilaway
+	unstable.gotools
 
   ];
 
