@@ -1,6 +1,6 @@
 # Custom packages, that can be defined similarly to ones from nixpkgs
 # You can build them using 'nix build .#example'
-{pkgs, buildGoModule, fetchFromGitHub, ...}: {
+{pkgs, fetchFromGitHub, ...}: {
   # dont know how to make shellcheck happy
   pandoc-for-homework = pkgs.writeShellScriptBin "pandoc-for-homework" ''
     readarray -d "" entries < <(printf '%s\0' *.md | sort -zV)
