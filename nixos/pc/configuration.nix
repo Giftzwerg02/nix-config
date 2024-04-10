@@ -231,6 +231,8 @@
 
 	rustdesk
 
+	go-nilaway
+
   ];
 
     services.teamviewer.enable = true;
