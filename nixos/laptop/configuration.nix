@@ -76,6 +76,11 @@
       enable = true;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
+
+	desktopManager = {
+		plasma6.enable = true;
+	};
+
     videoDrivers = ["intel" "nvidia"];
   };
 
