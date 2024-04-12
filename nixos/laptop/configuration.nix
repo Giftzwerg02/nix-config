@@ -191,6 +191,7 @@
     lutris
 
 	chromium
+	gnome.adwaita-icon-theme
   ];
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
