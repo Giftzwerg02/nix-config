@@ -233,6 +233,8 @@
 
 	unstable.gotools
 
+	cargo-cross
+
   ];
 
     services.teamviewer.enable = true;
