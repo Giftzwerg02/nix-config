@@ -235,9 +235,11 @@
 
 	cargo-cross
 
-	input-remapper
 
   ];
+
+
+	services.input-remapper.enable = true;
 
     services.teamviewer.enable = true;
 
