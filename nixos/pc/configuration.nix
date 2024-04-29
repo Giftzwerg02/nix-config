@@ -235,7 +235,7 @@
 
 	cargo-cross
 
-
+	chromium
   ];
 
 
