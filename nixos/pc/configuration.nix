@@ -229,13 +229,7 @@
 	protontricks
 	gnome.zenity
 
-	rustdesk
-
 	unstable.gotools
-
-	cargo-cross
-
-	chromium
   ];
 
 
