@@ -71,6 +71,7 @@
     proggyfonts
     font-awesome
     siji
+	roboto
   ];
 
   security.polkit.enable = true;
