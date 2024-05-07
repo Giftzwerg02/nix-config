@@ -230,6 +230,7 @@
 	gnome.zenity
 
 	unstable.gotools
+	gitflow
   ];
 
 
