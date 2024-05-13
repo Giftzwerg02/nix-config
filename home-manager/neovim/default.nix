@@ -244,37 +244,51 @@ in {
           keymaps = {
             "<leader>?" = {
               action = "oldfiles";
-              desc = "[?] Find recently opened files";
+			  options = {
+              	desc = "[?] Find recently opened files";
+			  };
             };
 
             "<leader><space>" = {
               action = "buffers";
-              desc = "[ ] Find existing buffers";
+			  options = {
+              	desc = "[ ] Find existing buffers";
+			  };
             };
 
             "<leader>gf" = {
               action = "git_files";
-              desc = "Search [G]it [F]iles";
+			  options = {
+              	desc = "Search [G]it [F]iles";
+			  };
             };
 
             "<leader>sf" = {
               action = "find_files";
-              desc = "[S]earch [F]iles";
+			  options = {
+              	desc = "[S]earch [F]iles";
+			  };
             };
 
             "<leader>sg" = {
               action = "live_grep";
-              desc = "[S]earch by [G]rep";
+			  options = {
+              	desc = "[S]earch by [G]rep";
+			  };
             };
 
             "<leader>sd" = {
               action = "diagnostics";
-              desc = "[S]earch [D]iagnostics";
+			  options = {
+              	desc = "[S]earch [D]iagnostics";
+			  };
             };
 
             "<leader>sr" = {
               action = "resume";
-              desc = "[S]earch [R]resume";
+			  options = {
+              	desc = "[S]earch [R]resume";
+			  };
             };
           };
         };
