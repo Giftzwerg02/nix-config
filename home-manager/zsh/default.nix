@@ -34,7 +34,7 @@ in {
         theme = "robbyrussell";
       };
       syntaxHighlighting.enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
 	  initExtra = /*bash*/ ''
 function search_fzf() {
   p=$(fd . . | fzf)

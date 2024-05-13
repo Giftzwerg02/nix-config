@@ -62,7 +62,7 @@ in {
         maplocalleader = " ";
       };
 
-      options = {
+      opts = {
         hlsearch = true;
         mouse = "a";
         breakindent = true;
@@ -210,7 +210,7 @@ in {
         which-key.enable = true;
         gitsigns.enable = true;
         indent-blankline.enable = true;
-        comment-nvim.enable = true;
+        comment.enable = true;
         nvim-autopairs.enable = true;
 
         vimtex = {
@@ -221,20 +221,24 @@ in {
 
         telescope = {
           enable = true;
-          defaults = {
-            mappings = {
-              i = {
-                "<C-u>" = false;
-                "<C-d>" = false;
-              };
-            };
-          };
+		  settings = {
+			  defaults = {
+				mappings = {
+				  i = {
+					"<C-u>" = false;
+					"<C-d>" = false;
+				  };
+				};
+			  };
+		  };
           extensions = {
             fzf-native = {
               enable = true;
-              overrideGenericSorter = true;
-              overrideFileSorter = true;
-              caseMode = "smart_case";
+			  settings = {
+              	override_generic_sorter = true;
+              	override_file_sorter = true;
+              	case_mode = "smart_case";
+			  };
             };
           };
           keymaps = {
