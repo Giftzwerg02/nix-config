@@ -231,6 +231,8 @@
 
 	unstable.gotools
 	gitflow
+	
+	unstable.jetbrains.goland
   ];
 
 
