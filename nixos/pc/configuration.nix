@@ -205,6 +205,7 @@
     texlive.combined.scheme-full
 	unstable.go
 	unstable.templ
+	unstable.gopls
 	air
 	unstable.openapi-generator-cli
 	jdk21
