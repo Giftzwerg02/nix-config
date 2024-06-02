@@ -237,6 +237,8 @@
 
 	unstable.gleam
 	unstable.erlang
+
+	unstable.cypress
   ];
 
 
