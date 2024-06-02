@@ -236,6 +236,7 @@
 	unstable.jetbrains.goland
 
 	unstable.gleam
+	unstable.erlang
   ];
 
 
