@@ -234,6 +234,8 @@
 	gitflow
 	
 	unstable.jetbrains.goland
+
+	unstable.gleam
   ];
 
 
