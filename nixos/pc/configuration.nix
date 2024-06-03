@@ -239,6 +239,8 @@
 	unstable.erlang
 
 	unstable.cypress
+
+	unstable.libopus
   ];
 
 
