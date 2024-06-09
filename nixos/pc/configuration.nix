@@ -242,7 +242,7 @@
 
 	unstable.libopus
 
-	unstable.dbeaver
+	unstable.dbeaver-bin
   ];
 
 
