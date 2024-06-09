@@ -241,6 +241,8 @@
 	unstable.cypress
 
 	unstable.libopus
+
+	unstable.dbeaver
   ];
 
 
