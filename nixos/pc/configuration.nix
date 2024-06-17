@@ -256,6 +256,8 @@
     ipcp-accept-remote
   '';
 
+  programs.java.enable = true;
+
   programs.gamemode.enable = true;
   programs.steam = {
     enable = true;
