@@ -243,6 +243,8 @@
 	unstable.libopus
 
 	unstable.dbeaver-bin
+
+	unstable.zed-editor
   ];
 
 
