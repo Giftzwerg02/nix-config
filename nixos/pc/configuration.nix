@@ -246,7 +246,7 @@
 
 	unstable.zed-editor
 	
-	unstable.networkmanagerapplet
+	unstable.libsForQt5.plasma-nm
   ];
 
 
