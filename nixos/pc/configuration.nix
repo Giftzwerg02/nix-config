@@ -247,6 +247,7 @@
 	unstable.zed-editor
 	
 	unstable.libsForQt5.plasma-nm
+	unstable.kdePackages.plasma-nm
   ];
 
 
