@@ -245,6 +245,8 @@
 	unstable.dbeaver-bin
 
 	unstable.zed-editor
+
+	unstable.vesktop
   ];
 
 
