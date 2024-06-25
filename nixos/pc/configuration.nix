@@ -247,6 +247,8 @@
 	unstable.zed-editor
 
 	unstable.vesktop
+
+	gparted
   ];
 
 
