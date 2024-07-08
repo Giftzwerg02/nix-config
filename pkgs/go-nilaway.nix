@@ -1,6 +1,6 @@
-{ lib, buildGoModule, fetchFromGitHub, ... }:
+{ buildGoModule, fetchFromGitHub, ... }:
 
-buildGoModule rec {
+buildGoModule  {
   pname = "nilaway";
   version = "unstable-2023-11-17";
 
