@@ -346,7 +346,7 @@ in {
 
         treesitter = {
           enable = true;
-          ensureInstalled = [
+          settings.ensure_installed = [
             "vim"
             "bash"
             "lua"
@@ -360,7 +360,7 @@ in {
 			"go"
 			"templ"
           ];
-          indent = true;
+          settings.indent.enable = true;
         };
         treesitter-textobjects = {
           enable = true;
