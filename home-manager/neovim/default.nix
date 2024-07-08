@@ -411,7 +411,7 @@ in {
 
 		rustaceanvim = {
 			enable = true;
-			server = {
+			settings.server = {
 				on_attach = /* lua */ '' 
 					function(client, bufnr) ${lspKeymapsOnAttach} end
 				'';
