@@ -34,6 +34,10 @@ in {
             popups = 8;
           };
         };
+
+		targets.firefox = {
+			profileNames = [ "default" ];
+		};
       };
     };
 }
