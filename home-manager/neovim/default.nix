@@ -346,20 +346,21 @@ in {
 
         treesitter = {
           enable = true;
-          settings.ensure_installed = [
-            "vim"
-            "bash"
-            "lua"
-            "python"
-            "json"
-            "typescript"
-            "tsx"
-            "rust"
-            "latex"
-			"java"
-			"go"
-			"templ"
-          ];
+		  settings.ensure_installed = true;
+   #        settings.ensure_installed = [
+   #          "vim"
+   #          "bash"
+   #          "lua"
+   #          "python"
+   #          "json"
+   #          "typescript"
+   #          "tsx"
+   #          "rust"
+   #          "latex"
+			# "java"
+			# "go"
+			# "templ"
+   #        ];
           settings.indent.enable = true;
         };
         treesitter-textobjects = {
