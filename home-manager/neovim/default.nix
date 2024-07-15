@@ -347,21 +347,33 @@ in {
         treesitter = {
           enable = true;
 		  # settings.ensure_installed = [ ];
-          settings.ensure_installed = [
-            "vim"
-            "bash"
-            "lua"
-            "python"
-            "json"
-            "typescript"
-            "tsx"
-            "rust"
-            "latex"
-			"java"
-			"go"
-			"templ"
-          ];
-          settings.indent.enable = true;
+		  settings = {
+			  ensure_installed = [
+				"vim"
+				"bash"
+				"lua"
+				"python"
+				"json"
+				"typescript"
+				"tsx"
+				"rust"
+				"latex"
+				"java"
+				"go"
+				"templ"
+			  ];
+
+			  indent.enable = true;
+			  highlight = {
+				additional_vim_regex_highlighting = true;
+				enable = true;
+			  };
+
+			  parser_install_dir = {
+				__raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
+			  };
+			  sync_install = false;
+		  };
         };
         treesitter-textobjects = {
           enable = true;
