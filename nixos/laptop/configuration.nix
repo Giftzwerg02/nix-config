@@ -199,6 +199,13 @@
 	chromium
 	gnome.adwaita-icon-theme
 	jdk21
+
+
+	unstable.go
+	unstable.templ
+	air
+	unstable.openapi-generator-cli
+	unstable.gotools
   ];
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
