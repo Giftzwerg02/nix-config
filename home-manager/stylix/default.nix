@@ -34,6 +34,11 @@ in {
             desktop = 12;
             popups = 8;
           };
+
+		  monospace = {
+		  	package = pkgs.miracode;
+			name = "Miracode";
+		  };
         };
 
 		targets.firefox = {
