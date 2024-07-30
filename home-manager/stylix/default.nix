@@ -35,16 +35,6 @@ in {
             popups = 8;
           };
 
-		  serif = {
-		  	package = pkgs.miracode;
-			name = "Miracode";
-		  };
-
-		  sansSerif = {
-		  	package = pkgs.miracode;
-			name = "Miracode";
-		  };
-
 		  monospace = {
 		  	package = pkgs.miracode;
 			name = "Miracode";
