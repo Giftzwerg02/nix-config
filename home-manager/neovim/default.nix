@@ -446,10 +446,10 @@ in {
             tsserver = {
 				enable = true;
 				settings = {
-					path = "${pkgs.typescript}/lib";
+					path = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
 				};
 				extraOptions = {
-					path = "${pkgs.typescript}/lib";
+					path = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
 				};
 			};
             lua-ls.enable = true;
