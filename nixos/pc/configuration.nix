@@ -214,7 +214,7 @@
     # LSPs
     nodePackages_latest.pyright
     nodePackages_latest.typescript-language-server
-	typescript
+	nodePackages_latest.typescript
 
     # Gamer Girl :3
     prismlauncher # mc launcher
