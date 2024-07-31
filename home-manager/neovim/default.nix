@@ -445,7 +445,7 @@ in {
             nixd.enable = true;
             tsserver = {
 				enable = true;
-				cmd = [
+				cmd = cfg: [
 					pkgs.typescript-language-server
 					"--stdio"
 					"--tsserver-path"
