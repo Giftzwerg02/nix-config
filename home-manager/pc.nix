@@ -38,7 +38,6 @@
   };
 
   programs.rofi.enable = true;
-  home.packages = [ pkgs.typescript ];
 
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";

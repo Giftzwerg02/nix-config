@@ -444,8 +444,9 @@ in {
           servers = {
             nixd.enable = true;
             tsserver = {
-				enable = true;
+				enable = false;
 			};
+			typescript-tools.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
