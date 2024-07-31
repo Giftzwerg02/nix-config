@@ -446,10 +446,10 @@ in {
             tsserver = {
 				enable = true;
 				cmd = [
-					${pkgs.typescript-language-server}
+					pkgs.typescript-language-server
 					"--stdio"
 					"--tsserver-path"
-					${pkgs.typescript-language-server}
+					pkgs.typescript-language-server
 				];
 			};
             lua-ls.enable = true;
