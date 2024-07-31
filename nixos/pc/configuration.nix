@@ -213,7 +213,7 @@
 
     # LSPs
     nodePackages_latest.pyright
-    nodePackages_latest.typescript-language-server
+    nodePackages.typescript-language-server
 	nodePackages.typescript
 
     # Gamer Girl :3
