@@ -445,12 +445,6 @@ in {
             nixd.enable = true;
             tsserver = {
 				enable = true;
-				cmd = [
-					"${pkgs.typescript-language-server}"
-					"--stdio"
-					"--tsserver-path"
-					"${pkgs.typescript-language-server}"
-				];
 			};
             lua-ls.enable = true;
             pyright.enable = true;
