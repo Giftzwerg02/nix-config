@@ -446,7 +446,7 @@ in {
             tsserver = {
 				enable = true;
 				settings = {
-					path = ${pkgs.typescript};
+					path = "${pkgs.typescript}";
 				};
 			};
             lua-ls.enable = true;
