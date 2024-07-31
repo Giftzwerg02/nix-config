@@ -32,7 +32,7 @@ in {
           sizes = {
             applications = 12;
             desktop = 12;
-            popups = 8;
+            popups = 12;
           };
 
 		  monospace = {
