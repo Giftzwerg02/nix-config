@@ -446,7 +446,7 @@ in {
             tsserver = {
 				enable = true;
 				settings = {
-					path = "/nix/store/26vvnzfjg860ny4s7s1af38nskpfyps1-typescript-5.2.2/lib/";
+					path = "/nix/store/26vvnzfjg860ny4s7s1af38nskpfyps1-typescript-5.2.2/lib/node_modules/typescript/lib/";
 				};
 			};
             lua-ls.enable = true;
