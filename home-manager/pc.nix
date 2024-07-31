@@ -37,6 +37,8 @@
     ];
   };
 
+  programs.rofi.enable = true;
+
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";
 
