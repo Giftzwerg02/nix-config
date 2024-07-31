@@ -439,6 +439,9 @@ in {
 			};
 		};
 
+
+		typescript-tools.enable = true;
+
         lsp = {
           enable = true;
           servers = {
@@ -446,7 +449,6 @@ in {
             tsserver = {
 				enable = false;
 			};
-			typescript-tools.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
