@@ -448,7 +448,9 @@ in {
 				settings = {
 					path = "${pkgs.typescript}/lib";
 				};
-				path = "${pkgs.typescript}/lib";
+				extraOptions = {
+					path = "${pkgs.typescript}/lib";
+				};
 			};
             lua-ls.enable = true;
             pyright.enable = true;
