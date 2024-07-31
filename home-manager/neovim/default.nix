@@ -443,7 +443,12 @@ in {
           enable = true;
           servers = {
             nixd.enable = true;
-            tsserver.enable = true;
+            tsserver = {
+				enable = true;
+				settings = {
+					path = "/nix/store/26vvnzfjg860ny4s7s1af38nskpfyps1-typescript-5.2.2/lib/";
+				};
+			};
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
