@@ -213,6 +213,8 @@
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
+
+	burpsuite
   ];
 
   environment.etc."ppp/options".text = ''
