@@ -35,9 +35,6 @@
     ];
     config = {
       allowUnfree = true;
-	  permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
     };
   };
 
@@ -116,9 +113,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    subversion
-  	unstable.discord-screenaudio
-  	unstable.discord
     # Core (Undertale reference!)
     wget
     kitty
@@ -143,7 +137,6 @@
     zoxide
     fzf
     neofetch
-    brightnessctl
     xclip
     feh
     mpv
@@ -151,68 +144,64 @@
     unstable.eza
     bat
     fd
-    btop
     ripgrep
     openfortivpn
     imagemagick
     xdragon
     toggle-redshift
+	ffmpeg
+	p7zip
 
     # Gui (eww) Utils
     pavucontrol
     networkmanagerapplet
     vlc
     flameshot
-    lxappearance
     obs-studio
 
     # Dev and Work (as if)
     firefox
     xournalpp
-	gnome.adwaita-icon-theme
     bitwarden
-    # unstable.obsidian
     zathura
     signal-desktop
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
     thunderbird
-    jetbrains.idea-ultimate
     remmina
     pandoc
-    unstable.mermaid-filter
     pandoc-for-homework
     pdftk
     libreoffice
+	unstable.cypress
+	unstable.dbeaver-bin
 
     # Compilers
     clang
     libgccjit
 	gcc
     libstdcxx5
+
     python311
     python311Packages.pip
+
     unstable.rustc
 	rustfmt
     unstable.cargo
-    unstable.rust-analyzer
-    nodejs_20
-    unstable.bun
-    unstable.typst
-    unstable.typstfmt
-    unstable.typst-lsp
+
     texlive.combined.scheme-full
+
 	unstable.go
 	unstable.templ
-	unstable.gopls
+	unstable.gotools
 	air
+
 	unstable.openapi-generator-cli
-	jdk21
-	maven
 
     # LSPs
-    nodePackages_latest.pyright
+    unstable.rust-analyzer
+	unstable.gopls
     nodePackages.typescript-language-server
 	nodePackages.typescript
 
@@ -221,50 +210,16 @@
     heroic
     wineWowPackages.staging
     lutris
-	unstable.r2modman
+	unstable.vesktop
 
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
-
-	p7zip
-	protontricks
-	gnome.zenity
-
-	unstable.gotools
-	gitflow
-	
-	unstable.jetbrains.goland
-
-	unstable.gleam
-	unstable.erlang
-
-	unstable.cypress
-
-	unstable.libopus
-
-	unstable.dbeaver-bin
-
-	unstable.zed-editor
-
-	unstable.vesktop
-
-	gparted
   ];
-
-
-	services.input-remapper.enable = true;
-
-    services.teamviewer.enable = true;
 
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote
   '';
-
-  programs.java = {
-	enable = true;
-	package = pkgs.jdk21;
-  };
 
   programs.gamemode.enable = true;
   programs.steam = {
