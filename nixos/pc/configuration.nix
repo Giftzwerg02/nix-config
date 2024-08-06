@@ -130,13 +130,11 @@
     openssl
 
     # Cli Utils deez nuts
-    pamixer
     killall
     htop
     thefuck
     zoxide
     fzf
-    neofetch
     xclip
     feh
     mpv
