@@ -160,6 +160,8 @@
     # Dev and Work (as if)
     firefox
     xournalpp
+	gnome.adwaita-icon-theme # needed for xournalpp
+
     bitwarden
     zathura
     signal-desktop
