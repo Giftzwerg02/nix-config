@@ -81,6 +81,8 @@
     packages = [];
   };
 
+  services.pufferpanel.enable = true;
+
   services.xserver = {
     enable = true;
     displayManager = {
