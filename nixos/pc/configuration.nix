@@ -206,6 +206,7 @@
 
     # Gamer Girl :3
     prismlauncher # mc launcher
+	jdk21 # for minecraft obviously
     heroic
     wineWowPackages.staging
     lutris
