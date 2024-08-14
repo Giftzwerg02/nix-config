@@ -138,7 +138,6 @@ in {
           action = {
 			__raw = "vim.diagnostic.goto_prev";
 		  };
-          lua = true;
           options = {
             desc = "Go to previous diagnostic message";
           };
@@ -150,7 +149,6 @@ in {
           action = {
 		  	__raw = "vim.diagnostic.goto_next";
 		  };
-          lua = true;
           options = {
             desc = "Go to next diagnostic message";
           };
@@ -162,7 +160,6 @@ in {
           action = {
 		  	__raw = "vim.diagnostic.open_float";
 		  };
-          lua = true;
           options = {
             desc = "Open floating diagnostic message";
           };
@@ -174,7 +171,6 @@ in {
           action = {
 		  	__raw = "vim.diagnostic.setloclist";
 		  };
-          lua = true;
           options = {
             desc = "Open diagnostics list";
           };
