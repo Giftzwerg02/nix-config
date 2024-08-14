@@ -218,6 +218,7 @@
     linuxPackages.v4l2loopback
 
 	burpsuite
+	unstable.ryujinx
   ];
 
   environment.etc."ppp/options".text = ''
