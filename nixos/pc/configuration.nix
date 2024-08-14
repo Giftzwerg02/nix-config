@@ -220,6 +220,7 @@
 	burpsuite
 	unstable.ryujinx
 	unstable.lime3ds
+	rar
   ];
 
   environment.etc."ppp/options".text = ''
