@@ -55,8 +55,6 @@ in {
     programs.nixvim = {
       enable = true;
 
-	  
-
       globals = {
         mapleader = " ";
         maplocalleader = " ";
@@ -96,18 +94,6 @@ in {
           })
         end, { desc = '[/] Fuzzily search in current buffer' })
 
-		local cmd = { "./node_modules/@angular/language-server/bin/ngserver", "--stdio", "--tsProbeLocations", "./node_modules", "--ngProbeLocations", "./node_modules"}
-
-		require('lspconfig').angularls.setup {
-			cmd = cmd,
-			on_new_config = function(new_config,new_root_dir)
-				new_config.cmd = cmd
-			end,
-			on_attach = function(client, bufnr)
-				${lspKeymapsOnAttach}
-			end,
-		}
-
 		require('go').setup()
       '';
 
@@ -129,39 +115,6 @@ in {
           options = {
             expr = true;
             silent = true;
-          };
-        }
-
-        {
-          mode = "n";
-          key = "[d";
-          action = {
-			__raw = "vim.diagnostic.goto_prev";
-		  };
-          options = {
-            desc = "Go to previous diagnostic message";
-          };
-        }
-
-        {
-          mode = "n";
-          key = "]d";
-          action = {
-		  	__raw = "vim.diagnostic.goto_next";
-		  };
-          options = {
-            desc = "Go to next diagnostic message";
-          };
-        }
-
-        {
-          mode = "n";
-          key = "<leader>e";
-          action = {
-		  	__raw = "vim.diagnostic.open_float";
-		  };
-          options = {
-            desc = "Open floating diagnostic message";
           };
         }
 
@@ -222,7 +175,6 @@ in {
 			settings.view_method = "zathura";
 		};
 
-
         telescope = {
           enable = true;
 		  settings = {
@@ -246,24 +198,10 @@ in {
             };
           };
           keymaps = {
-            "<leader>?" = {
-              action = "oldfiles";
-			  options = {
-              	desc = "[?] Find recently opened files";
-			  };
-            };
-
             "<leader><space>" = {
               action = "buffers";
 			  options = {
               	desc = "[ ] Find existing buffers";
-			  };
-            };
-
-            "<leader>gf" = {
-              action = "git_files";
-			  options = {
-              	desc = "Search [G]it [F]iles";
 			  };
             };
 
@@ -285,13 +223,6 @@ in {
               action = "diagnostics";
 			  options = {
               	desc = "[S]earch [D]iagnostics";
-			  };
-            };
-
-            "<leader>sr" = {
-              action = "resume";
-			  options = {
-              	desc = "[S]earch [R]resume";
 			  };
             };
           };
@@ -442,16 +373,11 @@ in {
           enable = true;
           servers = {
             nixd.enable = true;
-            tsserver = {
-				enable = false;
-			};
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
 			gopls.enable = true;
-			templ = {
-				enable = true;
-			};
+			templ.enable = true;
 			html = {
 				enable = true;
 				filetypes = [ "html" "templ" ];
