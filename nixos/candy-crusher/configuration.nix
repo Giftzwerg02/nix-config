@@ -113,7 +113,6 @@ in
 				servers = {
 					vanilla-1 = {
 						enable = true;
-						serviceConfig.ExecStart = ''foobar'';
 						serverProperties = {
 							server-port = ports.minecraft.s1;
 							gamemode = "survival";
