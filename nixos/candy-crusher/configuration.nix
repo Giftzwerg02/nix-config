@@ -123,9 +123,9 @@ in
 						};
 
 						enableReload = true;
-						extraReload = [
-							''echo "rcon-vanilla-1=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password"}.path)" >> ${config.services.minecraft-servers.environmentFile}''
-						];
+						extraReload = ''
+							echo "rcon-vanilla-1=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password"}.path)" >> ${config.services.minecraft-servers.environmentFile}
+						'';
 					};
 				};
 			};
