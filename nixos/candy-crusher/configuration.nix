@@ -106,7 +106,9 @@ in
 			services.minecraft-servers = {
 				enable = true;
 				eula = true;	
-				environmentFile = ./test-env;
+				environmentFile = builtins.path {
+					path = ./test-file;
+				};
 				servers = {
 					vanilla-1 = {
 						enable = true;
