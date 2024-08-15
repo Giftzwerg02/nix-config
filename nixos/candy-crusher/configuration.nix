@@ -80,7 +80,7 @@ in
 			{ containerPort = ports.minecraft.rcon; hostPort = ports.minecraft.rcon; } 
 		];
 		bindMounts = { 
-			"${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password"}".isReadOnly = true; 
+			"${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path}".isReadOnly = true; 
 		};
 		privateNetwork = true;
 		localAddress = localAddress.minecraft; 
