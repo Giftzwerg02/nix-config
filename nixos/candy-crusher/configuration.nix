@@ -106,7 +106,9 @@ in
 			services.minecraft-servers = {
 				enable = true;
 				eula = true;	
-				environmentFile = pkgs.writeText "test-file.txt" '''';
+				environmentFile = pkgs.writeText "test-file.txt" ''
+					test=bla
+				'';
 				servers = {
 					vanilla-1 = {
 						enable = true;
@@ -117,7 +119,7 @@ in
 							simulation-distance = 16;
 
 							enable-rcon = true;
-							"rcon.password" = "@rcon-vanilla-1@";
+							"rcon.password" = "@test@";
 							"rcon.port" = ports.minecraft.rcon;
 							broadcast-rcon-to-ops = false;
 						};
