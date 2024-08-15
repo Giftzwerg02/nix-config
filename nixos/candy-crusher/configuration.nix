@@ -109,10 +109,10 @@ in
 				environmentFile = pkgs.writeText "test-file.txt" ''
 					rconpwd=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})
 				'';
-				serviceConfig.ExecStart = ''foobar'';
 				servers = {
 					vanilla-1 = {
 						enable = true;
+						serviceConfig.ExecStart = ''foobar'';
 						serverProperties = {
 							server-port = ports.minecraft.s1;
 							gamemode = "survival";
