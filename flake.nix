@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "My nixos config";
 
   inputs = {
     # Nixpkgs
@@ -10,12 +10,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    # Neovim Nightly Overlay
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
-    # Doom emacs
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -23,6 +17,12 @@
 
     # Stylix
     stylix.url = "github:danth/stylix";
+
+	# Minecraft-Servers
+	nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
+	# Sops
+	inputs.sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = {
@@ -78,6 +78,13 @@
           ./nixos/laptop/configuration.nix
         ];
       };
+	
+	  giftzwerg02-nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+		modules = [
+		  ./nixos/candy-crusher/configuration.nix
+		];
+	  };
     };
 
     # Standalone home-manager configuration entrypoint
