@@ -88,6 +88,7 @@ in
 		config = { config, pkgs, ... }: {
 			imports = [ 
 				inputs.nix-minecraft.nixosModules.minecraft-servers
+				inputs.sops-nix.nixosModules.sops
 			];
 			nixpkgs.config.allowUnfree = true;
 
