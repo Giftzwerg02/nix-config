@@ -121,7 +121,7 @@ in
 						# 	#rconpwd="$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
 						# };
 						environment =  {
-							F = "sussy";
+							"F" = "sussy";
 						}; #.FOOBAR = "sussy";
 						serverProperties = {
 							server-port = ports.minecraft.s1;
