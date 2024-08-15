@@ -58,7 +58,7 @@ in
 		age.keyFile = "~/.config/sops/age/keys.txt";
 
 		secrets = {
-			"minecraft-servers/vanilla-1/rcon" = {
+			"minecraft-servers/vanilla-1/rcon-password" = {
 			};
 		};
 	};
@@ -97,7 +97,7 @@ in
 	# 	age.keyFile = "~/.config/sops/age/keys.txt";
 	#
 	# 	secrets = {
-	# 		"minecraft-servers/vanilla-1/rcon" = {
+	# 		"minecraft-servers/vanilla-1/rcon-password" = {
 	# 		};
 	# 	};
 	# };
@@ -123,7 +123,7 @@ in
 
 						enableReload = true;
 						extraReload = ''
-							echo "rcon-vanilla-1=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon"}.path)" >> ${config.services.minecraft-servers.environmentFile}
+							echo "rcon-vanilla-1=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password"}.path)" >> ${config.services.minecraft-servers.environmentFile}
 						'';
 					};
 				};
