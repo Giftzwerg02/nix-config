@@ -119,7 +119,7 @@ in
 							simulation-distance = 16;
 
 							enable-rcon = true;
-							"rcon.password" = "@test@";
+							"rcon.password" = "@rcon-vanilla-1@";
 							"rcon.port" = ports.minecraft.rcon;
 							broadcast-rcon-to-ops = false;
 						};
