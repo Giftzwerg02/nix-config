@@ -91,7 +91,7 @@ in
 		};
 		privateNetwork = true;
 		localAddress = localAddress.minecraft; 
-		config = { config, pkgs, ... }: {
+		config = { config, pkgs, options, ... }: {
 			imports = [ 
 				inputs.nix-minecraft.nixosModules.minecraft-servers
 				inputs.sops-nix.nixosModules.sops
@@ -120,7 +120,7 @@ in
 						# 	FOOBAR="sussy"; 
 						# 	#rconpwd="$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
 						# };
-						environment = config.services.minecraft-servers.servers.vanilla-1.environment // {
+						environment = options.services.minecraft-servers.servers.vanilla-1.environment.default // {
 							F = "sussy";
 						}; #.FOOBAR = "sussy";
 						serverProperties = {
