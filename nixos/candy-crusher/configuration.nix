@@ -107,7 +107,7 @@ in
 				enable = true;
 				eula = true;	
 				environmentFile = pkgs.writeText "test-file.txt" ''
-					rcon-vanilla-1=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})
+					rcon-vanilla-1="bla $(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path}) da"
 				'';
 				servers = {
 					vanilla-1 = {
