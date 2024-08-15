@@ -92,16 +92,16 @@ in
 			nixpkgs.config.allowUnfree = true;
 
 			sops = {
-		defaultSopsFile = ./secrets/secrets.yaml;
-		defaultSopsFormat = "yaml";
-		age.keyFile = "~/.config/sops/age/keys.txt";
+				defaultSopsFile = ./secrets/secrets.yaml;
+				defaultSopsFormat = "yaml";
+				age.keyFile = "/root/.config/sops/age/keys.txt";
 
-		secrets = {
-			"minecraft-servers/vanilla-1/rcon-password" = {
-				owner = "root";
+				secrets = {
+					"minecraft-servers/vanilla-1/rcon-password" = {
+						owner = "root";
+					};
+				};
 			};
-		};
-	};
 
 			services.minecraft-servers = {
 				enable = true;
@@ -124,7 +124,7 @@ in
 
 						enableReload = true;
 						extraReload = ''
-							echo "rcon-vanilla-1=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})" >> ${config.services.minecraft-servers.environmentFile}
+							
 						'';
 					};
 				};
