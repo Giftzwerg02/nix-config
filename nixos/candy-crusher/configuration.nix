@@ -92,6 +92,18 @@ in
 			];
 			nixpkgs.config.allowUnfree = true;
 
+			sops = {
+				defaultSopsFile = ./secrets/secrets.yaml;
+				defaultSopsFormat = "yaml";
+				age.keyFile = "~/.config/sops/age/keys.txt";
+
+				# secrets = {
+				# 	# "minecraft-servers/vanilla-1/rcon-password" = {
+				# 	# 	owner = 
+				# 	# }
+				# };
+			};
+
 			services.minecraft-servers = {
 				enable = true;
 				eula = true;	
