@@ -98,7 +98,7 @@ in
 
 				secrets = {
 					"minecraft-servers/vanilla-1/rcon-password" = {
-						owner = "root";
+						owner = "minecraft";
 					};
 				};
 			};
