@@ -63,7 +63,12 @@ in
 		};
 	};
 
-	nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+	nixpkgs.overlays = [ 
+		inputs.nix-minecraft.overlay 
+		# (final: prev: 
+		# 	
+		# )
+	];
 
 	boot.tmp.cleanOnBoot = true;
 	zramSwap.enable = true;
@@ -109,11 +114,10 @@ in
 				servers = {
 					vanilla-1 = {
 						enable = true;
-						preStart = "amogus";
-						# environment = {
-						# 	foobar="sussy";
-						# 	rconpwd="$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
-						# };
+						environment = {
+							FOOBAR="sussy"; 
+							#rconpwd="$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
+						};
 						serverProperties = {
 							server-port = ports.minecraft.s1;
 							gamemode = "survival";
