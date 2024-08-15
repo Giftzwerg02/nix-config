@@ -80,6 +80,9 @@ in
 			{ containerPort = ports.minecraft.s1; hostPort = ports.minecraft.s1; } 
 			{ containerPort = ports.minecraft.rcon; hostPort = ports.minecraft.rcon; } 
 		];
+		bindMounts = { 
+			"${config.sops.secrets."minecraft-servers/vanilla-1/rcon"}".isReadOnly = true; 
+		};
 		privateNetwork = true;
 		localAddress = localAddress.minecraft; 
 		config = { config, pkgs, ... }: {
