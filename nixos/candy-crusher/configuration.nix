@@ -120,7 +120,9 @@ in
 						# 	FOOBAR="sussy"; 
 						# 	#rconpwd="$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
 						# };
-						environment = {}; #.FOOBAR = "sussy";
+						environment = {
+							F = "sussy";
+						}; #.FOOBAR = "sussy";
 						serverProperties = {
 							server-port = ports.minecraft.s1;
 							gamemode = "survival";
