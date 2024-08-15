@@ -22,7 +22,7 @@
 	nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
 	# Sops
-	inputs.sops-nix.url = "github:Mic92/sops-nix";
+	sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = {
