@@ -107,8 +107,7 @@ in
 				enable = true;
 				eula = true;	
 				environmentFile = pkgs.writeText "test-file.txt" ''
-					rcon-vanilla-1="blada"
-					test="testing"
+					rconpwd="bla $(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path}) da"
 				'';
 				servers = {
 					vanilla-1 = {
@@ -120,8 +119,7 @@ in
 							simulation-distance = 16;
 
 							enable-rcon = true;
-							"rcon.password" = "@rcon-vanilla-1@";
-							"rcon.test" = "@test@";
+							"rcon.password" = "@rconpwd@";
 							"rcon.port" = ports.minecraft.rcon;
 							broadcast-rcon-to-ops = false;
 						};
