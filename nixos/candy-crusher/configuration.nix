@@ -112,7 +112,7 @@ in
 					vanilla-1 = {
 						enable = true;
 						environment = {
-							rconpwd = "$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
+							rconpwd = "$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})" ;
 						};
 						serverProperties = {
 							server-port = ports.minecraft.s1;
