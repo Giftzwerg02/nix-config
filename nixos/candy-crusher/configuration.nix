@@ -106,7 +106,8 @@ in
 			services.minecraft-servers = {
 				enable = true;
 				eula = true;	
-				environmentFile = pkgs.writeText "test-file.txt" ''
+				environment = pkgs.writeText "test-file.txt" ''
+					foobar=sussy
 					rconpwd=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})
 				'';
 				servers = {
