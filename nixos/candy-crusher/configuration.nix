@@ -65,9 +65,11 @@ in
 
 	nixpkgs.overlays = [ 
 		inputs.nix-minecraft.overlay 
-		# (final: prev: 
-		# 	
-		# )
+		# (final: prev: {
+		#  minecraft-servers = prev.minecraft-servers.overrideAttrs(old: {
+		# 	 config.systemd.services = map (service: service.ExecStart = "...") old.config.systemd.services;
+		#  })
+		# })
 	];
 
 	boot.tmp.cleanOnBoot = true;
@@ -118,7 +120,7 @@ in
 						# 	FOOBAR="sussy"; 
 						# 	#rconpwd="$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
 						# };
-						environment.FOOBAR = "sussy";
+						environment = {}; #.FOOBAR = "sussy";
 						serverProperties = {
 							server-port = ports.minecraft.s1;
 							gamemode = "survival";
