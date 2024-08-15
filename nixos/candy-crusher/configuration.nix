@@ -108,6 +108,7 @@ in
 				eula = true;	
 				environmentFile = pkgs.writeText "test-file.txt" ''
 					rcon-vanilla-1="blada"
+					test="testing"
 				'';
 				servers = {
 					vanilla-1 = {
@@ -120,14 +121,10 @@ in
 
 							enable-rcon = true;
 							"rcon.password" = "@rcon-vanilla-1@";
+							"rcon.test" = "@test@";
 							"rcon.port" = ports.minecraft.rcon;
 							broadcast-rcon-to-ops = false;
 						};
-
-						enableReload = true;
-						extraReload = ''
-							echo "rcon-vanilla-1=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})" >> test-file.txt
-						'';
 					};
 				};
 			};
