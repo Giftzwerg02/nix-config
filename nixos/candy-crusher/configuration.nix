@@ -55,7 +55,7 @@ in
 	sops = {
 		defaultSopsFile = ./secrets/secrets.yaml;
 		defaultSopsFormat = "yaml";
-		age.keyFile = "~/.config/sops/age/keys.txt";
+		age.keyFile = "/root/.config/sops/age/keys.txt";
 
 		secrets = {
 			"minecraft-servers/vanilla-1/rcon-password" = {
