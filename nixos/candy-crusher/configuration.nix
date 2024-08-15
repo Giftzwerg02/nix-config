@@ -106,13 +106,13 @@ in
 			services.minecraft-servers = {
 				enable = true;
 				eula = true;	
-				environment = pkgs.writeText "test-file.txt" ''
-					foobar=sussy
-					rconpwd=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})
-				'';
 				servers = {
 					vanilla-1 = {
 						enable = true;
+						environment = pkgs.writeText "test-file.txt" ''
+							foobar=sussy
+							rconpwd=$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})
+						'';
 						serverProperties = {
 							server-port = ports.minecraft.s1;
 							gamemode = "survival";
