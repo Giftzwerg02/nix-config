@@ -97,7 +97,7 @@ in
 				age.keyFile = "/root/.config/sops/age/keys.txt";
 
 				secrets = {
-					"minecraft-servers/vanilla-1/rcon-password" = {
+					"minecraft-servers/vanilla-1/env" = {
 						owner = "minecraft";
 					};
 				};
