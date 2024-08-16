@@ -58,19 +58,12 @@ in
 		age.keyFile = "/root/.config/sops/age/keys.txt";
 
 		secrets = {
-			"minecraft-servers/vanilla-1/rcon-password" = {
+			"minecraft-servers/vanilla-1/env" = {
 			};
 		};
 	};
 
-	nixpkgs.overlays = [ 
-		inputs.nix-minecraft.overlay 
-		# (final: prev: {
-		#  minecraft-servers = prev.minecraft-servers.overrideAttrs(old: {
-		# 	 config.systemd.services = map (service: service.ExecStart = "...") old.config.systemd.services;
-		#  })
-		# })
-	];
+	nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
 	boot.tmp.cleanOnBoot = true;
 	zramSwap.enable = true;
@@ -87,7 +80,7 @@ in
 			{ containerPort = ports.minecraft.rcon; hostPort = ports.minecraft.rcon; } 
 		];
 		bindMounts = { 
-			"${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path}".isReadOnly = true; 
+			"${config.sops.secrets."minecraft-servers/vanilla-1/env".path}".isReadOnly = true; 
 		};
 		privateNetwork = true;
 		localAddress = localAddress.minecraft; 
@@ -113,16 +106,10 @@ in
 			services.minecraft-servers = {
 				enable = true;
 				eula = true;	
+				environmentFile = config.sops.secrets."minecraft-servers/vanilla-1/env".path;
 				servers = {
 					vanilla-1 = {
 						enable = true;
-						# environment = {
-						# 	FOOBAR="sussy"; 
-						# 	#rconpwd="$(cat ${config.sops.secrets."minecraft-servers/vanilla-1/rcon-password".path})";
-						# };
-						environment =  {
-							"F" = "sussy";
-						}; #.FOOBAR = "sussy";
 						serverProperties = {
 							server-port = ports.minecraft.s1;
 							gamemode = "survival";
