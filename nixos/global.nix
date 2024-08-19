@@ -122,7 +122,7 @@
 
   programs.ssh.startAgent = true;
 
-  sound.enable = true;
+  sound.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
