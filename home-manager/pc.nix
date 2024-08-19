@@ -30,10 +30,10 @@
   setup-this-thing = {
     enable = true;
     wallpapers = [
-      ./imgs/middle.jpg
-      ./imgs/left.jpg
-      ./imgs/right.jpg
 	  ./imgs/zeldafirst.jpg
+      ./imgs/left.jpg
+      ./imgs/middle.jpg
+      ./imgs/right.jpg
     ];
   };
 
