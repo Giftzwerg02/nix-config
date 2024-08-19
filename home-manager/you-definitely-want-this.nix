@@ -14,7 +14,6 @@ in {
     ./carapace
     ./zsh
     ./zoxide
-    ./doom-emacs
     ./neovim
     ./dunst
     ./mimeApps
