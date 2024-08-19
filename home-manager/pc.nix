@@ -33,7 +33,7 @@
       ./imgs/middle.jpg
       ./imgs/left.jpg
       ./imgs/right.jpg
-	  ./imgs/zeldafirst.png
+	  ./imgs/zeldafirst.jpg
     ];
   };
 
