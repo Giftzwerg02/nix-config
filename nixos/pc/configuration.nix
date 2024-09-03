@@ -253,7 +253,7 @@
     externalInterface = "enp0s31f6";
   };
 
-  programs.joycond-cemuhook.enable = true;
+  programs."joycond-cemuhook".enable = true;
   services.joycond.enable = true;
 
 
