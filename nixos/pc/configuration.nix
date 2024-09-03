@@ -222,7 +222,7 @@
 	unstable.lime3ds
 	rar
 
-	joycond-cemuhook
+	joycond-cemuhook-unstable
   ];
 
   environment.etc."ppp/options".text = ''
