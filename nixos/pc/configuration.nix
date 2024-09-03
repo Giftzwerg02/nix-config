@@ -221,6 +221,8 @@
 	unstable.ryujinx
 	unstable.lime3ds
 	rar
+
+	joycond-cemuhook
   ];
 
   environment.etc."ppp/options".text = ''
@@ -253,7 +255,6 @@
     externalInterface = "enp0s31f6";
   };
 
-  programs."joycond-cemuhook".enable = true;
   services.joycond.enable = true;
 
 
