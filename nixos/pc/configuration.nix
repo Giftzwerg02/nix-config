@@ -222,7 +222,7 @@
 	unstable.lime3ds
 	rar
 
-	unstable.joycond-cemuhook
+	# unstable.joycond-cemuhook
   ];
 
   environment.etc."ppp/options".text = ''
@@ -255,7 +255,7 @@
     externalInterface = "enp0s31f6";
   };
 
-  services.joycond.enable = true;
+  services.joycond.enable = false;
 
 
   system.stateVersion = "23.05"; # Did you read the comment?
