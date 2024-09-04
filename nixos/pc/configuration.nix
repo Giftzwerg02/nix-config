@@ -84,7 +84,6 @@
     isNormalUser = true;
     description = "Benjamin Komar";
     extraGroups = ["networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox"];
-    packages = [];
   };
 
   services.xserver = {
@@ -227,8 +226,6 @@
 	unstable.ryujinx
 	unstable.lime3ds
 	rar
-
-	# unstable.joycond-cemuhook
   ];
 
   environment.etc."ppp/options".text = ''
@@ -260,9 +257,6 @@
     internalInterfaces = ["enp0s31f6"];
     externalInterface = "enp0s31f6";
   };
-
-  services.joycond.enable = false;
-
 
   system.stateVersion = "23.05"; # Did you read the comment?
 }
