@@ -367,11 +367,14 @@ in {
 		};
 
 
-		typescript-tools.enable = true;
+		# typescript-tools.enable = true;
 
         lsp = {
           enable = true;
           servers = {
+			tsserver = {
+				enable = true;
+			};
             nixd.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
