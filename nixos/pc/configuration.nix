@@ -196,18 +196,18 @@
 
     texlive.combined.scheme-full
 
-	unstable.go
-	unstable.templ
-	unstable.gotools
-	air
+	# unstable.go
+	# unstable.templ
+	# unstable.gotools
+	# air
 
 	unstable.openapi-generator-cli
 
     # LSPs
     unstable.rust-analyzer
-	unstable.gopls
-    nodePackages.typescript-language-server
-	nodePackages.typescript
+	# unstable.gopls
+	# nodePackages.typescript-language-server
+	# nodePackages.typescript
 
     # Gamer Girl :3
     prismlauncher # mc launcher
