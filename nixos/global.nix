@@ -109,6 +109,12 @@
 	config.common.default = "gtk";
   };
 
+  location = {
+	provider = "manual";
+	latitude = 48.210033;
+	longitude = 16.363449;
+  };
+
   services = {
     # thunar settings
 	gvfs.enable = true;
