@@ -33,8 +33,10 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "at";
-    xkbVariant = "nodeadkeys";
+	xkb = {
+		layout = "at";
+		variant = "nodeadkeys";
+	};
   };
 
   console.keyMap = "de";
@@ -46,7 +48,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
       driSupport32Bit = true;
     };
