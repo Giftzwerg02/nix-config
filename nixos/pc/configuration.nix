@@ -86,17 +86,16 @@
     extraGroups = ["networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox"];
   };
 
-  services.xserver.displayManager = {
+  services.displayManager = {
       sddm = {
         enable = true;
       };
-
-      setupCommands = ''
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --pos 3000x704 --crtc 2 --mode 1920x1080 --rate 59.93 --output DVI-D-0 --pos 0x0 --crtc 1 --mode 1920x1080 --rate 60.00 --rotate left --output DP-1 --pos 1080x704 --crtc 0 --primary --mode 1920x1080 --rate 60.00 --rotate normal
-      '';
   };
 
   services.xserver = {
+	displayManager.setupCommands = ''
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --pos 3000x704 --crtc 2 --mode 1920x1080 --rate 59.93 --output DVI-D-0 --pos 0x0 --crtc 1 --mode 1920x1080 --rate 60.00 --rotate left --output DP-1 --pos 1080x704 --crtc 0 --primary --mode 1920x1080 --rate 60.00 --rotate normal
+      '';
     enable = true;
     windowManager.i3 = {
       enable = true;
