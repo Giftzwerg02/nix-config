@@ -48,7 +48,6 @@
   hardware = {
     opengl = {
       enable = true;
-      driSupport = true;
       driSupport32Bit = true;
     };
     nvidia = {
@@ -123,7 +122,6 @@
 
   programs.ssh.startAgent = true;
 
-  sound.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
