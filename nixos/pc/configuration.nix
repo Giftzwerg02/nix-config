@@ -86,7 +86,7 @@
     extraGroups = ["networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox"];
   };
 
-  services.displayManager = {
+  services.xserver.displayManager = {
       sddm = {
         enable = true;
       };
