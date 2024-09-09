@@ -3,33 +3,43 @@
   config,
   ...
 }: {
-  # Use latest Kernel
-  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+	boot = {
+  		# Use latest Kernel
+		kernelPackages = pkgs.unstable.linuxPackages_latest;
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  		# Bootloader
+		loader.systemd-boot.enable = true;
+		loader.efi.canTouchEfiVariables = true;	
+	};
 
-  # Set your time zone.
-  time.timeZone = "Europe/Vienna";
+	networking = {
+  		# Enable networking
+		networkmanager.enable = true;
+	};
+
+	time = {
+  		# Set your time zone.
+		timeZone = "Europe/Vienna";
+	};
+
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "de_AT.UTF-8";
+  i18n = {
+		defaultLocale = "de_AT.UTF-8";
+	  extraLocaleSettings = {
+		LC_ADDRESS = "de_AT.UTF-8";
+		LC_IDENTIFICATION = "de_AT.UTF-8";
+		LC_MEASUREMENT = "de_AT.UTF-8";
+		LC_MONETARY = "de_AT.UTF-8";
+		LC_NAME = "de_AT.UTF-8";
+		LC_NUMERIC = "de_AT.UTF-8";
+		LC_PAPER = "de_AT.UTF-8";
+		LC_TELEPHONE = "de_AT.UTF-8";
+		LC_TIME = "de_AT.UTF-8";
+	  };
+	};
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_AT.UTF-8";
-    LC_IDENTIFICATION = "de_AT.UTF-8";
-    LC_MEASUREMENT = "de_AT.UTF-8";
-    LC_MONETARY = "de_AT.UTF-8";
-    LC_NAME = "de_AT.UTF-8";
-    LC_NUMERIC = "de_AT.UTF-8";
-    LC_PAPER = "de_AT.UTF-8";
-    LC_TELEPHONE = "de_AT.UTF-8";
-    LC_TIME = "de_AT.UTF-8";
-  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -41,10 +51,12 @@
 
   console.keyMap = "de";
 
-  programs.dconf.enable = true;
-  programs.zsh = {
-    enable = true;
+  programs = {
+	dconf.enable = true;
+	zsh.enable = true;  	
+	ssh.startAgent = true;
   };
+
   users.defaultUserShell = pkgs.zsh;
 
   hardware = {
@@ -91,47 +103,39 @@
     };
   };
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  xdg.portal.config.common.default = "gtk";
-
-  # thunar settings
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  location.provider = "manual";
-  location.latitude = 48.210033;
-  location.longitude = 16.363449;
-  services.redshift = {
-    enable = true;
-    brightness = {
-      day = "1";
-      night = "1";
-    };
-    temperature = {
-      day = 3000;
-      night = 2000;
-    };
+  xdg.portal = {
+	enable = true;
+	extraPortals = [pkgs.xdg-desktop-portal-gtk];
+	config.common.default = "gtk";
   };
 
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
+  services = {
+    # thunar settings
+	gvfs.enable = true;
+	tumbler.enable = true;
+	blueman.enable = true;
+	redshift = {
+		enable = true;
+		brightness = {
+			day = "1";
+			night = "1";
+		};
+		temperature = {
+			day = 3000;
+			night = 2000;
+		};
+	};
+	pipewire = {
+		enable = true;
+		alsa.enable = true;
+		alsa.support32Bit = true;
+		pulse.enable = true;
+		jack.enable = true;
+	};
   };
 
-  programs.ssh.startAgent = true;
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
+  hardware = {
+	bluetooth.enable = true;
+	opentabletdriver.enable = true;
   };
-
-  hardware.opentabletdriver.enable = true;
 }

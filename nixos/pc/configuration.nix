@@ -187,27 +187,7 @@
 	gcc
     libstdcxx5
 
-    python311
-    python311Packages.pip
-
-    unstable.rustc
-	rustfmt
-    unstable.cargo
-
     texlive.combined.scheme-full
-
-	# unstable.go
-	# unstable.templ
-	# unstable.gotools
-	# air
-
-	unstable.openapi-generator-cli
-
-    # LSPs
-    unstable.rust-analyzer
-	# unstable.gopls
-	# nodePackages.typescript-language-server
-	# nodePackages.typescript
 
     # Gamer Girl :3
     prismlauncher # mc launcher
@@ -222,7 +202,6 @@
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
 
-	burpsuite
 	unstable.ryujinx
 	unstable.lime3ds
 	rar
