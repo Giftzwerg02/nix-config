@@ -160,6 +160,7 @@ in {
 
       plugins = {
 		neotest = {
+			enable = true;
 			adapters = {
 				playwright.enable = true;
 			};
