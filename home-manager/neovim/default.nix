@@ -159,6 +159,12 @@ in {
       };
 
       plugins = {
+		neotest = {
+			adapters = {
+				playwright.enable = true;
+			};
+		};
+
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
