@@ -162,7 +162,7 @@ in {
 		neotest = {
 			enable = true;
 			adapters = {
-				playwright.enable = true;
+				playwright.enable = false;
 			};
 		};
 
