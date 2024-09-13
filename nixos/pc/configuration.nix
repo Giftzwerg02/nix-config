@@ -197,6 +197,7 @@
     wineWowPackages.staging
     lutris
 	unstable.vesktop
+	r2modman
 
     # extras
     # Used for obs virtual cam
