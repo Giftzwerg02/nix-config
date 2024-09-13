@@ -381,7 +381,7 @@ in {
           servers = {
 			tsserver = {
 				enable = true;
-				filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
+				# filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
 			};
             nixd.enable = true;
 			clangd.enable = true;
