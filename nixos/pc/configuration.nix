@@ -94,7 +94,7 @@
 
   services.xserver = {
 	displayManager.setupCommands = ''
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --pos 3000x704 --crtc 2 --mode 1920x1080 --rate 59.93 --output DVI-D-0 --pos 0x0 --crtc 1 --mode 1920x1080 --rate 60.00 --rotate left --output DP-1 --pos 1080x704 --crtc 0 --primary --mode 1920x1080 --rate 60.00 --rotate normal
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x704 --rotate normal --output DP-0 --off --output DP-1 --primary --mode 1920x1080 --pos 3000x704 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 4920x704 --rotate normal --output DP-5 --off
       '';
     enable = true;
     windowManager.i3 = {
