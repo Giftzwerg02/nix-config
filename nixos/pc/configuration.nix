@@ -165,7 +165,6 @@
     # Dev and Work (as if)
     firefox
 	unstable.xournalpp
-	nyxt
 
     bitwarden
     zathura
