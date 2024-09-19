@@ -88,8 +88,11 @@
 
   services.displayManager = {
       sddm = {
-        enable = true;
+        enable = false;
       };
+	  ly = {
+		enable = true;
+	  };
   };
 
   services.xserver = {
