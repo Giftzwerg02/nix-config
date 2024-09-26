@@ -166,6 +166,7 @@ in {
 			};
 		};
 
+		web-devicons.enabled = true;
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
@@ -198,9 +199,9 @@ in {
             fzf-native = {
               enable = true;
 			  settings = {
-              	override_generic_sorter = true;
-              	override_file_sorter = true;
-              	case_mode = "smart_case";
+				override_generic_sorter = true;
+				override_file_sorter = true;
+				case_mode = "smart_case";
 			  };
             };
           };
@@ -379,7 +380,7 @@ in {
         lsp = {
           enable = true;
           servers = {
-			tsserver = {
+			ts-ls = {
 				enable = true;
 				# filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
 			};
