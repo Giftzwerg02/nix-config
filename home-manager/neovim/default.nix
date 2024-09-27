@@ -166,7 +166,7 @@ in {
 			};
 		};
 
-		web-devicons.enabled = true;
+		# web-devicons.enabled = true;
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
