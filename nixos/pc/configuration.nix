@@ -35,7 +35,6 @@
     ];
     config = {
       allowUnfree = true;
-	  allowUnsupportedSystem = true;
     };
   };
 
@@ -211,7 +210,7 @@
 	unstable.lime3ds
 	rar
 
-	unstable.wine-discord-ipc-bridge
+	unstable.armcord
   ];
 
   environment.etc."ppp/options".text = ''
