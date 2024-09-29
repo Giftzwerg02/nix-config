@@ -209,6 +209,8 @@
 	unstable.ryujinx
 	unstable.lime3ds
 	rar
+
+	unstable.wine-discord-ipc-bridge
   ];
 
   environment.etc."ppp/options".text = ''
