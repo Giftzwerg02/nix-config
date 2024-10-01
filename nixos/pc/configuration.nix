@@ -217,7 +217,11 @@
 		sdk_7_0
 		sdk_8_0
 		sdk_9_0
+		
 	])
+	mono4
+	mono5
+	mono6
   ];
 
   environment.etc."ppp/options".text = ''
