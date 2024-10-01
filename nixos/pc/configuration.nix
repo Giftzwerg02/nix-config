@@ -210,7 +210,7 @@
 	unstable.lime3ds
 	rar
 
-	unstable.jetbraints.rider
+	unstable.jetbrains.rider
   ];
 
   environment.etc."ppp/options".text = ''
