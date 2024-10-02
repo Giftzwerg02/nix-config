@@ -84,7 +84,7 @@
     };
 
 	desktopManager = {
-		plasma5.enable = true;
+		plasma5.enable = false;
 	};
 
     videoDrivers = ["intel" "nvidia"];
@@ -148,19 +148,12 @@
     firefox
     xournalpp
     bitwarden
-    unstable.webcord-vencord
     zathura
     signal-desktop
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
-    libsForQt5.kdeconnect-kde
     thunderbird
-    jetbrains.idea-ultimate
-    remmina
-    unstable.onedrive
-    umlet
-    pandoc
     unstable.mermaid-filter
     pandoc-for-homework
     pdftk
@@ -172,40 +165,9 @@
     libstdcxx5
     python311
     python311Packages.pip
-    unstable.rustc
-    unstable.cargo
-    unstable.rust-analyzer
-    nodejs_20
-    unstable.bun
-    plantuml
-    unstable.typst
-    unstable.typstfmt
-    unstable.typst-lsp
     texlive.combined.scheme-full
-    R
 
-    # LSPs
-    nodePackages_latest.pyright
-    nodePackages_latest.typescript-language-server
-    jdt-language-server
-
-    # Gamer Girl :3
-    prismlauncher # mc launcher
-    unstable.atlauncher # mc launcher 2
-    heroic
-    wineWowPackages.staging
-    lutris
-
-	chromium
 	gnome.adwaita-icon-theme
-	jdk21
-
-
-	unstable.go
-	unstable.templ
-	air
-	unstable.openapi-generator-cli
-	unstable.gotools
   ];
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
