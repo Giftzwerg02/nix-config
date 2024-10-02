@@ -115,7 +115,6 @@
 	longitude = 16.363449;
   };
 
-<<<<<<< HEAD
   services = {
     # thunar settings
 	gvfs.enable = true;
@@ -139,20 +138,6 @@
 		pulse.enable = true;
 		jack.enable = true;
 	};
-=======
-  programs.ssh.startAgent = true;
-  services.openssh.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
->>>>>>> bb2bb1c (ssh)
   };
 
   hardware = {
