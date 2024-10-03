@@ -200,6 +200,7 @@
     wineWowPackages.staging
     lutris
 	unstable.vesktop
+	premid
 	r2modman
 
     # extras
