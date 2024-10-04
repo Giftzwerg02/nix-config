@@ -243,6 +243,10 @@
     ipcp-accept-remote
   '';
 
+  environment.sessionVariables = {
+	VULKAN_SDK = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
+  };
+
   programs.gamemode.enable = true;
   programs.steam = {
     enable = true;
