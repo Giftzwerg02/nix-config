@@ -60,6 +60,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   hardware = {
+	opengl.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;
