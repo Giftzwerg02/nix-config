@@ -225,6 +225,18 @@
 	mono4
 	mono5
 	mono6
+
+
+    glfw
+    freetype
+    vulkan-headers
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-tools        # vulkaninfo
+    shaderc             # GLSL to SPIRV compiler - glslc
+    renderdoc           # Graphics debugger
+    tracy               # Graphics profiler
+    vulkan-tools-lunarg # vkconfig
   ];
 
   environment.etc."ppp/options".text = ''
