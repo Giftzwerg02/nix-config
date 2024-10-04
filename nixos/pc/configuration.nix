@@ -115,7 +115,7 @@
 	};
     virtualbox = {
       host = {
-        enable = false;
+        enable = true;
       };
     };
   };
