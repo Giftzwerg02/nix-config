@@ -212,6 +212,8 @@
 	rar
 
 	jetbrains.rider
+	jetbrains.clion
+
 	msbuild
 	(with dotnetCorePackages; combinePackages [
 		sdk_6_0
