@@ -213,6 +213,7 @@
 
 	jetbrains.rider
 	jetbrains.clion
+	jetbrains.idea-ultimate
 
 	msbuild
 	(with dotnetCorePackages; combinePackages [
