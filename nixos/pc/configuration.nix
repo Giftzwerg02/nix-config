@@ -238,6 +238,8 @@
     renderdoc           # Graphics debugger
     tracy               # Graphics profiler
     vulkan-tools-lunarg # vkconfig
+
+	zoom-us
   ];
 
   environment.etc."ppp/options".text = ''
