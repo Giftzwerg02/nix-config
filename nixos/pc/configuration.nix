@@ -257,6 +257,8 @@
     dedicatedServer.openFirewall = true;
   };
 
+  programs.nix-ld.enable = true;
+
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
   networking.defaultGateway = {
     address = "192.168.1.1";
