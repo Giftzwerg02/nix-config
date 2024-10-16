@@ -71,13 +71,10 @@
     extraGroups = ["networkmanager" "wheel"];
   };
 
+  services.displayManager.sddm.enable = true;
+
   services.xserver = {
     enable = true;
-    displayManager = {
-      sddm = {
-        enable = true;
-      };
-    };
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
