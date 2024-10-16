@@ -607,6 +607,7 @@
       "locked": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lastModified": 1730499423,
         "narHash": "sha256-A94qAvyezFfq73meXLRo3BGvxQwm2SuFLfHcXKUIXpI=",
         "owner": "nixos",
@@ -626,6 +627,13 @@
         "repo": "nixpkgs",
         "rev": "0c1085e9099d747cc2a72081450606b909788056",
 >>>>>>> bac21ba (nix flake update)
+=======
+        "lastModified": 1729038217,
+        "narHash": "sha256-MXt3KeGNHhw4Em3hxNSZp8vFwmnyvBVbok8mR9qvPEc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "955355a83fa70de2b529a3b43226ea234855acde",
+>>>>>>> f079295 (nix flake update)
         "type": "github"
       },
       "original": {
