@@ -208,7 +208,7 @@
     linuxPackages.v4l2loopback
 
 	unstable.ryujinx
-	unstable.lime3ds
+		# unstable.lime3ds
 	rar
 
 	jetbrains.rider
