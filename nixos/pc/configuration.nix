@@ -240,6 +240,7 @@
     vulkan-tools-lunarg # vkconfig
 
 	zoom-us
+	networkmanager-openvpn
   ];
 
   environment.etc."ppp/options".text = ''
