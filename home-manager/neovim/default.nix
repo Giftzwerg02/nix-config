@@ -385,7 +385,8 @@ in {
 				# filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
 			};
 			clangd.enable = true;
-			glslls.enable = true;
+			# glslls.enable = true;
+			glsl_analyzer.enable = true;
             nixd.enable = true;
 			clangd.enable = true;
             lua-ls.enable = true;
