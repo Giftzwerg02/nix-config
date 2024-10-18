@@ -386,7 +386,10 @@ in {
 			};
 			clangd.enable = true;
 			# glslls.enable = true;
-			glsl_analyzer.enable = true;
+			glsl_analyzer = {
+				enable = true;
+				filetypes = [ "vert" "frag" ];
+			};
             nixd.enable = true;
 			clangd.enable = true;
             lua-ls.enable = true;
