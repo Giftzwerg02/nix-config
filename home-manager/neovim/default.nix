@@ -304,6 +304,7 @@ in {
 				"java"
 				"go"
 				"templ"
+				"glsl"
 			  ];
 
 			  indent.enable = true;
