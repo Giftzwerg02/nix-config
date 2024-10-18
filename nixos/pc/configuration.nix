@@ -215,32 +215,8 @@
 	jetbrains.clion
 	jetbrains.idea-ultimate
 
-	msbuild
-	(with dotnetCorePackages; combinePackages [
-		sdk_6_0
-		sdk_7_0
-		sdk_8_0
-		sdk_9_0
-		
-	])
-	mono4
-	mono5
-	mono6
-
-
-    glfw
-    freetype
-    vulkan-headers
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools        # vulkaninfo
-    shaderc             # GLSL to SPIRV compiler - glslc
-    renderdoc           # Graphics debugger
-    tracy               # Graphics profiler
-    vulkan-tools-lunarg # vkconfig
-
 	zoom-us
-	networkmanager-openvpn
+	vscode
   ];
 
   environment.etc."ppp/options".text = ''
