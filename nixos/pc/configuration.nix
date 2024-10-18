@@ -216,7 +216,6 @@
 	jetbrains.idea-ultimate
 
 	zoom-us
-	vscode
   ];
 
   environment.etc."ppp/options".text = ''
