@@ -217,6 +217,8 @@
 
 	zoom-us
 	vscode
+
+	cargo-cross
   ];
 
   environment.etc."ppp/options".text = ''
