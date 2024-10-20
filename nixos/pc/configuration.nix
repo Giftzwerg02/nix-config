@@ -217,12 +217,6 @@
 
 	zoom-us
 	vscode
-
-	rustup
-    rustc
-	rust-analyzer
-	clippy
-	cargo
   ];
 
   environment.etc."ppp/options".text = ''
