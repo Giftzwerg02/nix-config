@@ -367,7 +367,7 @@ in {
         };
 
 		rustaceanvim = {
-			enable = true;
+			enable = false;
 			settings.server = {
 				on_attach = /* lua */ '' 
 					function(client, bufnr) ${lspKeymapsOnAttach} end
@@ -390,6 +390,9 @@ in {
 			glsl_analyzer = {
 				enable = true;
 				filetypes = [ "vert" "frag" ];
+			};
+			rust_analyzer = {
+				enable = true;
 			};
             nixd.enable = true;
 			clangd.enable = true;
