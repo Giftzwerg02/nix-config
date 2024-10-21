@@ -219,6 +219,7 @@
 	vscode
 
 	cargo-cross
+		google-chrome
   ];
 
   environment.etc."ppp/options".text = ''
