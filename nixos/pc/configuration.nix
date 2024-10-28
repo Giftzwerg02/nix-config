@@ -213,7 +213,7 @@
 
 	jetbrains.rider
 	jetbrains.clion
-	jetbrains.idea-ultimate
+	jetbrains.idea-community
 
 	zoom-us
 	vscode
