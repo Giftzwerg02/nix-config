@@ -376,7 +376,7 @@ in {
 				enable = true;
 			};
             nixd.enable = true;
-			clang-d.enable = true;
+			clangd.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
