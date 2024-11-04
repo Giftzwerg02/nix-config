@@ -220,6 +220,7 @@
 
 	cargo-cross
 		google-chrome
+	easyeffects
   ];
 
   environment.etc."ppp/options".text = ''
