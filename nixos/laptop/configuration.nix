@@ -81,6 +81,8 @@
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
 
+	displayManager.sddm.enable = true;
+
 	desktopManager = {
 		plasma5.enable = true;
 	};
