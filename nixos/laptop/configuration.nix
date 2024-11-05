@@ -82,7 +82,7 @@
     };
 
 	desktopManager = {
-		plasma5.enable = false;
+		plasma5.enable = true;
 	};
 
     videoDrivers = ["intel" "nvidia"];

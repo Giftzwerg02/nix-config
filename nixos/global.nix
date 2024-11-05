@@ -65,7 +65,7 @@
       enable32Bit = true;
     };
     nvidia = {
-      modesetting.enable = true;
+      modesetting.enable = false;
 			#package = config.boot.kernelPackages.nvidiaPackages.latest;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
 	  open = false;
