@@ -87,7 +87,8 @@
 		plasma5.enable = true;
 	};
 
-    videoDrivers = ["intel" "nvidia"];
+		#videoDrivers = ["intel" "nvidia"];
+	videoDrivers = ["intel"];
   };
 
   virtualisation.docker.enable = true;
