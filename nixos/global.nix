@@ -66,9 +66,8 @@
     };
     nvidia = {
       modesetting.enable = true;
-	  #package = config.boot.kernelPackages.nvidiaPackages.latest;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-	  open = true;
+	  package = config.boot.kernelPackages.nvidiaPackages.latest;
+	  open = false;
     };
   };
 

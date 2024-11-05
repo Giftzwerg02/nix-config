@@ -72,23 +72,24 @@
     extraGroups = ["networkmanager" "wheel"];
   };
 
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = false;
 
   services.xserver = {
     enable = true;
     windowManager.i3 = {
-      enable = true;
+      enable = false;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
 
-	displayManager.sddm.enable = true;
+
+		#displayManager.sddm.enable = true;
+		displayManager.lightdm.enable = true;
 
 	desktopManager = {
 		plasma5.enable = true;
 	};
 
-		#videoDrivers = ["intel" "nvidia"];
-	videoDrivers = ["intel"];
+	videoDrivers = ["intel" "nvidia"];
   };
 
   virtualisation.docker.enable = true;
