@@ -10,7 +10,6 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ./i3
 	./sway
     ./stylix
     ./git
@@ -48,10 +47,10 @@
 	my-stylix-config.enable = true;
 	my-git-config.enable = true;
 	my-kitty-config.enable = true;
-	my-i3-config = { # seems broken lmao
-		enable = false;
-        wallpapers = [./imgs/background-laptop.jpg];
-	};
+	# my-i3-config = { # seems broken lmao
+	# 	enable = false;
+ #        wallpapers = [./imgs/background-laptop.jpg];
+	# };
 	my-sway-config = {
 		enable = false;
         wallpapers = [./imgs/background-laptop.jpg];

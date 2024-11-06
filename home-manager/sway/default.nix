@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: let
-  cfg = config.my-i3-config;
+	  cfg = config.my-sway-config;
 in {
   options = {
     my-sway-config = {
-      enable = lib.mkEnableOption "enable i3 config";
+      enable = lib.mkEnableOption "enable sway config";
       wallpapers =
         lib.mkOption
         {
@@ -42,7 +42,7 @@ in {
           modifier = "${modifier}";
 
           startup = [
-            {command = "i3";}
+            {command = "sway";}
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
             {command = "flameshot";}
