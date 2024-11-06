@@ -23,6 +23,7 @@ in {
     bar_name = "bottom";
   in
     lib.mkIf cfg.enable {
+			foobare;jafweo
       wayland.windowManager.sway = let
         modifier = "Mod4";
         refresh_i3status = "killall -SIGUSR1 i3status";
