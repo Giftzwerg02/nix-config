@@ -137,11 +137,23 @@
 		alsa.support32Bit = true;
 		pulse.enable = true;
 		jack.enable = true;
+		wireplumber = { # this prevents my bluetooth headphones from using mic which fucks the audio-quality
+			configPackages = [
+				  (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf" ''
+					wireplumber.settings = { bluetooth.autoswitch-to-headset-profile = false }
+				  '')
+				];
+		};
 	};
   };
 
   hardware = {
-	bluetooth.enable = true;
+	bluetooth = {
+		enable = true;
+		hsphfpd = {
+			enable = false;
+		};
+	};
 	opentabletdriver.enable = true;
   };
 }
