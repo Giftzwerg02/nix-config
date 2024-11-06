@@ -10,7 +10,17 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ./you-definitely-want-this.nix
+    ./i3
+	./sway
+    ./stylix
+    ./git
+    ./kitty
+    ./carapace
+    ./zsh
+    ./zoxide
+    ./neovim
+    ./dunst
+    ./mimeApps
   ];
 
   nixpkgs = {
@@ -30,10 +40,28 @@
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";
 
-  setup-this-thing = {
-    enable = true;
-    wallpapers = [./imgs/background-laptop.jpg];
-  };
+  # setup-this-thing = {
+  #   wallpapers = [./imgs/background-laptop.jpg];
+  # };
+
+
+	my-stylix-config.enable = true;
+	my-git-config.enable = true;
+	my-kitty-config.enable = true;
+	my-i3-config = { # seems broken lmao
+		enable = false;
+        wallpapers = [./imgs/background-laptop.jpg];
+	};
+	my-sway-config = {
+		enable = true;
+        wallpapers = [./imgs/background-laptop.jpg];
+	};
+	my-carapace-config.enable = true;
+	my-zsh-config.enable = true;
+	my-zoxide-config.enable = true;
+	my-neovim-config.enable = true;
+	my-dunst-config.enable = true;
+	my-mimeApps-config.enable = true;
 
   programs.home-manager.enable = true;
 
