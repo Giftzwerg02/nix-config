@@ -53,7 +53,7 @@
         wallpapers = [./imgs/background-laptop.jpg];
 	};
 	my-sway-config = {
-		enable = true;
+		enable = false;
         wallpapers = [./imgs/background-laptop.jpg];
 	};
 	my-carapace-config.enable = true;

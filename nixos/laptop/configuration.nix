@@ -170,7 +170,26 @@
     texlive.combined.scheme-full
 
 	gnome.adwaita-icon-theme
+
+	wayland
+	sway
+	xdg-utils
+	glib
+	grim
+	slurp
+	wl-clipboard
   ];
+
+  xdg.portal = {
+	enable = true;
+	wlr.enable = true;
+		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+	programs.sway = {
+		enable = true;
+		wrapperFeatures.gtk = true;
+	};
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 
