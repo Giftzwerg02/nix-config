@@ -37,6 +37,8 @@
     ];
   };
 
+  services.arrpc.enable = true;
+
   programs.rofi.enable = true;
 
   home.username = "benjamin";

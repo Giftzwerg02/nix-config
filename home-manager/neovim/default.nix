@@ -159,6 +159,14 @@ in {
       };
 
       plugins = {
+		neotest = {
+			enable = true;
+			adapters = {
+				playwright.enable = false;
+			};
+		};
+
+		# web-devicons.enabled = true;
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
@@ -191,9 +199,9 @@ in {
             fzf-native = {
               enable = true;
 			  settings = {
-              	override_generic_sorter = true;
-              	override_file_sorter = true;
-              	case_mode = "smart_case";
+				override_generic_sorter = true;
+				override_file_sorter = true;
+				case_mode = "smart_case";
 			  };
             };
           };
@@ -296,6 +304,7 @@ in {
 				"java"
 				"go"
 				"templ"
+				"glsl"
 			  ];
 
 			  indent.enable = true;
@@ -358,7 +367,7 @@ in {
         };
 
 		rustaceanvim = {
-			enable = true;
+			enable = false;
 			settings.server = {
 				on_attach = /* lua */ '' 
 					function(client, bufnr) ${lspKeymapsOnAttach} end
@@ -369,11 +378,48 @@ in {
 
 		# typescript-tools.enable = true;
 
+		conform-nvim = {
+			settings = {
+				default_format_opts = {
+					lsp_format = "fallback";
+				};
+
+				format_on_save = {
+					lsp_format = "fallback";
+					timeout_ms = 500;
+				};
+
+				formatters_by_ft = {
+									javascript = [ "prettier" ];
+									svelte = [ "prettier" ];
+									css = [ "prettier" ];
+									html = [ "prettier" ];
+									json = [ "prettier" ];
+									jsonc = [ "prettier" ];
+									scss = [ "prettier" ];
+									typescript = [ "prettier" ];
+									yaml = [ "prettier" ];
+								};
+			};
+		};
+
         lsp = {
           enable = true;
           servers = {
-			tsserver = {
+			ts-ls = {
 				enable = true;
+				# filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
+			};
+			clangd.enable = true;
+			# glslls.enable = true;
+			glsl_analyzer = {
+				enable = true;
+				filetypes = [ "vert" "frag" ];
+			};
+			rust_analyzer = {
+				enable = true;
+				installCargo = true;
+				installRustc = true;
 			};
             nixd.enable = true;
 			clangd.enable = true;
