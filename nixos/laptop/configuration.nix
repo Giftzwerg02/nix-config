@@ -191,6 +191,17 @@
 		wrapperFeatures.gtk = true;
 	};
 
+	services.greetd = {
+	  enable = true;
+	  settings = rec {
+		initial_session = {
+		  command = "${pkgs.sway}/bin/sway";
+		  user = "simon";
+		};
+		default_session = initial_session;
+	  };
+	};
+
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 
   system.stateVersion = "23.11"; # Did you read the comment?
