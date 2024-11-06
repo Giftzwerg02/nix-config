@@ -72,18 +72,12 @@
     extraGroups = ["networkmanager" "wheel"];
   };
 
-  services.displayManager.sddm.enable = false;
-
   services.xserver = {
     enable = true;
     windowManager.i3 = {
       enable = false;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
-
-
-		#displayManager.sddm.enable = true;
-		displayManager.lightdm.enable = true;
 
 	desktopManager = {
 		plasma5.enable = true;
@@ -99,7 +93,7 @@
     wget
     kitty
     git
-    rofi
+    rofi-wayland
     libnotify
     dunst
     home-manager
@@ -191,14 +185,22 @@
 		wrapperFeatures.gtk = true;
 	};
 
-	services.greetd = {
+	services.greetd = let
+			swayConfig = pkgs.writeText "greetd-sway-config" ''
+			exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
+			bindsym Mod4+shift+e exec swaynag \
+				-t warning \
+				-m 'What do you want to do?' \
+				-b 'Poweroff' 'systemctl poweroff' \
+				-b 'Reboot' 'systemctl reboot'
+		'';
+		in
+		{
 	  enable = true;
-	  settings = rec {
-		initial_session = {
-		  command = "${pkgs.sway}/bin/sway";
-		  user = "simon";
+	  settings = {
+		default_session = {
+		  command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
 		};
-		default_session = initial_session;
 	  };
 	};
 
