@@ -172,6 +172,9 @@
 	grim
 	slurp
 	wl-clipboard
+	
+	jetbrains.idea-community
+	jetbrains.pycharm-community
   ];
 
   xdg.portal = {
