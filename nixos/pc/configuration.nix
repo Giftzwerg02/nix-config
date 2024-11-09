@@ -221,6 +221,7 @@
 	cargo-cross
 		google-chrome
 	easyeffects
+	renderdoc
   ];
 
   environment.etc."ppp/options".text = ''
