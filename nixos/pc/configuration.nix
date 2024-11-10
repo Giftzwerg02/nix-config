@@ -222,6 +222,7 @@
 		google-chrome
 	easyeffects
 	renderdoc
+	ipe
   ];
 
   environment.etc."ppp/options".text = ''
