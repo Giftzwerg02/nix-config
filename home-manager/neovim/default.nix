@@ -166,11 +166,7 @@ in {
 			};
 		};
 
-		mini = {
-			enable = true;
-			mockDevIcons.enable = true;
-			modules.icons.enable = true;
-			};
+		web-devicons.enable = true;
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
