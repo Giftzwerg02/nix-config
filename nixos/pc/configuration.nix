@@ -192,6 +192,9 @@
 
     texlive.combined.scheme-full
 
+	# Formatters
+	alejandra
+
     # Gamer Girl :3
     prismlauncher # mc launcher
 	jdk21 # for minecraft obviously
@@ -223,6 +226,8 @@
 	easyeffects
 	renderdoc
 	ipe
+
+	
   ];
 
   environment.etc."ppp/options".text = ''
