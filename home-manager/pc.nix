@@ -35,6 +35,8 @@
       ./imgs/middle.jpg
       ./imgs/right.jpg
     ];
+	nixosConfigName = "pc";
+	hmConfigName = "benjamin@pc";
   };
 
   services.arrpc.enable = true;

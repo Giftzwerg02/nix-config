@@ -29,6 +29,8 @@ in {
           description = "provide a list of paths for each wallpaper for each monitor";
           default = ["none"];
         };
+      nixosConfigName = lib.mkOption "Set this to the nixos-config name of the current machine";
+      hmConfigName = lib.mkOption "Set this to the home-manager-config name of the current machine";
     };
   };
 
@@ -43,7 +45,11 @@ in {
     my-carapace-config.enable = true;
     my-zsh-config.enable = true;
     my-zoxide-config.enable = true;
-    my-neovim-config.enable = true;
+    my-neovim-config = {
+      enable = true;
+      nixosConfigName = cfg.nixosConfigName;
+      hmConfigName = cfg.hmConfigName;
+    };
     my-dunst-config.enable = true;
     my-mimeApps-config.enable = true;
   };

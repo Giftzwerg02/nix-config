@@ -2,8 +2,6 @@
   lib,
   config,
   pkgs,
-  nixosConfigName ? throw "Set this to the nixos-config name of the current machine",
-  hmConfigName ? throw "Set this to the home-manager-config name of the current machine",
   ...
 }: let
   cfg = config.my-neovim-config;
@@ -11,6 +9,8 @@ in {
   options = {
     my-neovim-config = {
       enable = lib.mkEnableOption "enable neovim config";
+      nixosConfigName = lib.mkOption "Set this to the nixos-config name of the current machine";
+      hmConfigName = lib.mkOption "Set this to the home-manager-config name of the current machine";
     };
   };
 
@@ -479,10 +479,10 @@ in {
                   };
                   options = {
                     nixos = {
-                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").nixosConfigurations.${nixosConfigName}.options";
+                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").nixosConfigurations.${cfg.nixosConfigName}.options";
                     };
                     home_manager = {
-                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").homeConfigurations.${hmConfigName}.options";
+                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").homeConfigurations.${cfg.hmConfigName}.options";
                     };
                   };
                 };
