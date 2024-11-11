@@ -29,8 +29,16 @@ in {
           description = "provide a list of paths for each wallpaper for each monitor";
           default = ["none"];
         };
-      nixosConfigName = lib.mkOption "Set this to the nixos-config name of the current machine";
-      hmConfigName = lib.mkOption "Set this to the home-manager-config name of the current machine";
+      nixosConfigName = lib.mkOption {
+        description = "Set this to the nixos-config name of the current machine";
+        type = lib.types.string;
+        default = null;
+      };
+      hmConfigName = lib.mkOption {
+        description = "Set this to the home-manager-config name of the current machine";
+        type = lib.types.string;
+        default = null;
+      };
     };
   };
 
