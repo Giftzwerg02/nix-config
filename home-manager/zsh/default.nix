@@ -55,7 +55,13 @@ in {
                 bindkey '^f' search_fzf
 
           function update() {
-          	alejandra ./ && git add --all && git commit -m "$1" && git push && switch
+			cd ~/nix-config
+          	alejandra ./ 
+			git add --all 
+			git commit -m "$1" 
+			git push
+			sudo nixos-rebuild switch --flake .
+			home-manager switch --flake .
           }
         '';
     };
