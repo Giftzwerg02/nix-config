@@ -425,7 +425,7 @@ in {
 			};
             nixd = {
 				enable = true;
-				extraOptions = {
+				settings = {
 					nixd = {
 formatting = {
 												command = [ "${pkgs.alejandra}" ];
