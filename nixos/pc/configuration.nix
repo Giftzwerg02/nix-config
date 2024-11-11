@@ -57,11 +57,11 @@
       allow-dirty = false;
     };
 
-	gc = {
-		automatic = true;
-		dates = "weekly";
-		options = "--delete-older-than 30d";
-	};
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   boot.extraModulePackages = [
@@ -87,18 +87,18 @@
   };
 
   services.displayManager = {
-      sddm = {
-        enable = true;
-      };
-	  ly = {
-		enable = false;
-	  };
+    sddm = {
+      enable = true;
+    };
+    ly = {
+      enable = false;
+    };
   };
 
   services.xserver = {
-	displayManager.setupCommands = ''
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x704 --rotate normal --output DP-0 --off --output DP-1 --primary --mode 1920x1080 --pos 3000x704 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 4920x704 --rotate normal --output DP-5 --off
-      '';
+    displayManager.setupCommands = ''
+      ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x704 --rotate normal --output DP-0 --off --output DP-1 --primary --mode 1920x1080 --pos 3000x704 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 4920x704 --rotate normal --output DP-5 --off
+    '';
     enable = true;
     windowManager.i3 = {
       enable = true;
@@ -109,10 +109,10 @@
 
   virtualisation = {
     docker.enable = true;
-	docker.rootless = {
-		enable = true;
-		setSocketVariable = true;
-	};
+    docker.rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
     virtualbox = {
       host = {
         enable = true;
@@ -155,8 +155,8 @@
     imagemagick
     xdragon
     toggle-redshift
-	ffmpeg
-	p7zip
+    ffmpeg
+    p7zip
 
     # Gui (eww) Utils
     pavucontrol
@@ -167,7 +167,7 @@
 
     # Dev and Work (as if)
     firefox
-	unstable.xournalpp
+    unstable.xournalpp
 
     bitwarden
     zathura
@@ -181,53 +181,51 @@
     pandoc-for-homework
     pdftk
     libreoffice
-	unstable.cypress
-	unstable.dbeaver-bin
+    unstable.cypress
+    unstable.dbeaver-bin
 
     # Compilers
     clang
     libgccjit
-	gcc
+    gcc
     libstdcxx5
 
     texlive.combined.scheme-full
 
-	# Formatters
-	alejandra
+    # Formatters
+    alejandra
 
     # Gamer Girl :3
     prismlauncher # mc launcher
-	jdk21 # for minecraft obviously
-	rconc
+    jdk21 # for minecraft obviously
+    rconc
     heroic
     wineWowPackages.staging
     lutris
-	unstable.vesktop
-	premid
-	r2modman
+    unstable.vesktop
+    premid
+    r2modman
 
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
 
-	unstable.ryujinx
-		# unstable.lime3ds
-	rar
+    unstable.ryujinx
+    # unstable.lime3ds
+    rar
 
-	jetbrains.rider
-	jetbrains.clion
-	jetbrains.idea-community
+    jetbrains.rider
+    jetbrains.clion
+    jetbrains.idea-community
 
-	zoom-us
-	vscode
+    zoom-us
+    vscode
 
-	cargo-cross
-		google-chrome
-	easyeffects
-	renderdoc
-	ipe
-
-	
+    cargo-cross
+    google-chrome
+    easyeffects
+    renderdoc
+    ipe
   ];
 
   environment.etc."ppp/options".text = ''
@@ -235,7 +233,7 @@
   '';
 
   environment.sessionVariables = {
-	VULKAN_SDK = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
+    VULKAN_SDK = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
   };
 
   programs.gamemode.enable = true;

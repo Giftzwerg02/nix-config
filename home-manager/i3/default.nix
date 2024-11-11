@@ -40,9 +40,8 @@ in {
         enable = true;
         config = {
           modifier = "${modifier}";
-		  
+
           startup = [
-						
             {command = "i3";}
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
@@ -187,9 +186,9 @@ in {
             icons = "awesome6";
 
             blocks = [
-			  {
-			    block = "battery";
-			  }
+              {
+                block = "battery";
+              }
 
               {
                 alert = 10.0;

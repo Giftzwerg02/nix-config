@@ -35,20 +35,24 @@ in {
       };
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
-	  initExtra = /*bash*/ ''
-function search_fzf() {
-  p=$(fd . . | fzf)
-  if [ -d "''${p}" ]; then
-	  cd "''${p}"
-  else
-	  cd "$(dirname "''${p}")"
-  fi
-}			
+      initExtra =
+        /*
+        bash
+        */
+        ''
+          function search_fzf() {
+            p=$(fd . . | fzf)
+            if [ -d "''${p}" ]; then
+          	  cd "''${p}"
+            else
+          	  cd "$(dirname "''${p}")"
+            fi
+          }
 
-zle -N search_fzf
+          zle -N search_fzf
 
-bindkey '^f' search_fzf
-	  '';
+          bindkey '^f' search_fzf
+        '';
     };
   };
 }

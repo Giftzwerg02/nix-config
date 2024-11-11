@@ -6,7 +6,7 @@
   lib,
   config,
   pkgs,
-	mkForce,
+  mkForce,
   ...
 }: {
   # You can import other NixOS modules here
@@ -57,11 +57,11 @@
       allow-dirty = false;
     };
 
-	gc = {
-		automatic = true;
-		dates = "weekly";
-		options = "--delete-older-than 30d";
-	};
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   networking.hostName = "laptop";
@@ -81,15 +81,14 @@
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
 
+    #displayManager.sddm.enable = true;
+    displayManager.lightdm.enable = true;
 
-		#displayManager.sddm.enable = true;
-		displayManager.lightdm.enable = true;
+    desktopManager = {
+      plasma5.enable = true;
+    };
 
-	desktopManager = {
-		plasma5.enable = true;
-	};
-
-	videoDrivers = ["intel" "nvidia"];
+    videoDrivers = ["intel" "nvidia"];
   };
 
   virtualisation.docker.enable = true;
@@ -169,38 +168,38 @@
     python311Packages.pip
     texlive.combined.scheme-full
 
-	gnome.adwaita-icon-theme
+    gnome.adwaita-icon-theme
 
-	wayland
-	sway
-	xdg-utils
-	glib
-	grim
-	slurp
-	wl-clipboard
+    wayland
+    sway
+    xdg-utils
+    glib
+    grim
+    slurp
+    wl-clipboard
   ];
 
   xdg.portal = {
-	enable = true;
-	wlr.enable = true;
-		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
-	programs.sway = {
-		enable = true;
-		wrapperFeatures.gtk = true;
-	};
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
 
-	services.greetd = {
-	  enable = true;
-	  settings = rec {
-		initial_session = {
-		  command = "${pkgs.sway}/bin/sway";
-		  user = "simon";
-		};
-		default_session = initial_session;
-	  };
-	};
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.sway}/bin/sway";
+        user = "simon";
+      };
+      default_session = initial_session;
+    };
+  };
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 

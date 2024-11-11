@@ -18,11 +18,11 @@
     # Stylix
     stylix.url = "github:danth/stylix";
 
-	# Minecraft-Servers
-	nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    # Minecraft-Servers
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
-	# Sops
-	sops-nix.url = "github:Mic92/sops-nix";
+    # Sops
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = {
@@ -78,13 +78,13 @@
           ./nixos/laptop/configuration.nix
         ];
       };
-	
-	  giftzwerg02-nixos = nixpkgs.lib.nixosSystem {
+
+      giftzwerg02-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-		modules = [
-		  ./nixos/candy-crusher/configuration.nix
-		];
-	  };
+        modules = [
+          ./nixos/candy-crusher/configuration.nix
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint

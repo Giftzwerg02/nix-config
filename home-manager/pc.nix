@@ -30,13 +30,13 @@
   setup-this-thing = {
     enable = true;
     wallpapers = [
-	  ./imgs/zeldafirst.jpg
+      ./imgs/zeldafirst.jpg
       ./imgs/left.jpg
       ./imgs/middle.jpg
       ./imgs/right.jpg
     ];
-	nixosConfigName = "pc";
-	hmConfigName = "benjamin@pc";
+    nixosConfigName = "pc";
+    hmConfigName = "benjamin@pc";
   };
 
   services.arrpc.enable = true;
