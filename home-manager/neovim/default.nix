@@ -487,10 +487,10 @@ in {
                   };
                   options = {
                     nixos = {
-                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").nixosConfigurations.${cfg.nixosConfigName}.options";
+                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").nixosConfigurations.\"${cfg.nixosConfigName}\".options";
                     };
                     home_manager = {
-                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").homeConfigurations.${cfg.hmConfigName}.options";
+                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").homeConfigurations.\"${cfg.hmConfigName}\".options";
                     };
                   };
                 };
