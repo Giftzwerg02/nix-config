@@ -166,7 +166,7 @@ in {
 			};
 		};
 
-		# web-devicons.enabled = true;
+		web-devicons.enabled = true;
         lualine.enable = true;
         fugitive.enable = true;
         luasnip.enable = true;
@@ -408,7 +408,7 @@ in {
         lsp = {
           enable = true;
           servers = {
-			ts-ls = {
+			ts_ls = {
 				enable = true;
 				# filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
 			};
@@ -433,7 +433,7 @@ formatting = {
 										}	;
 									};
 			};
-            lua-ls.enable = true;
+            lua_ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
 			gopls.enable = true;
