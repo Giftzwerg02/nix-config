@@ -403,6 +403,8 @@ in {
 			};
 		};
 
+		
+
         lsp = {
           enable = true;
           servers = {
@@ -421,7 +423,16 @@ in {
 				installCargo = true;
 				installRustc = true;
 			};
-            nixd.enable = true;
+            nixd = {
+				enable = true;
+				extraOptions = {
+					nixd = {
+formatting = {
+												command = [ "${pkgs.alejandra}" ];
+											};
+										}	;
+									};
+			};
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
