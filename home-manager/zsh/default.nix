@@ -18,7 +18,7 @@ in {
       shellAliases = {
         hms = "home-manager switch --flake ~/nix-config";
         ncs = "sudo nixos-rebuild switch --flake ~/nix-config";
-        update = "ncs && hms";
+        switch = "ncs && hms";
         cfg = "cd ~/nix-config && nvim .";
         ls = "eza";
         find = "fd";
@@ -33,6 +33,7 @@ in {
         plugins = ["git" "thefuck"];
         theme = "robbyrussell";
       };
+
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
       initExtra =
@@ -40,18 +41,22 @@ in {
         bash
         */
         ''
-          function search_fzf() {
-            p=$(fd . . | fzf)
-            if [ -d "''${p}" ]; then
-          	  cd "''${p}"
-            else
-          	  cd "$(dirname "''${p}")"
-            fi
+                function search_fzf() {
+                  p=$(fd . . | fzf)
+                  if [ -d "''${p}" ]; then
+                	  cd "''${p}"
+                  else
+                	  cd "$(dirname "''${p}")"
+                  fi
+                }
+
+                zle -N search_fzf
+
+                bindkey '^f' search_fzf
+
+          function update() {
+          	alejandra ./ && git add --all && git commit -m "$1" && git push && switch
           }
-
-          zle -N search_fzf
-
-          bindkey '^f' search_fzf
         '';
     };
   };
