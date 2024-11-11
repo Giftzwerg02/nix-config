@@ -422,7 +422,6 @@ in {
 				installRustc = true;
 			};
             nixd.enable = true;
-			clangd.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
 			svelte.enable = true;
