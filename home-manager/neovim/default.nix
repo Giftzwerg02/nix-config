@@ -427,7 +427,7 @@ in {
 				enable = true;
 				settings = {
 formatting = {
-												command = [ "${pkgs.alejandra}" ];
+												command = [ "${pkgs.alejandra}/bin/alejandra" ];
 											};
 										}	;
 			};
