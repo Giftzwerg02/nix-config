@@ -226,6 +226,7 @@
     easyeffects
     renderdoc
     ipe
+	lunar-client
   ];
 
   environment.etc."ppp/options".text = ''
