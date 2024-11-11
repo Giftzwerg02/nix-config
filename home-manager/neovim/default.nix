@@ -426,12 +426,10 @@ in {
             nixd = {
 				enable = true;
 				settings = {
-					nixd = {
 formatting = {
 												command = [ "${pkgs.alejandra}" ];
 											};
 										}	;
-									};
 			};
             lua_ls.enable = true;
             pyright.enable = true;
