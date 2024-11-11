@@ -11,12 +11,12 @@ in {
       enable = lib.mkEnableOption "enable neovim config";
       nixosConfigName = lib.mkOption {
         description = "Set this to the nixos-config name of the current machine";
-        type = lib.types.string;
+        type = lib.types.str;
         default = null;
       };
       hmConfigName = lib.mkOption {
         description = "Set this to the home-manager-config name of the current machine";
-        type = lib.types.string;
+        type = lib.types.str;
         default = null;
       };
     };
