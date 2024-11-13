@@ -32,10 +32,10 @@ in {
           bash
           */
           ''
-            nix search nixpkgs --json ^ \\
-              | ${pkgs.jq}/bin/jq -- -r '. | keys[]' \\
+            nix search nixpkgs --json ^ \
+              | ${pkgs.jq}/bin/jq -- -r '. | keys[]' \
               | cut -d \. -f 3- \
-              | nix run nixpkgs#fzf
+              | ${pkgs.fzf}
           '';
       };
 
