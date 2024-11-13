@@ -58,7 +58,7 @@ in {
             if [ -d "''${p}" ]; then
               cd "''${p}"
             else
-              cd "$(dirname "''${p})"
+              cd "$(dirname "''${p}")"
             fi
           }
 
