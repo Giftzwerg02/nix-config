@@ -227,6 +227,7 @@
     renderdoc
     ipe
 	lunar-client
+	anki
   ];
 
   environment.etc."ppp/options".text = ''
