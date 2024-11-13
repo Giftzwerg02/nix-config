@@ -226,8 +226,8 @@
     easyeffects
     renderdoc
     ipe
-	lunar-client
-	anki
+    lunar-client
+    anki
   ];
 
   environment.etc."ppp/options".text = ''

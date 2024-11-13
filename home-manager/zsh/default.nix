@@ -27,6 +27,11 @@ in {
         vi = "nvim";
         cd = "z";
         ssh = "TERM=linux ssh";
+        search = ''
+          function
+		  	fejfo
+					owafjfie
+        '';
       };
       oh-my-zsh = {
         enable = true;
