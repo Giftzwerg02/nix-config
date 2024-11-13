@@ -89,6 +89,16 @@ in {
           shiftwidth = 4;
         };
 
+        files = {
+          "ftplugin/nix.lua" = {
+            opts = {
+              expandtab = true;
+              shiftwidth = 2;
+              tabstop = 2;
+            };
+          };
+        };
+
         extraPlugins = [
           pkgs.vimPlugins.go-nvim
         ];
