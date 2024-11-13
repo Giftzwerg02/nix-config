@@ -33,7 +33,7 @@ in {
           */
           ''
             nix search nixpkgs --json ^ \
-              | ${pkgs.jq}/bin/jq -- -r '. | keys[]' \
+              | ${pkgs.jq}/bin/jq -- -r ". | keys[]" \
               | cut -d \. -f 3- \
               | ${pkgs.fzf}
           '';
