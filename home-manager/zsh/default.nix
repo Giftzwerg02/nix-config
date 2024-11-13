@@ -32,15 +32,13 @@ in {
           bash
           */
           ''
-            function abc() {
-            	local a="test";
-            }
-
-            function() {
-            	local a="test";
-            }
+            nix search nixpkgs --json ^ \\
+              | ${pkgs.jq/bin/jq} -- -r '. | keys[]' \\
+              | cut -d \. -f 3- \
+              | nix run nixpkgs#fzf
           '';
       };
+
       oh-my-zsh = {
         enable = true;
         plugins = ["git" "thefuck"];
@@ -55,30 +53,30 @@ in {
         bash
         */
         ''
-           function search_fzf() {
-          p=$(fd . . | fzf)
-          if [ -d "''${p}" ]; then
-           cd "''${p}"
-          else
-           cd "$(dirname "''${p}")"
-          fi
-           }
+          function search_fzf() {
+            p=$(fd . . | fzf)
+            if [ -d "''${p}"]; then
+              cd "''${p}"
+            else
+              cd "$(dirname "''${p})"
+            fi
+          }
 
-              	zle -N search_fzf
+          zle -N search_fzf
 
-                     bindkey '^f' search_fzf
+          bindkey '^f' search_fzf
 
-                     function update() {
-                     	local msg=''${1:-update}
+          function update() {
+            local msg=''${1:-update}
 
-                     	cd ~/nix-config
-                       alejandra ./
-                 git add --all
-                 git commit -m "''${msg}"
-                 git push
-                 sudo nixos-rebuild switch --flake .
-                home-manager switch --flake .
-                     }
+            cd ~/nix-config
+            alejandra ./
+            git add --all
+            git commit -m "''${msg}"
+            git push
+            sudo nixos-rebuild switch --flake .
+            home-manager switch --flake .
+          }
         '';
     };
   };
