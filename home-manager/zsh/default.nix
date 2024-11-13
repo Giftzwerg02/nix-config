@@ -55,7 +55,7 @@ in {
         ''
           function search_fzf() {
             p=$(fd . . | fzf)
-            if [ -d "''${p}"]; then
+            if [ -d "''${p}" ]; then
               cd "''${p}"
             else
               cd "$(dirname "''${p})"
