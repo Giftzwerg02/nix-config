@@ -598,7 +598,7 @@
         "nixvim": "nixvim",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
-        "zen-broser": "zen-broser"
+        "zen-browser": "zen-browser"
       }
     },
     "sops-nix": {
@@ -766,7 +766,7 @@
         "type": "github"
       }
     },
-    "zen-broser": {
+    "zen-browser": {
       "inputs": {
         "nixpkgs": "nixpkgs_5"
       },
