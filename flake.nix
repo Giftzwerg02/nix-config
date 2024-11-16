@@ -25,7 +25,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     # Zen-Browser: Remove this once it hits nixpkgs
-    zen-broser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = {
