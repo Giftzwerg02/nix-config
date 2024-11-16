@@ -229,7 +229,7 @@
     lunar-client
     anki
 
-    inputs.zen-browser.packages.specific
+    inputs.zen-browser.packages.x86_64-linux.specific
   ];
 
   environment.etc."ppp/options".text = ''
