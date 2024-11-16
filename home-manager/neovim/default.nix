@@ -478,6 +478,7 @@ in {
                 enable = true;
                 # filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
               };
+              gleam.enable = true;
               clangd.enable = true;
               # glslls.enable = true;
               glsl_analyzer = {
