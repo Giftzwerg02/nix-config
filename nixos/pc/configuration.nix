@@ -228,6 +228,8 @@
     ipe
     lunar-client
     anki
+
+    inputs.zen-browser.packages."${system}".specific
   ];
 
   environment.etc."ppp/options".text = ''
