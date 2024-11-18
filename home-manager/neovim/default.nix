@@ -97,6 +97,14 @@ in {
               tabstop = 2;
             };
           };
+
+          "ftplugin/gleam.lua" = {
+            opts = {
+              expandtab = true;
+              shiftwidth = 2;
+              tabstop = 2;
+            };
+          };
         };
 
         extraPlugins = [
