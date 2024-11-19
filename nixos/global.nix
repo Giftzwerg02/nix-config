@@ -25,7 +25,7 @@
   # Select internationalisation properties.
   i18n = let
     # locale = "de_AT.UTF-8";
-    locale = "slovak";
+    locale = "sk_SK";
   in {
     defaultLocale = locale;
     extraLocaleSettings = {
