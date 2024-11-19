@@ -23,14 +23,12 @@
   };
 
   # Select internationalisation properties.
-  i18n.supportedLocales = let
+  i18n = let
     # locale = "de_AT.UTF-8";
     locale = "sk_SK.UTF-8/UTF-8";
   in {
     supportedLocales = [
-      "en_US.UTF-8/UTF-8"
-      "nl_NL.UTF-8/UTF-8"
-      "nl_NL/ISO-8859-1"
+      "all"
     ];
     defaultLocale = locale;
     extraLocaleSettings = {
