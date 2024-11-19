@@ -27,7 +27,7 @@
     # locale = "de_AT.UTF-8";
     locale = "sk_SK.UTF-8/UTF-8";
   in {
-    supportedLocales = ["all"];
+    supportedLocales = "all";
     defaultLocale = locale;
     extraLocaleSettings = {
       LC_ADDRESS = locale;
