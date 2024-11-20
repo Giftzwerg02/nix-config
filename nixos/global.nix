@@ -29,6 +29,9 @@
   in {
     supportedLocales = [
       "all"
+      locale
+      "en_US.UTF-8"
+      "de_AT.UTF-8"
     ];
     defaultLocale = locale;
     extraLocaleSettings = {
