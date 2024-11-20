@@ -25,7 +25,7 @@
   # Select internationalisation properties.
   i18n = let
     # locale = "de_AT.UTF-8";
-    locale = "sk_SK.UTF-8/UTF-8";
+    locale = "sk_SK.UTF-8";
   in {
     supportedLocales = [
       "all"
