@@ -3,58 +3,64 @@
   config,
   ...
 }: {
+  boot = {
+    # Use latest Kernel
+    kernelPackages = pkgs.unstable.linuxPackages_latest;
 
-	boot = {
-  		# Use latest Kernel
-		kernelPackages = pkgs.unstable.linuxPackages_latest;
+    # Bootloader
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
-  		# Bootloader
-		loader.systemd-boot.enable = true;
-		loader.efi.canTouchEfiVariables = true;	
-	};
+  networking = {
+    # Enable networking
+    networkmanager.enable = true;
+  };
 
-	networking = {
-  		# Enable networking
-		networkmanager.enable = true;
-	};
-
-	time = {
-  		# Set your time zone.
-		timeZone = "Europe/Vienna";
-	};
-
+  time = {
+    # Set your time zone.
+    timeZone = "Europe/Vienna";
+  };
 
   # Select internationalisation properties.
-  i18n = {
-		defaultLocale = "de_AT.UTF-8";
-	  extraLocaleSettings = {
-		LC_ADDRESS = "de_AT.UTF-8";
-		LC_IDENTIFICATION = "de_AT.UTF-8";
-		LC_MEASUREMENT = "de_AT.UTF-8";
-		LC_MONETARY = "de_AT.UTF-8";
-		LC_NAME = "de_AT.UTF-8";
-		LC_NUMERIC = "de_AT.UTF-8";
-		LC_PAPER = "de_AT.UTF-8";
-		LC_TELEPHONE = "de_AT.UTF-8";
-		LC_TIME = "de_AT.UTF-8";
-	  };
-	};
-
+  i18n = let
+    # locale = "de_AT.UTF-8";
+    locale = "sk_SK.UTF-8";
+  in {
+    supportedLocales = [
+      "all"
+      locale
+      "en_US.UTF-8"
+      "de_AT.UTF-8"
+    ];
+    defaultLocale = locale;
+    extraLocaleSettings = {
+      LC_ADDRESS = locale;
+      LC_IDENTIFICATION = locale;
+      LC_MEASUREMENT = locale;
+      LC_MONETARY = locale;
+      LC_NAME = locale;
+      LC_NUMERIC = locale;
+      LC_PAPER = locale;
+      LC_TELEPHONE = locale;
+      LC_TIME = locale;
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
-	xkb = {
-		layout = "at";
-		variant = "nodeadkeys";
-	};
+    xkb = {
+      layout = "at";
+      variant = "nodeadkeys";
+    };
   };
 
   console.keyMap = "de";
 
   programs = {
-	dconf.enable = true;
-	zsh.enable = true;  	
-	ssh.startAgent = true;
+    dconf.enable = true;
+    zsh.enable = true;
+    ssh.startAgent = true;
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -66,8 +72,8 @@
     };
     nvidia = {
       modesetting.enable = true;
-	  package = config.boot.kernelPackages.nvidiaPackages.latest;
-	  open = false;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      open = false;
     };
   };
 
@@ -85,7 +91,7 @@
     proggyfonts
     font-awesome
     siji
-	roboto
+    roboto
   ];
 
   security.polkit.enable = true;
@@ -104,44 +110,57 @@
   };
 
   xdg.portal = {
-	enable = true;
-	extraPortals = [pkgs.xdg-desktop-portal-gtk];
-	config.common.default = "gtk";
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = "gtk";
   };
 
   location = {
-	provider = "manual";
-	latitude = 48.210033;
-	longitude = 16.363449;
+    provider = "manual";
+    latitude = 48.210033;
+    longitude = 16.363449;
   };
 
   services = {
     # thunar settings
-	gvfs.enable = true;
-	tumbler.enable = true;
-	blueman.enable = true;
-	redshift = {
-		enable = true;
-		brightness = {
-			day = "1";
-			night = "1";
-		};
-		temperature = {
-			day = 3000;
-			night = 2000;
-		};
-	};
-	pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-		jack.enable = true;
-	};
+    gvfs.enable = true;
+    tumbler.enable = true;
+    blueman.enable = true;
+    redshift = {
+      enable = true;
+      brightness = {
+        day = "1";
+        night = "1";
+      };
+      temperature = {
+        day = 3000;
+        night = 2000;
+      };
+    };
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+      wireplumber = {
+        # this prevents my bluetooth headphones from using mic which fucks the audio-quality
+        configPackages = [
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf" ''
+            wireplumber.settings = { bluetooth.autoswitch-to-headset-profile = false }
+          '')
+        ];
+      };
+    };
   };
 
   hardware = {
-	bluetooth.enable = true;
-	opentabletdriver.enable = true;
+    bluetooth = {
+      enable = true;
+      hsphfpd = {
+        enable = false;
+      };
+    };
+    opentabletdriver.enable = true;
   };
 }

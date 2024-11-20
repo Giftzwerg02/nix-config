@@ -186,9 +186,9 @@ in {
             icons = "awesome6";
 
             blocks = [
-			  {
-			    block = "battery";
-			  }
+              {
+                block = "battery";
+              }
 
               {
                 alert = 10.0;

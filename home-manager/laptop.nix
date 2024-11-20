@@ -10,7 +10,7 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-	./sway
+    ./sway
     ./stylix
     ./git
     ./kitty
@@ -43,24 +43,23 @@
   #   wallpapers = [./imgs/background-laptop.jpg];
   # };
 
-
-	my-stylix-config.enable = true;
-	my-git-config.enable = true;
-	my-kitty-config.enable = true;
-	# my-i3-config = { # seems broken lmao
-	# 	enable = false;
- #        wallpapers = [./imgs/background-laptop.jpg];
-	# };
-	my-sway-config = {
-		enable = false;
-        wallpapers = [./imgs/background-laptop.jpg];
-	};
-	my-carapace-config.enable = true;
-	my-zsh-config.enable = true;
-	my-zoxide-config.enable = true;
-	my-neovim-config.enable = true;
-	my-dunst-config.enable = true;
-	my-mimeApps-config.enable = true;
+  my-stylix-config.enable = true;
+  my-git-config.enable = true;
+  my-kitty-config.enable = true;
+  # my-i3-config = { # seems broken lmao
+  # 	enable = false;
+  #        wallpapers = [./imgs/background-laptop.jpg];
+  # };
+  my-sway-config = {
+    enable = false;
+    wallpapers = [./imgs/background-laptop.jpg];
+  };
+  my-carapace-config.enable = true;
+  my-zsh-config.enable = true;
+  my-zoxide-config.enable = true;
+  my-neovim-config.enable = true;
+  my-dunst-config.enable = true;
+  my-mimeApps-config.enable = true;
 
   programs.home-manager.enable = true;
 

@@ -1,2 +1,2 @@
 # nix-config
-My config for absolutely nix
+My config for absolutely nix 

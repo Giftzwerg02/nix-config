@@ -20,7 +20,7 @@ in {
         sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
       };
       stylix = {
-	  	enable = true;
+        enable = true;
         polarity = "dark";
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
         cursor = {
@@ -35,15 +35,15 @@ in {
             popups = 12;
           };
 
-		  monospace = {
-		  	package = pkgs.miracode;
-			name = "Miracode";
-		  };
+          monospace = {
+            package = pkgs.miracode;
+            name = "Miracode";
+          };
         };
 
-		targets.firefox = {
-			profileNames = [ "default" ];
-		};
+        targets.firefox = {
+          profileNames = ["default"];
+        };
       };
     };
 }

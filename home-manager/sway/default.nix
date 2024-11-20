@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-	  cfg = config.my-sway-config;
+  cfg = config.my-sway-config;
 in {
   options = {
     my-sway-config = {
@@ -186,9 +186,9 @@ in {
             icons = "awesome6";
 
             blocks = [
-			  {
-			    block = "battery";
-			  }
+              {
+                block = "battery";
+              }
 
               {
                 alert = 10.0;
