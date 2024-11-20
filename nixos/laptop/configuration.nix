@@ -6,7 +6,7 @@
   lib,
   config,
   pkgs,
-	mkForce,
+  mkForce,
   ...
 }: {
   # You can import other NixOS modules here
@@ -57,11 +57,11 @@
       allow-dirty = false;
     };
 
-	gc = {
-		automatic = true;
-		dates = "weekly";
-		options = "--delete-older-than 30d";
-	};
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   networking.hostName = "laptop";
@@ -84,6 +84,8 @@
 	};
 
 	videoDrivers = ["intel" "nvidia"];
+    #displayManager.sddm.enable = true;
+    displayManager.lightdm.enable = true;
   };
 
   virtualisation.docker.enable = true;
@@ -163,7 +165,7 @@
     python311Packages.pip
     texlive.combined.scheme-full
 
-	gnome.adwaita-icon-theme
+    gnome.adwaita-icon-theme
 
 	wayland
 	sway
@@ -178,15 +180,15 @@
   ];
 
   xdg.portal = {
-	enable = true;
-	wlr.enable = true;
-		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
-	programs.sway = {
-		enable = true;
-		wrapperFeatures.gtk = true;
-	};
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
 
 	services.greetd = let
 			swayConfig = pkgs.writeText "greetd-sway-config" ''
