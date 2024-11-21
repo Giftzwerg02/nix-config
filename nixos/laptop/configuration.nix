@@ -80,9 +80,11 @@
     };
 
 	desktopManager = {
-		plasma6.enable = true;
-
+		#plasma6.enable = true;
+		
 	};
+	
+		desktopManager.gnome.enable = true;
 
 	videoDrivers = ["intel" "nvidia"];
     #displayManager.sddm.enable = true;
