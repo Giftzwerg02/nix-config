@@ -78,13 +78,18 @@
       enable = false;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
-
-	desktopManager = {
-		#plasma6.enable = true;
-		
-	};
 	
-		desktopManager.gnome.enable = true;
+	# windowManager.hypr = {
+	# 	enable = true;
+	# };
+
+	# desktopManager = {
+	# 	#plasma6.enable = true;
+	# 	
+	# };
+	
+	
+		#desktopManager.gnome.enable = true;
 
 	videoDrivers = ["intel" "nvidia"];
     #displayManager.sddm.enable = true;
@@ -187,6 +192,8 @@
     wlr.enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
+
+  programs.hyprland.enable = true;
 
   programs.sway = {
     enable = true;
