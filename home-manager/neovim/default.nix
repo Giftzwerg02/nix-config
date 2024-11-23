@@ -105,6 +105,22 @@ in {
               tabstop = 2;
             };
           };
+
+          "ftplugin/c.lua" = {
+            opts = {
+              expandtab = true;
+              shiftwidth = 2;
+              tabstop = 2;
+            };
+          };
+
+          "ftplugin/cpp.lua" = {
+            opts = {
+              expandtab = true;
+              shiftwidth = 2;
+              tabstop = 2;
+            };
+          };
         };
 
         extraPlugins = [
