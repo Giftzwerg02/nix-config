@@ -78,20 +78,19 @@
       enable = false;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
-	
-	# windowManager.hypr = {
-	# 	enable = true;
-	# };
 
-	# desktopManager = {
-	# 	#plasma6.enable = true;
-	# 	
-	# };
-	
-	
-		#desktopManager.gnome.enable = true;
+    # windowManager.hypr = {
+    # 	enable = true;
+    # };
 
-	videoDrivers = ["intel" "nvidia"];
+    # desktopManager = {
+    # 	#plasma6.enable = true;
+    #
+    # };
+
+    #desktopManager.gnome.enable = true;
+
+    videoDrivers = ["intel" "nvidia"];
     #displayManager.sddm.enable = true;
     displayManager.lightdm.enable = true;
   };
@@ -175,16 +174,16 @@
 
     gnome.adwaita-icon-theme
 
-	wayland
-	sway
-	xdg-utils
-	glib
-	grim
-	slurp
-	wl-clipboard
-	
-	jetbrains.idea-community
-	jetbrains.pycharm-community
+    wayland
+    sway
+    xdg-utils
+    glib
+    grim
+    slurp
+    wl-clipboard
+
+    jetbrains.idea-community
+    jetbrains.pycharm-community
   ];
 
   xdg.portal = {
@@ -200,24 +199,23 @@
     wrapperFeatures.gtk = true;
   };
 
-	services.greetd = let
-			swayConfig = pkgs.writeText "greetd-sway-config" ''
-			exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
-			bindsym Mod4+shift+e exec swaynag \
-				-t warning \
-				-m 'What do you want to do?' \
-				-b 'Poweroff' 'systemctl poweroff' \
-				-b 'Reboot' 'systemctl reboot'
-		'';
-		in
-		{
-	  enable = true;
-	  settings = {
-		default_session = {
-		  command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
-		};
-	  };
-	};
+  services.greetd = let
+    swayConfig = pkgs.writeText "greetd-sway-config" ''
+      exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
+      bindsym Mod4+shift+e exec swaynag \
+      	-t warning \
+      	-m 'What do you want to do?' \
+      	-b 'Poweroff' 'systemctl poweroff' \
+      	-b 'Reboot' 'systemctl reboot'
+    '';
+  in {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+      };
+    };
+  };
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 

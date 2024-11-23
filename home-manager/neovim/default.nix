@@ -548,78 +548,81 @@ in {
           };
         };
 
-		rustaceanvim = {
-			enable = false;
-			settings.server = {
-				on_attach = /* lua */ '' 
-					function(client, bufnr) ${lspKeymapsOnAttach} end
-				'';
-			};
-		};
+        rustaceanvim = {
+          enable = false;
+          settings.server = {
+            on_attach =
+              /*
+              lua
+              */
+              ''
+                function(client, bufnr) ${lspKeymapsOnAttach} end
+              '';
+          };
+        };
 
+        # typescript-tools.enable = true;
 
-		# typescript-tools.enable = true;
+        conform-nvim = {
+          settings = {
+            default_format_opts = {
+              lsp_format = "fallback";
+            };
 
-		conform-nvim = {
-			settings = {
-				default_format_opts = {
-					lsp_format = "fallback";
-				};
+            format_on_save = {
+              lsp_format = "fallback";
+              timeout_ms = 500;
+            };
 
-				format_on_save = {
-					lsp_format = "fallback";
-					timeout_ms = 500;
-				};
-
-				formatters_by_ft = {
-									javascript = [ "prettier" ];
-									svelte = [ "prettier" ];
-									css = [ "prettier" ];
-									html = [ "prettier" ];
-									json = [ "prettier" ];
-									jsonc = [ "prettier" ];
-									scss = [ "prettier" ];
-									typescript = [ "prettier" ];
-									yaml = [ "prettier" ];
-								};
-			};
-		};
+            formatters_by_ft = {
+              javascript = ["prettier"];
+              svelte = ["prettier"];
+              css = ["prettier"];
+              html = ["prettier"];
+              json = ["prettier"];
+              jsonc = ["prettier"];
+              scss = ["prettier"];
+              typescript = ["prettier"];
+              yaml = ["prettier"];
+            };
+          };
+        };
 
         lsp = {
           enable = true;
           servers = {
-			ts-ls = {
-				enable = true;
-				# filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
-			};
-			clangd.enable = true;
-			# glslls.enable = true;
-			glsl_analyzer = {
-				enable = true;
-				filetypes = [ "vert" "frag" ];
-			};
-			rust_analyzer = {
-				enable = true;
-				installCargo = true;
-				installRustc = true;
-			};
+            ts-ls = {
+              enable = true;
+              # filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
+            };
+            clangd.enable = true;
+            # glslls.enable = true;
+            glsl_analyzer = {
+              enable = true;
+              filetypes = ["vert" "frag"];
+            };
+            rust_analyzer = {
+              enable = true;
+              installCargo = true;
+              installRustc = true;
+            };
             nixd.enable = true;
             lua-ls.enable = true;
             pyright.enable = true;
-			svelte.enable = true;
-			gopls.enable = true;
-			templ.enable = true;
-			html = {
-				enable = true;
-				filetypes = [ "html" "templ" ];
-			};
-			htmx = {
-				enable = true;
-				filetypes = [ "html" "templ" ];
-			};
+            svelte.enable = true;
+            gopls.enable = true;
+            templ.enable = true;
+            html = {
+              enable = true;
+              filetypes = ["html" "templ"];
+            };
+            htmx = {
+              enable = true;
+              filetypes = ["html" "templ"];
+            };
           };
           onAttach = lspKeymapsOnAttach;
-		};
+        };
       };
     };
 }
