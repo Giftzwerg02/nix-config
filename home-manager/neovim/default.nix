@@ -470,7 +470,7 @@ in {
 
           # typescript-tools.enable = true;
 
-          conform_nvim = {
+          conform-nvim = {
             settings = {
               default_format_opts = {
                 lsp_format = "fallback";
