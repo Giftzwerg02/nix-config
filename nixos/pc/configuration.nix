@@ -188,7 +188,6 @@
     clang
     libgccjit
     gcc
-    libstdcxx5
 
     texlive.combined.scheme-full
 

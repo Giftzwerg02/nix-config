@@ -167,7 +167,6 @@
     clang
     libgccjit
     gcc-unwrapped
-    libstdcxx5
     python311
     python311Packages.pip
     texlive.combined.scheme-full
