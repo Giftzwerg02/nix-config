@@ -560,69 +560,6 @@ in {
               '';
           };
         };
-
-        # typescript-tools.enable = true;
-
-        # conform_nvim = {
-        #   settings = {
-        #     default_format_opts = {
-        #       lsp_format = "fallback";
-        #     };
-        #
-        #     format_on_save = {
-        #       lsp_format = "fallback";
-        #       timeout_ms = 500;
-        #     };
-        #
-        #     formatters_by_ft = {
-        #       javascript = ["prettier"];
-        #       svelte = ["prettier"];
-        #       css = ["prettier"];
-        #       html = ["prettier"];
-        #       json = ["prettier"];
-        #       jsonc = ["prettier"];
-        #       scss = ["prettier"];
-        #       typescript = ["prettier"];
-        #       yaml = ["prettier"];
-        #     };
-        #   };
-        # };
-
-        lsp = {
-          enable = true;
-          servers = {
-            ts-ls = {
-              enable = true;
-              # filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
-            };
-            clangd.enable = true;
-            # glslls.enable = true;
-            glsl_analyzer = {
-              enable = true;
-              filetypes = ["vert" "frag"];
-            };
-            rust_analyzer = {
-              enable = true;
-              installCargo = true;
-              installRustc = true;
-            };
-            nixd.enable = true;
-            lua-ls.enable = true;
-            pyright.enable = true;
-            svelte.enable = true;
-            gopls.enable = true;
-            templ.enable = true;
-            html = {
-              enable = true;
-              filetypes = ["html" "templ"];
-            };
-            htmx = {
-              enable = true;
-              filetypes = ["html" "templ"];
-            };
-          };
-          onAttach = lspKeymapsOnAttach;
-        };
       };
     };
 }
