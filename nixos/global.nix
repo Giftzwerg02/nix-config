@@ -161,6 +161,8 @@
         enable = false;
       };
     };
-    opentabletdriver.enable = true;
+    opentabletdriver = {
+      enable = true;
+    };
   };
 }
