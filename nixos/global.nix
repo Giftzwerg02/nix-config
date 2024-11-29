@@ -93,7 +93,7 @@
       siji
       roboto
     ]
-    ++ pkgs.nerd-fonts;
+    ++ (builtins.attrValues pkgs.nerd-fonts);
 
   security.polkit.enable = true;
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
