@@ -547,19 +547,6 @@ in {
             onAttach = lspKeymapsOnAttach;
           };
         };
-
-        rustaceanvim = {
-          enable = false;
-          settings.server = {
-            on_attach =
-              /*
-              lua
-              */
-              ''
-                function(client, bufnr) ${lspKeymapsOnAttach} end
-              '';
-          };
-        };
       };
     };
 }
