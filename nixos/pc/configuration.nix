@@ -213,8 +213,8 @@
     # unstable.lime3ds
     rar
 
-    jetbrains.rider
-    jetbrains.clion
+    # jetbrains.rider
+    # jetbrains.clion
     jetbrains.idea-community
 
     zoom-us
@@ -223,12 +223,12 @@
     cargo-cross
     google-chrome
     easyeffects
-    renderdoc
-    ipe
+    # renderdoc
+    # ipe
     lunar-client
     anki
 
-    inputs.zen-browser.packages.x86_64-linux.specific
+    # inputs.zen-browser.packages.x86_64-linux.specific
   ];
 
   environment.etc."ppp/options".text = ''
