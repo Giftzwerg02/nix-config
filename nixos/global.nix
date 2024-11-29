@@ -91,7 +91,7 @@
     font-awesome
     siji
     roboto
-    nerd-fonts.jetbrains-mono
+    nerdfonts
   ];
 
   security.polkit.enable = true;
