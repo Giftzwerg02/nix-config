@@ -135,6 +135,7 @@ in {
           };
         in [
           pkgs.vimPlugins.go-nvim
+          clingoSyntaxPlugin
         ];
 
         extraConfigLua =
