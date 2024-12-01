@@ -130,7 +130,7 @@ in {
               owner = "rkaminsk";
               repo = "vim-syntax-clingo";
               rev = "9166d331ce66133716947ddabcd06a356807003c";
-              hash = "";
+              hash = "sha256-q/Q88NbK5krM9Z10cc84hhULYcovAE8Gqmu04yuda3Q=";
             };
           };
         in [
