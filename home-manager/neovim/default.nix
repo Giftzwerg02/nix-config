@@ -123,7 +123,17 @@ in {
           };
         };
 
-        extraPlugins = [
+        extraPlugins = let
+          clingoSyntaxPlugin = pkgs.vimUtils.buildVimPlugin {
+            name = "vim-syntax-clingo";
+            src = pkgs.fetchFromGitHub {
+              owner = "rkaminsk";
+              repo = "vim-syntax-clingo";
+              rev = "9166d331ce66133716947ddabcd06a356807003c";
+              hash = "";
+            };
+          };
+        in [
           pkgs.vimPlugins.go-nvim
         ];
 
