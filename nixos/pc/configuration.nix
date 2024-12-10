@@ -250,6 +250,13 @@
 
   programs.nix-ld.enable = true;
 
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
   networking.defaultGateway = {
     address = "192.168.1.1";
