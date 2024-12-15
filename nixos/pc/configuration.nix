@@ -117,6 +117,10 @@
       host = {
         enable = true;
       };
+      guest = {
+        enable = true;
+        dragAndDrop = true;
+      };
     };
   };
 
