@@ -524,6 +524,9 @@ in {
                 enable = true;
                 installCargo = true;
                 installRustc = true;
+                package = pkgs.rust-analyzer.overrideAttrs (old: {
+                  version = "2024-10-21";
+                });
                 settings = {
                   diagnostics = {
                     enable = true;
