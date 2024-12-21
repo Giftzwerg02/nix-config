@@ -524,6 +524,11 @@ in {
                 enable = true;
                 installCargo = true;
                 installRustc = true;
+                settings = {
+                  diagnostic = {
+                    refreshSupport = false;
+                  };
+                };
               };
               nixd = {
                 enable = true;

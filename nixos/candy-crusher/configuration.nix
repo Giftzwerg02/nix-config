@@ -407,7 +407,8 @@ in {
     ports.giteaHTTP
     ports.minecraft.s1
     ports.minecraft.rcon
-    25665 25675
+    25665
+    25675
     80
     443
     9999
