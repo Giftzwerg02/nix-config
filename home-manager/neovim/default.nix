@@ -520,13 +520,15 @@ in {
                 enable = true;
                 filetypes = ["vert" "frag"];
               };
-              rust_analyzer = {
+              rust_analyzer = let
+                my_ra = pkgs.rust-analyzer.overrideAttrs (old: {
+                  version = "2024-10-21";
+                });
+              in {
                 enable = true;
                 installCargo = true;
                 installRustc = true;
-                package = pkgs.rust-analyzer.overrideAttrs (old: {
-                  version = "2024-10-21";
-                });
+                package = my_ra;
                 settings = {
                   diagnostics = {
                     enable = true;
