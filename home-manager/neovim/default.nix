@@ -525,7 +525,8 @@ in {
                 installCargo = true;
                 installRustc = true;
                 settings = {
-                  diagnostic = {
+                  diagnostics = {
+                    enable = true;
                     refreshSupport = false;
                   };
                 };
