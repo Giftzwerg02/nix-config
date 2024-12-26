@@ -159,7 +159,7 @@
     python311Packages.pip
     texlive.combined.scheme-full
 
-    gnome.adwaita-icon-theme
+	adwaita-icon-theme
 
     wayland
     xdg-utils
