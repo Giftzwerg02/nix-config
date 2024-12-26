@@ -6,7 +6,6 @@
   lib,
   config,
   pkgs,
-  mkForce,
   ...
 }: {
   # You can import other NixOS modules here
@@ -75,24 +74,12 @@
   services.xserver = {
     enable = true;
     windowManager.i3 = {
-      enable = false;
+      enable = true;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
 
-    # windowManager.hypr = {
-    # 	enable = true;
-    # };
-
-    # desktopManager = {
-    # 	#plasma6.enable = true;
-    #
-    # };
-
-    #desktopManager.gnome.enable = true;
-
     videoDrivers = ["intel" "nvidia"];
-    #displayManager.sddm.enable = true;
-    displayManager.lightdm.enable = true;
+    displayManager.sddm.enable = true;
   };
 
   virtualisation.docker.enable = true;
@@ -174,7 +161,6 @@
     gnome.adwaita-icon-theme
 
     wayland
-    sway
     xdg-utils
     glib
     grim
@@ -192,29 +178,6 @@
   };
 
   programs.hyprland.enable = true;
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
-  services.greetd = let
-    swayConfig = pkgs.writeText "greetd-sway-config" ''
-      exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
-      bindsym Mod4+shift+e exec swaynag \
-      	-t warning \
-      	-m 'What do you want to do?' \
-      	-b 'Poweroff' 'systemctl poweroff' \
-      	-b 'Reboot' 'systemctl reboot'
-    '';
-  in {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
-      };
-    };
-  };
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 
