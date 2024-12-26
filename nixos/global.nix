@@ -91,8 +91,7 @@
     font-awesome
     siji
     roboto
-    nerdfonts
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   security.polkit.enable = true;
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
