@@ -78,7 +78,7 @@
       extraPackages = with pkgs; [i3status i3lock i3blocks];
     };
 
-    videoDrivers = ["intel" "nvidia"];
+    videoDrivers = ["modesetting" "nvidia"];
   };
 
   services.displayManager.sddm.enable = true;
