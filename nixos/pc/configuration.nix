@@ -161,6 +161,7 @@
     toggle-redshift
     ffmpeg
     p7zip
+    julia
 
     # Gui (eww) Utils
     pavucontrol
@@ -212,28 +213,17 @@
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
-
-    unstable.ryujinx
-    # unstable.lime3ds
     rar
 
-    # jetbrains.rider
-    # jetbrains.clion
     jetbrains.idea-community
 
-    zoom-us
     vscode
 
     cargo-cross
     google-chrome
     easyeffects
-    # renderdoc
-    # ipe
     lunar-client
     anki
-    unison-ucm
-
-    # inputs.zen-browser.packages.x86_64-linux.specific
   ];
 
   environment.etc."ppp/options".text = ''
