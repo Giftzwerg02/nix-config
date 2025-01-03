@@ -216,9 +216,7 @@
     linuxPackages.v4l2loopback
     rar
 
-    (jetbrains.idea-community.overrideAttrs (attrs: {
-      version = "2023.1.3";
-    }))
+    jetbrains.idea-community
 
     vscode
 
