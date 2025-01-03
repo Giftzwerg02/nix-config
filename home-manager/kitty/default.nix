@@ -21,6 +21,8 @@ in {
       };
       shellIntegration = {
         enableZshIntegration = true;
+        enableFishIntegration = true;
+        enableNushellIntegration = true;
       };
     };
   };

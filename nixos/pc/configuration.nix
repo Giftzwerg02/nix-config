@@ -134,6 +134,7 @@
     dunst
     home-manager
     zsh
+    fish
     gtk2
     gtk3
     gtk4

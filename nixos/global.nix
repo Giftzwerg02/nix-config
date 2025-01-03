@@ -60,10 +60,11 @@
   programs = {
     dconf.enable = true;
     zsh.enable = true;
+    fish.enable = true;
     ssh.startAgent = true;
   };
 
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
 
   hardware = {
     graphics = {
