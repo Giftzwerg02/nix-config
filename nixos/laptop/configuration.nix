@@ -90,6 +90,7 @@
     wget
     kitty
     git
+	rofi
     rofi-wayland
     libnotify
     dunst
@@ -161,7 +162,7 @@
 
 	adwaita-icon-theme
 
-    wayland
+		# wayland
     xdg-utils
     glib
     grim

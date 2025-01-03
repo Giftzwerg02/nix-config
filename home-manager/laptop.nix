@@ -46,14 +46,14 @@
   my-stylix-config.enable = true;
   my-git-config.enable = true;
   my-kitty-config.enable = true;
-  # my-i3-config = { # seems broken lmao
-  # 	enable = false;
-  #        wallpapers = [./imgs/background-laptop.jpg];
-  # };
-  my-sway-config = {
-    enable = false;
+  my-i3-config = { 
+  	enable = true;
     wallpapers = [./imgs/background-laptop.jpg];
   };
+  # my-sway-config = {
+  #   enable = false;
+  #   wallpapers = [./imgs/background-laptop.jpg];
+  # };
   my-carapace-config.enable = true;
   my-zsh-config.enable = true;
   my-zoxide-config.enable = true;
