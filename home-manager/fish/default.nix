@@ -14,7 +14,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs = {
       thefuck.enableFishIntegration = true;
-      kitty.shellIntegration.enableFishIntegration = true;
       fzf.enableFishIntegration = true;
       eza.enableFishIntegration = true;
     };
