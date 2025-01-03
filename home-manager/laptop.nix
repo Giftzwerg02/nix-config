@@ -10,7 +10,8 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ./sway
+    ./i3
+	./sway
     ./stylix
     ./git
     ./kitty
