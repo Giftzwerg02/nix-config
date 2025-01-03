@@ -216,7 +216,7 @@
     linuxPackages.v4l2loopback
     rar
 
-    jetbrains.idea-community
+    jetbrains.idea-community-bin
 
     vscode
 
