@@ -90,7 +90,7 @@
     wget
     kitty
     git
-	rofi
+    rofi
     rofi-wayland
     libnotify
     dunst
@@ -160,9 +160,9 @@
     python311Packages.pip
     texlive.combined.scheme-full
 
-	adwaita-icon-theme
+    adwaita-icon-theme
 
-		# wayland
+    # wayland
     xdg-utils
     glib
     grim
