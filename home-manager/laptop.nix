@@ -58,7 +58,11 @@
   my-carapace-config.enable = true;
   my-zsh-config.enable = true;
   my-zoxide-config.enable = true;
-  my-neovim-config.enable = true;
+  my-neovim-config = {
+	enable = true;
+    nixosConfigName = "laptop";
+    hmConfigName = "benjamin@laptop";
+  };
   my-dunst-config.enable = true;
   my-mimeApps-config.enable = true;
 
