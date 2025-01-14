@@ -23,7 +23,7 @@ in {
       shellAliases = {
         hms = "home-manager switch --flake ~/nix-config";
         ncs = "sudo nixos-rebuild switch --flake ~/nix-config";
-        switch = "ncs && hms";
+        nhs = "ncs && hms";
         cfg = "cd ~/nix-config && nvim .";
         ls = "eza";
         find = "fd";
