@@ -48,6 +48,13 @@
 
   programs.home-manager.enable = true;
 
+  programs.nix-index.enable = true;
+  programs.nix-index.enableFishIntegration = true;
+  programs.command-not-found.enable = false;
+  programs.fish.interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
