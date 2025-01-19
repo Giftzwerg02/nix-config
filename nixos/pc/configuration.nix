@@ -225,6 +225,8 @@
     easyeffects
     lunar-client
     anki
+
+    mupen64plus
   ];
 
   environment.etc."ppp/options".text = ''
