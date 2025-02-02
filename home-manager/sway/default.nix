@@ -61,19 +61,19 @@ in {
             DVI-D-1 = {
               pos = "1920 0";
               transform = "270";
-              bg = "${builtins.elemAt cfg.wallpapers 0}";
+              bg = "${builtins.elemAt cfg.wallpapers 0} center";
             };
 
             #center
             DP-1 = {
               pos = "3000 704";
-              bg = "${builtins.elemAt cfg.wallpapers 1}";
+              bg = "${builtins.elemAt cfg.wallpapers 1} center";
             };
 
             #right
             DP-3 = {
               pos = "4920 704";
-              bg = "${builtins.elemAt cfg.wallpapers 2}";
+              bg = "${builtins.elemAt cfg.wallpapers 2} center";
             };
           };
 
