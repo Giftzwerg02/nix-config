@@ -201,8 +201,8 @@ in {
 
           bars = [
             {
-              command = "${pkgs.waybar}/bin/waybar";
-              statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
+              # command = "${pkgs.waybar}/bin/waybar";
+              # statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
             }
           ];
 
@@ -230,6 +230,11 @@ in {
             "sway/workspaces" = {
               disable-scroll = true;
               all-outputs = false;
+            };
+
+            custom-status = {
+              format = "json";
+              exec = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
             };
           }
         ];
