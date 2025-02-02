@@ -222,7 +222,7 @@ in {
           {
             layer = "top";
             position = "bottom";
-            height = 30;
+            height = 15;
 
             modules-left = ["sway/workspaces" "sway/mode"];
             modules-center = ["sway/window"];
@@ -230,7 +230,7 @@ in {
 
             "sway/workspaces" = {
               disable-scroll = true;
-              all-outputs = true;
+              all-outputs = false;
             };
           }
         ];
