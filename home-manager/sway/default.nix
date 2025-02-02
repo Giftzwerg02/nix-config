@@ -40,12 +40,12 @@ in {
       in {
         enable = true;
         wrapperFeatures.gtk = true;
-        extraOptions = [ "--unsupported-gpu" ];
+        extraOptions = ["--unsupported-gpu"];
         extraConfig = ''
-    input * {
-      xkb_layout "de"
-    }
-  '';
+          input * {
+            xkb_layout "de"
+          }
+        '';
         config = {
           modifier = "${modifier}";
           terminal = "kitty";
@@ -202,7 +202,6 @@ in {
           bars = [
             {
               command = "${pkgs.waybar}/bin/waybar";
-              position = "bottom";
               statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
             }
           ];
@@ -215,6 +214,26 @@ in {
         };
       };
 
-      programs.waybar.enable = true;
+      programs.waybar = {
+        enable = true;
+        systemd.enable = true;
+
+        settings = [
+          {
+            layer = "top";
+            position = "bottom";
+            height = 30;
+
+            modules-left = ["sway/workspaces" "sway/mode"];
+            modules-center = ["sway/window"];
+            modules-right = ["cpu" "memory" "temperature" "network" "battery" "pulseaudio" "clock"];
+
+            "sway/workspaces" = {
+              disable-scroll = true;
+              all-outputs = true;
+            };
+          }
+        ];
+      };
     };
 }
