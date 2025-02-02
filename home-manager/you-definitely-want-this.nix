@@ -51,6 +51,10 @@ in {
       enable = true;
       wallpapers = cfg.wallpapers;
     };
+    my-sway-config = {
+      enable = true;
+      wallpapers = cfg.wallpapers;
+    };
     my-carapace-config.enable = true;
     my-zsh-config.enable = true;
     my-fish-config.enable = true;

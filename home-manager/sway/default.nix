@@ -5,6 +5,7 @@
   ...
 }: let
   cfg = config.my-sway-config;
+  pkgsBin = p: "${pkgs.${p}}/bin/${p}";
 in {
   options = {
     my-sway-config = {
@@ -25,7 +26,7 @@ in {
     lib.mkIf cfg.enable {
       wayland.windowManager.sway = let
         modifier = "Mod4";
-        refresh_i3status = "killall -SIGUSR1 i3status";
+        refresh_sway_status = "killall -SIGUSR1 i3status";
         ws1 = "1";
         ws2 = "2";
         ws3 = "3";
@@ -38,6 +39,7 @@ in {
         ws10 = "10";
       in {
         enable = true;
+        wrapperFeatures.gtk = true;
         config = {
           modifier = "${modifier}";
 
@@ -49,9 +51,9 @@ in {
           ];
 
           keybindings = {
-            "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_i3status}";
-            "XF86AudioLowerVolume" = "exec --no-startup-id pamixer --decrease 5 && ${refresh_i3status}";
-            "XF86AudioMute" = "exec --no-startup-id pamixer --togle-mute && ${refresh_i3status}";
+            "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_sway_status}";
+            "XF86AudioLowerVolume" = "exec --no-startup-id pamixer --decrease 5 && ${refresh_sway_status}";
+            "XF86AudioMute" = "exec --no-startup-id pamixer --togle-mute && ${refresh_sway_status}";
 
             "${modifier}+Control+d" = "exec dunstctl action";
 
@@ -59,7 +61,7 @@ in {
 
             "${modifier}+Shift+q" = "kill";
 
-            "${modifier}+p" = "exec \"rofi -show drun -show-icons\"";
+            "${modifier}+p" = "exec \"${pkgsBin "rofi-wayland"} -show drun -show-icons\"";
 
             # toggle nightlight (redshift)
             "${modifier}+Shift+a" = "exec \"toggle-redshift\"";
@@ -68,7 +70,7 @@ in {
             "${modifier}+Shift+s" = "exec \"flameshot gui\"";
 
             # lock
-            "${modifier}+Control+l" = "exec \"i3lock --color 181926\"";
+            "${modifier}+Control+l" = "exec \"${pkgsBin "swaylock"} --color 181926\"";
 
             # change focus
             "${modifier}+j" = "focus left";

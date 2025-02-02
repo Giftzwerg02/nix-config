@@ -130,6 +130,7 @@
     kitty
     git
     rofi
+    rofi-wayland
     libnotify
     dunst
     home-manager
@@ -228,6 +229,11 @@
 
     mupen64plus
   ];
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
 
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote
