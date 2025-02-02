@@ -40,6 +40,7 @@ in {
       in {
         enable = true;
         wrapperFeatures.gtk = true;
+        extraOptions = [ "--unsupported-gpu" ];
         config = {
           modifier = "${modifier}";
           terminal = "kitty";
