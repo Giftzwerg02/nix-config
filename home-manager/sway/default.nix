@@ -51,11 +51,28 @@ in {
           terminal = "kitty";
           startup = [
             # {command = "sway";}
-            # {command = "nm-applet";}
-            # {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
-            # {command = "flameshot";}
-            {command = "firefox";}
+            {command = "nm-applet";}
+            {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
+            {command = "flameshot";}
           ];
+
+          output = {
+            #left
+            DVI-D-1 = {
+              pos = "1920 0";
+              transform = "90";
+            };
+
+            #center
+            DP-1 = {
+              pos = "3000 704";
+            };
+
+            #right
+            DP-3 = {
+              pos = "4920 704";
+            };
+          };
 
           keybindings = {
             "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_sway_status}";
