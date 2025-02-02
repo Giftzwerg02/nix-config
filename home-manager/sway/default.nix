@@ -60,7 +60,7 @@ in {
             #left
             DVI-D-1 = {
               pos = "1920 0";
-              transform = "90";
+              transform = "270";
             };
 
             #center
