@@ -231,15 +231,14 @@ in {
               disable-scroll = true;
               all-outputs = false;
             };
-
-            style = ''
-              window#waybar {
-                padding: 0 !important;
-                margin: 0 !important;
-              }
-            '';
           }
         ];
+        style = ''
+          window#waybar {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+        '';
       };
     };
 }
