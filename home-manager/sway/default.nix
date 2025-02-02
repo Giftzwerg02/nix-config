@@ -42,12 +42,13 @@ in {
         wrapperFeatures.gtk = true;
         config = {
           modifier = "${modifier}";
-
+          terminal = "kitty";
           startup = [
-            {command = "sway";}
-            {command = "nm-applet";}
-            {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
-            {command = "flameshot";}
+            # {command = "sway";}
+            # {command = "nm-applet";}
+            # {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
+            # {command = "flameshot";}
+            {command = "firefox";}
           ];
 
           keybindings = {
