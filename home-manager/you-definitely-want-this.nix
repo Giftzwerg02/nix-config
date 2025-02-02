@@ -8,6 +8,7 @@
 in {
   imports = [
     ./i3
+    ./sway
     ./stylix
     ./git
     ./kitty
