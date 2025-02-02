@@ -54,6 +54,7 @@ in {
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
             {command = "flameshot";}
+            {command = "waybar"; always = true;}
           ];
 
           output = {
@@ -199,12 +200,20 @@ in {
             };
           };
 
+          bars = [
+            {
+               statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
+            }
+          ];
+
           # bars = [
           #   {
           #     statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
           #   }
           # ];
         };
+
+        programs.waybar.enable = true;
       };
     };
 }
