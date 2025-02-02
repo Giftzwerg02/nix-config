@@ -234,9 +234,8 @@ in {
           }
         ];
         style = ''
-          window#waybar {
-            padding: 0 !important;
-            margin: 0 !important;
+          * {
+            min-height: 0;
           }
         '';
       };
