@@ -222,7 +222,6 @@ in {
           {
             layer = "top";
             position = "bottom";
-            height = 15;
 
             modules-left = ["sway/workspaces" "sway/mode"];
             modules-center = ["sway/window"];
@@ -232,6 +231,13 @@ in {
               disable-scroll = true;
               all-outputs = false;
             };
+
+            style = ''
+              window#waybar {
+                padding: 0 !important;
+                margin: 0 !important;
+              }
+            '';
           }
         ];
       };
