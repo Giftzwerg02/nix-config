@@ -61,7 +61,7 @@ in {
 
             "${modifier}+Shift+q" = "kill";
 
-            "${modifier}+p" = "exec \"${pkgsBin "rofi-wayland"} -show drun -show-icons\"";
+            "${modifier}+p" = "exec \"${pkgs.rofi-wayland}/bin/rofi -show drun -show-icons\"";
 
             # toggle nightlight (redshift)
             "${modifier}+Shift+a" = "exec \"toggle-redshift\"";
