@@ -54,7 +54,6 @@ in {
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
             {command = "flameshot";}
-            {command = "waybar"; always = true;}
           ];
 
           output = {
