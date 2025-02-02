@@ -41,6 +41,11 @@ in {
         enable = true;
         wrapperFeatures.gtk = true;
         extraOptions = [ "--unsupported-gpu" ];
+        extraConfig = ''
+    input * {
+      xkb_layout "de"
+    }
+  '';
         config = {
           modifier = "${modifier}";
           terminal = "kitty";
