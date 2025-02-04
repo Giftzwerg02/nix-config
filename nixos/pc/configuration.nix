@@ -228,6 +228,7 @@
     anki
 
     mupen64plus
+    mangohud
   ];
 
   programs.sway = {
