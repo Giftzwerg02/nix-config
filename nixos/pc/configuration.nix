@@ -182,7 +182,7 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
-    thunderbird
+    thunderbird-latest
     remmina
     pandoc
     pandoc-for-homework
