@@ -160,7 +160,11 @@
     python311Packages.pip
     texlive.combined.scheme-full
 
-	adwaita-icon-theme
+    #Gaming
+    mupen64plus
+    rmg
+
+	  adwaita-icon-theme
 
 		# wayland
     xdg-utils
