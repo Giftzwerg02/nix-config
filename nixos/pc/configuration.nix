@@ -130,10 +130,12 @@
     kitty
     git
     rofi
+    rofi-wayland
     libnotify
     dunst
     home-manager
     zsh
+    fish
     gtk2
     gtk3
     gtk4
@@ -224,7 +226,15 @@
     easyeffects
     lunar-client
     anki
+
+    mupen64plus
+    mangohud
   ];
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
 
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote

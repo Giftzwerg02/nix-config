@@ -5,6 +5,7 @@
   ...
 }: let
   cfg = config.my-sway-config;
+  pkgsBin = p: "${pkgs.${p}}/bin/${p}";
 in {
   options = {
     my-sway-config = {
@@ -25,7 +26,7 @@ in {
     lib.mkIf cfg.enable {
       wayland.windowManager.sway = let
         modifier = "Mod4";
-        refresh_i3status = "killall -SIGUSR1 i3status";
+        refresh_sway_status = "killall -SIGUSR1 i3status";
         ws1 = "1";
         ws2 = "2";
         ws3 = "3";
@@ -38,20 +39,48 @@ in {
         ws10 = "10";
       in {
         enable = true;
+        wrapperFeatures.gtk = true;
+        extraOptions = ["--unsupported-gpu"];
+        extraConfig = ''
+          input * {
+            xkb_layout "de"
+          }
+        '';
         config = {
           modifier = "${modifier}";
-
+          terminal = "kitty";
           startup = [
-            {command = "sway";}
+            # {command = "sway";}
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
             {command = "flameshot";}
           ];
 
+          output = {
+            #left
+            DVI-D-1 = {
+              pos = "1920 0";
+              transform = "270";
+              bg = "${builtins.elemAt cfg.wallpapers 1} fill";
+            };
+
+            #center
+            DP-1 = {
+              pos = "3000 704";
+              bg = "${builtins.elemAt cfg.wallpapers 0} fill";
+            };
+
+            #right
+            DP-3 = {
+              pos = "4920 704";
+              bg = "${builtins.elemAt cfg.wallpapers 3} fill";
+            };
+          };
+
           keybindings = {
-            "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_i3status}";
-            "XF86AudioLowerVolume" = "exec --no-startup-id pamixer --decrease 5 && ${refresh_i3status}";
-            "XF86AudioMute" = "exec --no-startup-id pamixer --togle-mute && ${refresh_i3status}";
+            "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_sway_status}";
+            "XF86AudioLowerVolume" = "exec --no-startup-id pamixer --decrease 5 && ${refresh_sway_status}";
+            "XF86AudioMute" = "exec --no-startup-id pamixer --togle-mute && ${refresh_sway_status}";
 
             "${modifier}+Control+d" = "exec dunstctl action";
 
@@ -59,7 +88,7 @@ in {
 
             "${modifier}+Shift+q" = "kill";
 
-            "${modifier}+p" = "exec \"rofi -show drun -show-icons\"";
+            "${modifier}+p" = "exec \"${pkgs.rofi-wayland}/bin/rofi -show drun -show-icons\"";
 
             # toggle nightlight (redshift)
             "${modifier}+Shift+a" = "exec \"toggle-redshift\"";
@@ -68,7 +97,7 @@ in {
             "${modifier}+Shift+s" = "exec \"flameshot gui\"";
 
             # lock
-            "${modifier}+Control+l" = "exec \"i3lock --color 181926\"";
+            "${modifier}+Control+l" = "exec \"${pkgsBin "swaylock"} --color 181926\"";
 
             # change focus
             "${modifier}+j" = "focus left";
@@ -170,6 +199,13 @@ in {
             };
           };
 
+          bars = [
+            {
+              # command = "${pkgs.waybar}/bin/waybar";
+              # statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
+            }
+          ];
+
           # bars = [
           #   {
           #     statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
@@ -178,56 +214,35 @@ in {
         };
       };
 
-      programs.i3status-rust = {
-        enable = false;
-        bars = {
-          ${bar_name} = {
-            theme = "ctp-mocha";
-            icons = "awesome6";
+      programs.waybar = {
+        enable = true;
+        systemd.enable = true;
 
-            blocks = [
-              {
-                block = "battery";
-              }
+        settings = [
+          {
+            layer = "top";
+            position = "bottom";
 
-              {
-                alert = 10.0;
-                block = "disk_space";
-                info_type = "available";
-                interval = 60;
-                path = "/";
-                warning = 20.0;
-              }
+            modules-left = ["sway/workspaces" "sway/mode"];
+            modules-center = ["sway/window"];
+            modules-right = ["cpu" "memory" "temperature" "network" "battery" "pulseaudio" "clock"];
 
-              {
-                block = "memory";
-                format = " $icon $mem_used_percents ";
-                format_alt = " $icon $swap_used_percents ";
-              }
+            "sway/workspaces" = {
+              disable-scroll = true;
+              all-outputs = false;
+            };
 
-              {
-                block = "cpu";
-                interval = 1;
-              }
-
-              {
-                block = "load";
-                format = " $icon $1m ";
-                interval = 1;
-              }
-
-              {
-                block = "sound";
-              }
-
-              {
-                block = "time";
-                format = " $timestamp.datetime(f:'%a %d/%m %R') ";
-                interval = 60;
-              }
-            ];
-          };
-        };
+            custom-status = {
+              format = "json";
+              exec = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-${bar_name}.toml";
+            };
+          }
+        ];
+        style = ''
+          * {
+            min-height: 0;
+          }
+        '';
       };
     };
 }

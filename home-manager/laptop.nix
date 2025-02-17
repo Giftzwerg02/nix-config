@@ -11,7 +11,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./i3
-	./sway
+    ./sway
     ./stylix
     ./git
     ./kitty
@@ -47,8 +47,8 @@
   my-stylix-config.enable = true;
   my-git-config.enable = true;
   my-kitty-config.enable = true;
-  my-i3-config = { 
-  	enable = true;
+  my-i3-config = {
+    enable = true;
     wallpapers = [./imgs/background-laptop.jpg];
   };
   # my-sway-config = {
@@ -59,7 +59,7 @@
   my-zsh-config.enable = true;
   my-zoxide-config.enable = true;
   my-neovim-config = {
-	enable = true;
+    enable = true;
     nixosConfigName = "laptop";
     hmConfigName = "benjamin@laptop";
   };
