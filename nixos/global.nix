@@ -24,8 +24,8 @@
 
   # Select internationalisation properties.
   i18n = let
-    locale = "de_AT.UTF-8";
-    # locale = "sk_SK.UTF-8";
+    # locale = "de_AT.UTF-8";
+    locale = "sk_SK.UTF-8";
   in {
     supportedLocales = [
       "all"
@@ -64,7 +64,7 @@
     ssh.startAgent = true;
   };
 
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.zsh;
 
   hardware = {
     graphics = {

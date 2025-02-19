@@ -211,6 +211,7 @@
     unstable.vesktop
     premid
     r2modman
+    lumafly
 
     # extras
     # Used for obs virtual cam
