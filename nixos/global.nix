@@ -151,6 +151,47 @@
           (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf" ''
             wireplumber.settings = { bluetooth.autoswitch-to-headset-profile = false }
           '')
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-disable-suspension.conf" ''
+            monitor.alsa.rules = [
+              {
+                matches = [
+                  {
+                    # Matches all sources
+                    node.name = "~alsa_input.*"
+                  },
+                  {
+                    # Matches all sinks
+                    node.name = "~alsa_output.*"
+                  }
+                ]
+                actions = {
+                  update-props = {
+                    session.suspend-timeout-seconds = 0
+                  }
+                }
+              }
+            ]
+            # bluetooth devices
+            monitor.bluez.rules = [
+              {
+                matches = [
+                  {
+                    # Matches all sources
+                    node.name = "~bluez_input.*"
+                  },
+                  {
+                    # Matches all sinks
+                    node.name = "~bluez_output.*"
+                  }
+                ]
+                actions = {
+                  update-props = {
+                    session.suspend-timeout-seconds = 0
+                  }
+                }
+              }
+            ]
+          '')
         ];
       };
     };
