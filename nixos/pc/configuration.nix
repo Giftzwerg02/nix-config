@@ -208,7 +208,7 @@
     heroic
     wineWowPackages.staging
     lutris
-    unstable.vesktop
+    unstable.legcord
     premid
     r2modman
     lumafly
