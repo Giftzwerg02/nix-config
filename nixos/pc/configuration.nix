@@ -208,6 +208,7 @@
     heroic
     wineWowPackages.staging
     lutris
+    vesktop
     unstable.legcord
     premid
     r2modman
