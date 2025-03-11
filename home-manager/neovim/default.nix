@@ -526,8 +526,8 @@ in {
                 });
               in {
                 enable = true;
-                installCargo = true;
-                installRustc = true;
+                installCargo = false;
+                installRustc = false;
                 package = my_ra;
                 settings = {
                   diagnostics = {
