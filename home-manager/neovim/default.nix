@@ -522,7 +522,7 @@ in {
               };
               rust_analyzer = let
                 my_ra = pkgs.rust-analyzer.overrideAttrs (old: {
-                  version = "2024-10-21";
+                  version = "2025-03-10";
                 });
               in {
                 enable = true;
