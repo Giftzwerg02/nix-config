@@ -174,6 +174,7 @@
 
     # Dev and Work (as if)
     firefox
+    firefox-beta
     unstable.xournalpp
 
     bitwarden
