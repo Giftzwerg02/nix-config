@@ -389,26 +389,12 @@ in {
             };
           };
 
-          treesitter = {
+          treesitter = 
+          {
             enable = true;
-            # settings.ensure_installed = [ ];
+            grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars ++ [
+            ];
             settings = {
-              ensure_installed = [
-                "vim"
-                "bash"
-                "lua"
-                "python"
-                "json"
-                "typescript"
-                "tsx"
-                "rust"
-                "latex"
-                "java"
-                "go"
-                "templ"
-                "glsl"
-              ];
-
               indent.enable = true;
               highlight = {
                 additional_vim_regex_highlighting = true;
@@ -535,6 +521,9 @@ in {
                     refreshSupport = false;
                   };
                 };
+              };
+              pest_ls = {
+                enable = true;
               };
               nixd = {
                 enable = true;
