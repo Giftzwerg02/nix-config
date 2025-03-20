@@ -223,6 +223,7 @@
     jetbrains.idea-community
 
     vscode
+    jetbrains.clion
 
     cargo-cross
     google-chrome
