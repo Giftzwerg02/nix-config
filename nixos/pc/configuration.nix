@@ -221,6 +221,7 @@
     rar
 
     jetbrains.idea-community
+    jetbrains.idea-ultimate
 
     vscode
     jetbrains.clion
