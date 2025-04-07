@@ -83,7 +83,7 @@
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = ["networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox"];
+    extraGroups = ["networkmanager" "wheel" "adbusers"];
   };
 
   services.displayManager = {
@@ -112,15 +112,6 @@
     docker.rootless = {
       enable = true;
       setSocketVariable = true;
-    };
-    virtualbox = {
-      host = {
-        enable = true;
-      };
-      guest = {
-        enable = true;
-        dragAndDrop = true;
-      };
     };
   };
 
