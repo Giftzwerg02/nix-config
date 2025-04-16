@@ -495,6 +495,7 @@ in {
           lsp = {
             enable = true;
             servers = {
+              sqls.enable = true;
               ts_ls = {
                 enable = true;
                 filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
