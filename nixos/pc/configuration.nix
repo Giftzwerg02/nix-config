@@ -225,7 +225,18 @@
 
     mupen64plus
     mangohud
+
+    man-pages
+    man-pages-posix
   ];
+
+  documentation = {
+    enable = true;
+    dev.enable = true;
+    man.enable = true;
+    info.enable = true;
+    doc.enable = true;
+  };
 
   programs.sway = {
     enable = true;
