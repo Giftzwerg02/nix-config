@@ -84,6 +84,7 @@
     isNormalUser = true;
     description = "Benjamin Komar";
     extraGroups = ["networkmanager" "wheel" "adbusers"];
+    shell = pkgs.zsh;
   };
 
   services.displayManager = {
