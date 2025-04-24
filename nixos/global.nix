@@ -24,8 +24,8 @@
 
   # Select internationalisation properties.
   i18n = let
-    locale = "de_AT.UTF-8";
-    # locale = "sk_SK.UTF-8";
+    # locale = "de_AT.UTF-8";
+    locale = "sk_SK.UTF-8";
   in {
     supportedLocales = [
       "all"
@@ -64,7 +64,7 @@
     ssh.startAgent = true;
   };
 
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.zsh;
 
   hardware = {
     graphics = {
@@ -96,7 +96,10 @@
     ]
     ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
-  security.polkit.enable = true;
+  security = {
+    polkit.enable = true;
+    rtkit.enable = true;
+  };
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
     wantedBy = ["graphical-session.target"];
@@ -150,6 +153,47 @@
         configPackages = [
           (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf" ''
             wireplumber.settings = { bluetooth.autoswitch-to-headset-profile = false }
+          '')
+          (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-disable-suspension.conf" ''
+            monitor.alsa.rules = [
+              {
+                matches = [
+                  {
+                    # Matches all sources
+                    node.name = "~alsa_input.*"
+                  },
+                  {
+                    # Matches all sinks
+                    node.name = "~alsa_output.*"
+                  }
+                ]
+                actions = {
+                  update-props = {
+                    session.suspend-timeout-seconds = 0
+                  }
+                }
+              }
+            ]
+            # bluetooth devices
+            monitor.bluez.rules = [
+              {
+                matches = [
+                  {
+                    # Matches all sources
+                    node.name = "~bluez_input.*"
+                  },
+                  {
+                    # Matches all sinks
+                    node.name = "~bluez_output.*"
+                  }
+                ]
+                actions = {
+                  update-props = {
+                    session.suspend-timeout-seconds = 0
+                  }
+                }
+              }
+            ]
           '')
         ];
       };

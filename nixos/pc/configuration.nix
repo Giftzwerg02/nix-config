@@ -83,7 +83,8 @@
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = ["networkmanager" "wheel" "adbusers" "user-with-access-to-virtualbox"];
+    extraGroups = ["networkmanager" "wheel" "adbusers"];
+    shell = pkgs.zsh;
   };
 
   services.displayManager = {
@@ -112,15 +113,6 @@
     docker.rootless = {
       enable = true;
       setSocketVariable = true;
-    };
-    virtualbox = {
-      host = {
-        enable = true;
-      };
-      guest = {
-        enable = true;
-        dragAndDrop = true;
-      };
     };
   };
 
@@ -174,6 +166,7 @@
 
     # Dev and Work (as if)
     firefox
+    firefox-beta
     unstable.xournalpp
 
     bitwarden
@@ -208,9 +201,11 @@
     heroic
     wineWowPackages.staging
     lutris
-    unstable.vesktop
+    vesktop
+    unstable.legcord
     premid
     r2modman
+    lumafly
 
     # extras
     # Used for obs virtual cam
@@ -218,8 +213,10 @@
     rar
 
     jetbrains.idea-community
+    jetbrains.idea-ultimate
 
     vscode
+    jetbrains.clion
 
     cargo-cross
     google-chrome
@@ -229,7 +226,18 @@
 
     mupen64plus
     mangohud
+
+    man-pages
+    man-pages-posix
   ];
+
+  documentation = {
+    enable = true;
+    dev.enable = true;
+    man.enable = true;
+    info.enable = true;
+    doc.enable = true;
+  };
 
   programs.sway = {
     enable = true;

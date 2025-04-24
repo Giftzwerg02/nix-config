@@ -389,26 +389,12 @@ in {
             };
           };
 
-          treesitter = {
+          treesitter = 
+          {
             enable = true;
-            # settings.ensure_installed = [ ];
+            grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars ++ [
+            ];
             settings = {
-              ensure_installed = [
-                "vim"
-                "bash"
-                "lua"
-                "python"
-                "json"
-                "typescript"
-                "tsx"
-                "rust"
-                "latex"
-                "java"
-                "go"
-                "templ"
-                "glsl"
-              ];
-
               indent.enable = true;
               highlight = {
                 additional_vim_regex_highlighting = true;
@@ -509,9 +495,10 @@ in {
           lsp = {
             enable = true;
             servers = {
+              sqls.enable = true;
               ts_ls = {
                 enable = true;
-                # filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
+                filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
               };
               gleam.enable = true;
               clangd.enable = true;
@@ -522,12 +509,12 @@ in {
               };
               rust_analyzer = let
                 my_ra = pkgs.rust-analyzer.overrideAttrs (old: {
-                  version = "2024-10-21";
+                  version = "2025-03-10";
                 });
               in {
                 enable = true;
-                installCargo = true;
-                installRustc = true;
+                installCargo = false;
+                installRustc = false;
                 package = my_ra;
                 settings = {
                   diagnostics = {
@@ -535,6 +522,9 @@ in {
                     refreshSupport = false;
                   };
                 };
+              };
+              pest_ls = {
+                enable = true;
               };
               nixd = {
                 enable = true;
