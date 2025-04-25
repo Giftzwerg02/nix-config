@@ -163,6 +163,7 @@
     vlc
     flameshot
     obs-studio
+    krita
 
     # Dev and Work (as if)
     firefox
