@@ -225,7 +225,6 @@
     lunar-client
     anki
 
-    mupen64plus
     mangohud
 
     man-pages
