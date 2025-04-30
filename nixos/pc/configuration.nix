@@ -185,6 +185,8 @@
     unstable.cypress
     unstable.dbeaver-bin
 
+    blender
+
     # Compilers
     clang
     libgccjit
