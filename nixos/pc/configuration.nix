@@ -90,11 +90,12 @@
   services.displayManager = {
     sddm = {
       enable = true;
-    };
-    ly = {
-      enable = false;
+      wayland.enable = true;
+      settings.General.DisplayServer = "wayland";
     };
   };
+
+  services.desktopManager.plasma6.enable = true;
 
   services.xserver = {
     displayManager.setupCommands = ''
