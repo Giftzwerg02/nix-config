@@ -204,6 +204,7 @@
     heroic
     wineWowPackages.staging
     lutris
+    adwaita-icon-theme # needed for lutris
     vesktop
     unstable.legcord
     premid
