@@ -100,6 +100,16 @@
     plasma-browser-integration
     konsole
     elisa
+    dolphin
+    dolphin-plugins
+    spectacle
+    kate
+    okular
+    gwenview
+    ark
+    ffmpegthumbs
+    krdp
+    baloo-widgets
   ];
 
   services.xserver = {
