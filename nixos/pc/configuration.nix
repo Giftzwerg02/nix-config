@@ -201,7 +201,9 @@
     unstable.cypress
     unstable.dbeaver-bin
 
-    blender
+    (blender.override {
+      cudaSupport = true;
+    })
 
     # Compilers
     clang
