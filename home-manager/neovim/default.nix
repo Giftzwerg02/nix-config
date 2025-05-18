@@ -517,6 +517,8 @@ in {
                 installRustc = false;
                 package = my_ra;
                 settings = {
+                  cargo.features = "all";
+                  check.command = "clippy";
                   diagnostics = {
                     enable = true;
                     refreshSupport = false;

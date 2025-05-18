@@ -250,8 +250,6 @@
 
     man-pages
     man-pages-posix
-    
-    cudatoolkit
   ];
 
   documentation = {
