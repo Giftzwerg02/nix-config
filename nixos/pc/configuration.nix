@@ -210,8 +210,6 @@
     libgccjit
     gcc
 
-    texlive.combined.scheme-full
-
     # Formatters
     alejandra
 

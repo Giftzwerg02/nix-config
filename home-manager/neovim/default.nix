@@ -245,7 +245,7 @@ in {
           nvim-autopairs.enable = true;
 
           vimtex = {
-            enable = true;
+            enable = false;
             settings.view_method = "zathura";
           };
 

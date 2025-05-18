@@ -159,7 +159,6 @@
     gcc-unwrapped
     python311
     python311Packages.pip
-    texlive.combined.scheme-full
 
     #Gaming
     mupen64plus
