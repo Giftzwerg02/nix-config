@@ -248,6 +248,8 @@
 
     man-pages
     man-pages-posix
+
+    figma-linux
   ];
 
   documentation = {
