@@ -142,6 +142,7 @@
         night = 2000;
       };
     };
+    playerctld.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

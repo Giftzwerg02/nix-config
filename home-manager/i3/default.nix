@@ -52,6 +52,8 @@ in {
             "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_i3status}";
             "XF86AudioLowerVolume" = "exec --no-startup-id pamixer --decrease 5 && ${refresh_i3status}";
             "XF86AudioMute" = "exec --no-startup-id pamixer --togle-mute && ${refresh_i3status}";
+            "XF86AudioPlay" = "playerctl play-pause";
+            "XF86AudioPause" = "playerctl play-pause";
 
             "${modifier}+Control+d" = "exec dunstctl action";
 
