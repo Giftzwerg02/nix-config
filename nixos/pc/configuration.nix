@@ -144,6 +144,7 @@
     zip
     unzip
     openssl
+    dust
 
     # Cli Utils deez nuts
     killall
