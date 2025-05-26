@@ -14,7 +14,6 @@ in {
 
   config = lib.mkIf cfg.enable {
     xdg.enable = true;
-
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
