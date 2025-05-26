@@ -13,7 +13,6 @@
         */
         ''
           alias "cat" = bat
-          alias "cd" = z
           alias "find" = fd
           alias "hms" = nh home switch ~/nix-config
           alias "ls" = eza
