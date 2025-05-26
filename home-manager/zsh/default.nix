@@ -48,7 +48,7 @@ in {
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
 
-      initExtra =
+      initContent =
         /*
         bash
         */

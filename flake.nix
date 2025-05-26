@@ -101,7 +101,7 @@
           ./home-manager/pc.nix
 
           # Stylix
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
         ];
       };
 
@@ -113,7 +113,7 @@
           ./home-manager/laptop.nix
 
           # Stylix
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
         ];
       };
     };
