@@ -137,6 +137,14 @@ in {
               broadcast-rcon-to-ops = false;
             };
           };
+          allOfCreate-1 = {
+            enable = true;
+            package = pkgs.
+            serverProperties = {
+              server-port = 6969;
+              gamemode = "survival";
+            };
+          };
         };
       };
 

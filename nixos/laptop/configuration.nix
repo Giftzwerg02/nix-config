@@ -55,12 +55,6 @@
       # Force clean git-directory before rebuilding
       allow-dirty = false;
     };
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
   };
 
   networking.hostName = "laptop";
