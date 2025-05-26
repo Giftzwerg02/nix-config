@@ -47,6 +47,7 @@
   home.homeDirectory = "/home/benjamin";
 
   programs.home-manager.enable = true;
+  programs.zathura.enable = true;
 
   programs.nix-index.enable = true;
   programs.command-not-found.enable = false;
