@@ -11,8 +11,8 @@
       shellAliases = {
         hms = "nh home switch ~/nix-config";
         ncs = "nh os switch ~/nix-config";
-        switch = "ncs && hms";
-        cfg = "cd ~/nix-config && nvim .";
+        switch = "ncs; hms";
+        cfg = "cd ~/nix-config; nvim .";
         ls = "eza";
         find = "fd";
         cat = "bat";
