@@ -8,29 +8,31 @@
     nushell = {
       enable = true;
       configFile.source = ./config.nu;
-      shellAliases = {
-        hms = "nh home switch ~/nix-config";
-        ncs = "nh os switch ~/nix-config";
-        ls = "eza";
-        find = "fd";
-        cat = "bat";
-        vim = "nvim";
-        vi = "nvim";
-        cd = "z";
-        ssh = "with-env { TERM: linux } { ssh }";
-      };
+      extraConfig =
+        /*
+        nu
+        */
+        ''
+          alias "cat" = bat
+          alias "cd" = z
+          alias "find" = fd
+          alias "hms" = nh home switch ~/nix-config
+          alias "ls" = eza
+          alias "ncs" = nh os switch ~/nix-config
+          alias "ssh" = with-env { TERM: linux } { ssh }
+          alias "vi" = nvim
+          alias "vim" = nvim
 
-      extraConfig = /* nu */ ''
-      def switch [] {
-        ncs
-        hms
-      }
+          def switch [] {
+            ncs
+            hms
+          }
 
-      def cfg [] {
-        cd ~/nix-config
-        nvim .
-      }
-      '';
+          def cfg [] {
+            cd ~/nix-config
+            nvim .
+          }
+        '';
     };
 
     starship = {
