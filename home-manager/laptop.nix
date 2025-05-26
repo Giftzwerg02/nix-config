@@ -15,8 +15,6 @@
     ./stylix
     ./git
     ./kitty
-    ./carapace
-    ./zsh
     ./zoxide
     ./neovim
     ./dunst
@@ -55,8 +53,6 @@
   #   enable = false;
   #   wallpapers = [./imgs/background-laptop.jpg];
   # };
-  my-carapace-config.enable = true;
-  my-zsh-config.enable = true;
   my-zoxide-config.enable = true;
   my-neovim-config = {
     enable = true;

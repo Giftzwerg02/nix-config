@@ -78,7 +78,7 @@
     isNormalUser = true;
     description = "Benjamin Komar";
     extraGroups = ["networkmanager" "wheel" "adbusers"];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
   };
 
   services.displayManager = {
@@ -136,8 +136,6 @@
     libnotify
     dunst
     home-manager
-    zsh
-    fish
     gtk2
     gtk3
     gtk4
@@ -150,7 +148,6 @@
     killall
     htop
     thefuck
-    zsh-fzf-history-search
     zoxide
     fzf
     xclip

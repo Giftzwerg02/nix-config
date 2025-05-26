@@ -59,8 +59,6 @@
 
   programs = {
     dconf.enable = true;
-    zsh.enable = true;
-    fish.enable = true;
     ssh.startAgent = true;
     nh = {
       enable = true;
@@ -71,7 +69,7 @@
     };
   };
 
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.nushell;
 
   hardware = {
     graphics = {

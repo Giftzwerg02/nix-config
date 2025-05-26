@@ -12,9 +12,7 @@ in {
     ./stylix
     ./git
     ./kitty
-    ./carapace
-    ./zsh
-    ./fish
+    ./nushell
     ./zoxide
     ./neovim
     ./dunst
@@ -56,9 +54,6 @@ in {
       enable = true;
       wallpapers = cfg.wallpapers;
     };
-    my-carapace-config.enable = true;
-    my-zsh-config.enable = true;
-    my-fish-config.enable = true;
     my-zoxide-config.enable = true;
     my-neovim-config = {
       enable = true;

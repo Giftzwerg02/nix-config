@@ -90,7 +90,6 @@
     libnotify
     dunst
     home-manager
-    zsh
     gtk2
     gtk3
     gtk4

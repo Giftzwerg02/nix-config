@@ -15,8 +15,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs.zoxide = {
       enable = true;
-      enableZshIntegration = true;
-      enableFishIntegration = true;
       enableNushellIntegration = true;
     };
   };
