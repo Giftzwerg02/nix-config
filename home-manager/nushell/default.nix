@@ -7,8 +7,7 @@
   programs = {
     nushell = {
       enable = true;
-      configFile.source = ./config.nu;
-      extraConfig =
+      configFile.text =
         /*
         nu
         */
