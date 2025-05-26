@@ -139,7 +139,6 @@ in {
           };
           allOfCreate-1 = {
             enable = true;
-            package = pkgs.
             serverProperties = {
               server-port = 6969;
               gamemode = "survival";
@@ -315,11 +314,12 @@ in {
       # nextcloud config :3
       services.nextcloud = {
         enable = true;
-        package = pkgs.nextcloud28;
+        package = pkgs.nextcloud31;
         https = true;
         hostName = domain;
         configureRedis = true;
         config.adminpassFile = "/etc/nextcloud-admin-pass";
+        config.dbtype = "pgsql";
       };
       system.stateVersion = "23.05";
 
