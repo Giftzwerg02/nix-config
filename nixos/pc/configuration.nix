@@ -150,6 +150,7 @@
     killall
     htop
     thefuck
+    zsh-fzf-history-search
     zoxide
     fzf
     xclip
