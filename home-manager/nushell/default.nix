@@ -15,7 +15,6 @@
           alias "cat" = bat
           alias "find" = fd
           alias "hms" = nh home switch ~/nix-config
-          alias "ls" = eza
           alias "ncs" = nh os switch ~/nix-config
           alias "ssh" = with-env { TERM: linux } { ssh }
           alias "vi" = nvim
