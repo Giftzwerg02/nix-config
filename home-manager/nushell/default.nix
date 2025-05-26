@@ -19,8 +19,20 @@
         vim = "nvim";
         vi = "nvim";
         cd = "z";
-        ssh = "TERM=linux ssh";
+        ssh = "with-env { TERM: linux } { ssh }";
       };
+
+      extraConfig = /* nu */ ''
+      def switch [] {
+        ncs
+        hms
+      }
+
+      def cfg [] {
+        cd ~/nix-config
+        nvim .
+      }
+      '';
     };
 
     starship = {
