@@ -19,7 +19,7 @@
           alias "ssh" = with-env { TERM: linux } { ssh }
           alias "vi" = nvim
           alias "vim" = nvim
-          alias "dev" = nix develop -c $env.SHELL
+          alias "dev" = nix develop -c $env.SHELL --allow-dirty
 
           def switch [] {
             ncs
