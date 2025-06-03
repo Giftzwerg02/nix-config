@@ -500,13 +500,7 @@ in {
                 enable = true;
                 filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
               };
-              gleam.enable = true;
               clangd.enable = true;
-              # glslls.enable = true;
-              glsl_analyzer = {
-                enable = true;
-                filetypes = ["vert" "frag"];
-              };
               rust_analyzer = let
                 my_ra = pkgs.rust-analyzer.overrideAttrs (old: {
                   version = "2025-03-10";
@@ -525,9 +519,6 @@ in {
                   };
                 };
               };
-              pest_ls = {
-                enable = true;
-              };
               nixd = {
                 enable = true;
                 settings = {
@@ -545,7 +536,7 @@ in {
                 };
               };
               lua_ls.enable = true;
-              pyright.enable = true;
+              ruff.enable = true;
               svelte.enable = true;
               gopls.enable = true;
               templ.enable = true;
