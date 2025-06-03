@@ -537,6 +537,7 @@ in {
               };
               lua_ls.enable = true;
               ruff.enable = true;
+              pylsp.enable = true; 
               svelte.enable = true;
               gopls.enable = true;
               templ.enable = true;
