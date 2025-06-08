@@ -77,7 +77,7 @@
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = ["networkmanager" "wheel" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode"];
     shell = pkgs.nushell;
   };
 
