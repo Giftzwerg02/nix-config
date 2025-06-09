@@ -303,7 +303,10 @@
     externalInterface = "enp0s31f6";
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "performance";
+  };
   services.thermald.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
