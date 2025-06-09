@@ -266,7 +266,10 @@
     VULKAN_SDK = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
   };
 
-  programs.gamemode.enable = true;
+  programs.gamemode = {
+    enable = true;
+  };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
