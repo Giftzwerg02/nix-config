@@ -308,7 +308,7 @@
 
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "performance";
+    cpuFreqGovernor = lib.mkForce "performance";
   };
   services.thermald.enable = true;
 
