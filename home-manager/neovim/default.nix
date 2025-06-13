@@ -537,7 +537,16 @@ in {
               };
               lua_ls.enable = true;
               ruff.enable = true;
-              pylsp.enable = true; 
+              pylsp = {
+                enable = true;
+                settings.plugins = {
+                  ruff.enabled = true;
+                  flake8.enabled = true;
+                  isort.enabled = true;
+                  pylint.enabled = true;
+                  pylsp_mypy.enabled = true;
+                };
+              };
               svelte.enable = true;
               gopls.enable = true;
               templ.enable = true;
