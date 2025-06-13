@@ -541,7 +541,10 @@ in {
                 enable = true;
                 settings.plugins = {
                   ruff.enabled = true;
-                  flake8.enabled = true;
+                  flake8 = {
+                    enabled = true;
+                    maxLineLength = 120;
+                  };
                   isort.enabled = true;
                   pylint.enabled = true;
                   pylsp_mypy.enabled = true;
