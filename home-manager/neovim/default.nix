@@ -501,15 +501,10 @@ in {
                 filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
               };
               clangd.enable = true;
-              rust_analyzer = let
-                my_ra = pkgs.rust-analyzer.overrideAttrs (old: {
-                  version = "2025-03-10";
-                });
-              in {
+              rust_analyzer = {
                 enable = true;
                 installCargo = false;
                 installRustc = false;
-                package = my_ra;
                 settings = {
                   cargo.features = "all";
                   check.command = "clippy";
