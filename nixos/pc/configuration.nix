@@ -81,30 +81,7 @@
     shell = pkgs.nushell;
   };
 
-  services.displayManager = {
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-      settings.General.DisplayServer = "wayland";
-    };
-  };
-
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    konsole
-    elisa
-    dolphin
-    dolphin-plugins
-    spectacle
-    kate
-    okular
-    gwenview
-    ark
-    ffmpegthumbs
-    krdp
-    baloo-widgets
-  ];
+  services.displayManager.sddm.enable = true;
 
   services.xserver = {
     displayManager.setupCommands = ''
@@ -132,7 +109,6 @@
     kitty
     git
     rofi
-    rofi-wayland
     libnotify
     dunst
     home-manager
@@ -175,7 +151,6 @@
     krita
 
     # Dev and Work (as if)
-    firefox
     firefox-beta
     unstable.xournalpp
 
@@ -191,7 +166,6 @@
     pandoc-for-homework
     pdftk
     libreoffice
-    unstable.cypress
     unstable.dbeaver-bin
 
     (blender.override {
@@ -209,40 +183,21 @@
     # Gamer Girl :3
     prismlauncher # mc launcher
     jdk21 # for minecraft obviously
-    rconc
     heroic
     wineWowPackages.staging
     lutris
     adwaita-icon-theme # needed for lutris
     vesktop
-    unstable.legcord
-    premid
-    r2modman
-    lumafly
 
     # extras
     # Used for obs virtual cam
     linuxPackages.v4l2loopback
     rar
 
-    jetbrains.idea-community
-    jetbrains.idea-ultimate
-
-    vscode
-    jetbrains.clion
-
-    cargo-cross
-    google-chrome
-    easyeffects
-    lunar-client
     anki
-
-    mangohud
 
     man-pages
     man-pages-posix
-
-    figma-linux
   ];
 
   documentation = {
@@ -253,18 +208,9 @@
     doc.enable = true;
   };
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
   environment.etc."ppp/options".text = ''
     ipcp-accept-remote
   '';
-
-  environment.sessionVariables = {
-    VULKAN_SDK = "${pkgs.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
-  };
 
   programs.gamemode = {
     enable = true;
