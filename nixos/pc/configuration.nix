@@ -147,7 +147,7 @@
     # Cli Utils deez nuts
     killall
     htop
-    thefuck
+    pay-respects 
     zoxide
     fzf
     xclip

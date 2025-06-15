@@ -46,5 +46,10 @@
 
     carapace.enable = true;
     carapace.enableNushellIntegration = true;
+
+    pay-respects = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
   };
 }

@@ -101,7 +101,7 @@
     pamixer
     killall
     htop
-    thefuck
+    pay-respects
     zoxide
     fzf
     neofetch
