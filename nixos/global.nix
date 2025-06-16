@@ -98,6 +98,7 @@
       font-awesome
       siji
       roboto
+      miracode
     ]
     ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
