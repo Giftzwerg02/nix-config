@@ -12,15 +12,8 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
-  networking = {
-    # Enable networking
-    networkmanager.enable = true;
-  };
-
-  time = {
-    # Set your time zone.
-    timeZone = "Europe/Vienna";
-  };
+  networking.networkmanager.enable = true;
+  time.timeZone = "Europe/Vienna";
 
   # Select internationalisation properties.
   i18n = let
@@ -48,11 +41,9 @@
   };
 
   # Configure keymap in X11
-  services.xserver = {
-    xkb = {
-      layout = "at";
-      variant = "nodeadkeys";
-    };
+  services.xserver.xkb = {
+    layout = "at";
+    variant = "nodeadkeys";
   };
 
   console.keyMap = "de";

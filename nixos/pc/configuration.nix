@@ -198,6 +198,8 @@
 
     man-pages
     man-pages-posix
+
+    geekbench
   ];
 
   documentation = {
