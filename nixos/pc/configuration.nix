@@ -184,7 +184,9 @@
     prismlauncher # mc launcher
     jdk21 # for minecraft obviously
     heroic
+    ## wine stuff
     wineWowPackages.staging
+    winetricks
     lutris
     adwaita-icon-theme # needed for lutris
     vesktop
