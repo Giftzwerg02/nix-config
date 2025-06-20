@@ -187,6 +187,7 @@
     ## wine stuff
     wineWowPackages.staging
     winetricks
+    protontricks
     lutris
     adwaita-icon-theme # needed for lutris
     vesktop
