@@ -204,7 +204,7 @@
 
     gale
     (writeShellScriptBin "gale-wrapper" ''
-      export WEBKIT_DISABLE_COMPOSITING_MODR=1
+      export WEBKIT_DISABLE_DMABUF_RENDERER=1
       exec ${pkgs.gale}/bin/gale "$@"
     '')
   ];
