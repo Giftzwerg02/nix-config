@@ -203,6 +203,10 @@
     man-pages-posix
 
     gale
+    (writeShellScriptBin "gale-wrapper" ''
+      export WEBKIT_DISABLE_COMPOSITING_MODR=1
+      exec ${pkgs.gale}/bin/gale "$@"
+    '')
   ];
 
   documentation = {
