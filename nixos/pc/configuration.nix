@@ -201,6 +201,8 @@
 
     man-pages
     man-pages-posix
+
+    gale
   ];
 
   documentation = {
