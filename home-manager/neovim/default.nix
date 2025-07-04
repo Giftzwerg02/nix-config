@@ -500,7 +500,7 @@ in {
             sqls.enable = true;
             ts_ls = {
               enable = true;
-              filetypes = ["js" "mjs" "templ" "html" "ts" "tsx" "jsx"];
+              settings.filetypes = ["js" "mjs" "templ" "html" "ts" "tsx" "jsx"];
             };
             clangd.enable = true;
             rust_analyzer = {
@@ -557,11 +557,11 @@ in {
             templ.enable = true;
             html = {
               enable = true;
-              filetypes = ["html" "templ"];
+              settings.filetypes = ["html" "templ"];
             };
             htmx = {
               enable = true;
-              filetypes = ["html" "templ"];
+              settings.filetypes = ["html" "templ"];
             };
           };
           onAttach = lspKeymapsOnAttach;
