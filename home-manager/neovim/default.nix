@@ -389,11 +389,12 @@ in {
             };
           };
 
-          treesitter = 
-          {
+          treesitter = {
             enable = true;
-            grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars ++ [
-            ];
+            grammarPackages =
+              pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars
+              ++ [
+              ];
             settings = {
               indent.enable = true;
               highlight = {
@@ -491,82 +492,80 @@ in {
               };
             };
           };
-
         };
 
-                  lsp = {
-            enable = true;
-            servers = {
-              sqls.enable = true;
-              ts_ls = {
-                enable = true;
-                filetypes = [ "js" "mjs" "templ" "html" "ts" "tsx" "jsx" ];
-              };
-              clangd.enable = true;
-              rust_analyzer = {
-                enable = true;
-                installCargo = false;
-                installRustc = false;
-                settings = {
-                  cargo.features = "all";
-                  check.command = "clippy";
-                  diagnostics = {
-                    enable = true;
-                    refreshSupport = false;
-                  };
+        lsp = {
+          inlayHints.enable = true;
+          servers = {
+            sqls.enable = true;
+            ts_ls = {
+              enable = true;
+              filetypes = ["js" "mjs" "templ" "html" "ts" "tsx" "jsx"];
+            };
+            clangd.enable = true;
+            rust_analyzer = {
+              enable = true;
+              installCargo = false;
+              installRustc = false;
+              settings = {
+                cargo.features = "all";
+                check.command = "clippy";
+                diagnostics = {
+                  enable = true;
+                  refreshSupport = false;
                 };
-              };
-              nixd = {
-                enable = true;
-                settings = {
-                  formatting = {
-                    command = ["${pkgs.alejandra}/bin/alejandra"];
-                  };
-                  options = {
-                    nixos = {
-                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").nixosConfigurations.\"${cfg.nixosConfigName}\".options";
-                    };
-                    home_manager = {
-                      expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").homeConfigurations.\"${cfg.hmConfigName}\".options";
-                    };
-                  };
-                };
-              };
-              lua_ls.enable = true;
-              pylsp = {
-                enable = true;
-                settings.plugins = {
-                  ruff.enabled = true;
-                  flake8 = {
-                    enabled = true;
-                    maxLineLength = 120;
-                  };
-                  isort.enabled = true;
-                  pylint.enabled = true;
-                  pylsp_mypy.enabled = true;
-                  jedi_hover.enabled = true;
-                  jedi_symbols.enabled = true;
-                  jedi_completion.enabled = true;
-                  jedi_definition.enabled = true;
-                  jedi_references.enabled = true;
-                  jedi_signature_help.enabled = true;
-                };
-              };
-              svelte.enable = true;
-              gopls.enable = true;
-              templ.enable = true;
-              html = {
-                enable = true;
-                filetypes = ["html" "templ"];
-              };
-              htmx = {
-                enable = true;
-                filetypes = ["html" "templ"];
               };
             };
-            onAttach = lspKeymapsOnAttach;
+            nixd = {
+              enable = true;
+              settings = {
+                formatting = {
+                  command = ["${pkgs.alejandra}/bin/alejandra"];
+                };
+                options = {
+                  nixos = {
+                    expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").nixosConfigurations.\"${cfg.nixosConfigName}\".options";
+                  };
+                  home_manager = {
+                    expr = "(builtins.getFlake \"github:Giftzwerg02/nix-config\").homeConfigurations.\"${cfg.hmConfigName}\".options";
+                  };
+                };
+              };
+            };
+            lua_ls.enable = true;
+            pylsp = {
+              enable = true;
+              settings.plugins = {
+                ruff.enabled = true;
+                flake8 = {
+                  enabled = true;
+                  maxLineLength = 120;
+                };
+                isort.enabled = true;
+                pylint.enabled = true;
+                pylsp_mypy.enabled = true;
+                jedi_hover.enabled = true;
+                jedi_symbols.enabled = true;
+                jedi_completion.enabled = true;
+                jedi_definition.enabled = true;
+                jedi_references.enabled = true;
+                jedi_signature_help.enabled = true;
+              };
+            };
+            svelte.enable = true;
+            gopls.enable = true;
+            templ.enable = true;
+            html = {
+              enable = true;
+              filetypes = ["html" "templ"];
+            };
+            htmx = {
+              enable = true;
+              filetypes = ["html" "templ"];
+            };
           };
-
+          onAttach = lspKeymapsOnAttach;
+        };
       };
     };
 }
