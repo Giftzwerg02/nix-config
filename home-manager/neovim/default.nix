@@ -225,6 +225,7 @@ in {
         };
 
         plugins = {
+          lspconfig.enable = true;
           neotest = {
             enable = true;
             adapters = {
