@@ -505,8 +505,6 @@ in {
             clangd.enable = true;
             rust_analyzer = {
               enable = true;
-              installCargo = false;
-              installRustc = false;
               settings = {
                 cargo.features = "all";
                 check.command = "clippy";
