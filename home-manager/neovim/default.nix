@@ -501,7 +501,24 @@ in {
             sqls.enable = true;
             ts_ls = {
               enable = true;
-              settings.filetypes = ["js" "mjs" "templ" "html" "ts" "tsx" "jsx"];
+              settings = {
+                filetypes = ["js" "mjs" "templ" "html" "ts" "tsx" "jsx"];
+                typescript = {
+                  tsserver = {
+                    useSyntaxServer = false;
+                  };
+                  inlayHints = {
+                    includeInlayParameterNameHints = "all";
+                    includeInlayParameterNameHintsWhenArgumentMatchesName = true;
+                    includeInlayFunctionParameterTypeHints = true;
+                    includeInlayVariableTypeHints = true;
+                    includeInlayVariableTypeHintsWhenTypeMatchesName = true;
+                    includeInlayPropertyDeclarationTypeHints = true;
+                    includeInlayFunctionLikeReturnTypeHints = true;
+                    includeInlayEnumMemberValueHints = true;
+                  };
+                };
+              };
             };
             clangd.enable = true;
             rust_analyzer = {
