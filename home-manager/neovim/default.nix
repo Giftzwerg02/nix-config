@@ -492,7 +492,9 @@ in {
             };
           };
 
-          lsp = {
+        };
+
+                  lsp = {
             enable = true;
             servers = {
               sqls.enable = true;
@@ -564,7 +566,7 @@ in {
             };
             onAttach = lspKeymapsOnAttach;
           };
-        };
+
       };
     };
 }
