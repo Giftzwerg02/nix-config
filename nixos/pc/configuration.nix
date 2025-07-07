@@ -67,7 +67,7 @@
     options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
   '';
 
-  boot.kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc"];
+  boot.kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc" "hid_nintendo"];
 
   networking.hostName = "pc";
 
