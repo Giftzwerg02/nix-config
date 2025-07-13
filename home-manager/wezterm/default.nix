@@ -5,12 +5,19 @@
     enable = true;
     extraConfig = /* lua */ ''
       local mux = wezterm.mux
+      local config = {}
 
       wezterm.on('gui-startup', function(cmd)
-        local tab, pane, window = mux.spawn_window(cmd or {})
-        pane:split { size = 0.3 }
-        pane:split { size = 0.5 }
+        if cmd.args ~= 'cwd-template' then 
+          return 
+        end
+
+        local cwd = cmd.cwd
+        local template = require(cwd .. '.layout/layout.lua')
+        template.apply(wezterm, config, cmd)
       end)
+
+      return config
     '';
   };
 }
