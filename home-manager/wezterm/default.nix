@@ -8,8 +8,9 @@
       local config = {}
 
       wezterm.on('gui-startup', function(cmd)
-        if cmd.args ~= 'cwd-template' then 
-          return 
+        local load_template = os.getenv('MY_WEZTERM_LOAD_LAYOUT')
+        if not load_template then
+          return
         end
 
         local cwd = cmd.cwd
