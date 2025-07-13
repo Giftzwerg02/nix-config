@@ -13,7 +13,7 @@
           return
         end
 
-        local template = require('.layout/layout.lua')
+        local template = require('.layout')
         template.apply(wezterm, config, cmd)
       end)
 
