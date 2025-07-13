@@ -11,12 +11,12 @@ in {
     ./sway
     ./stylix
     ./git
-    ./kitty
     ./nushell
     ./zoxide
     ./neovim
     ./dunst
     ./mimeApps
+    ./wezterm
   ];
 
   options = {
@@ -43,29 +43,14 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    my-stylix-config.enable = true;
-    my-git-config.enable = true;
-    my-kitty-config.enable = true;
     my-i3-config = {
       enable = true;
       wallpapers = cfg.wallpapers;
     };
-    my-sway-config = {
-      enable = true;
-      wallpapers = cfg.wallpapers;
-    };
-    my-zoxide-config.enable = true;
     my-neovim-config = {
       enable = true;
       nixosConfigName = cfg.nixosConfigName;
       hmConfigName = cfg.hmConfigName;
-    };
-    my-dunst-config.enable = true;
-    my-mimeApps-config.enable = true;
-
-
-    programs.wezterm = {
-      enable = true;
     };
   };
 }

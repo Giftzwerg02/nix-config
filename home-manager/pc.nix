@@ -3,9 +3,6 @@
 {
   inputs,
   outputs,
-  lib,
-  config,
-  pkgs,
   ...
 }: {
   imports = [
@@ -40,8 +37,6 @@
   };
 
   services.arrpc.enable = true;
-
-  programs.rofi.enable = true;
 
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";

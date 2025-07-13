@@ -57,7 +57,7 @@ in {
 
             "${modifier}+Control+d" = "exec dunstctl action";
 
-            "${modifier}+Return" = "exec kitty";
+            "${modifier}+Return" = "exec ${lib.getExe pkgs.wezterm}";
 
             "${modifier}+Shift+q" = "kill";
 
