@@ -9,6 +9,8 @@
         nu
         */
         ''
+          $env.config.show_banner = false
+
           alias "cat" = bat
           alias "find" = fd
           alias "hms" = nh home switch ~/nix-config
