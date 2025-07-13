@@ -39,9 +39,9 @@ in {
       in {
         enable = true;
       
-        # extraConfig = ''
-        #   for_window [class="scratchy" move scratchpad]
-        # '';
+        extraConfig = ''
+          for_window [class="scratchy" move scratchpad]
+        '';
 
         config = {
           modifier = "${modifier}";
