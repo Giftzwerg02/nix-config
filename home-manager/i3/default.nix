@@ -40,7 +40,7 @@ in {
         enable = true;
       
         extraConfig = ''
-          for_window [class="scratchy" move scratchpad]
+          for_window [class="scratchy"] move scratchpad
         '';
 
         config = {
