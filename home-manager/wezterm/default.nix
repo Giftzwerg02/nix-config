@@ -13,8 +13,7 @@
           return
         end
 
-        local cwd = cmd.cwd
-        local template = require(cwd .. '.layout/layout.lua')
+        local template = require(load_template .. '.layout/layout.lua')
         template.apply(wezterm, config, cmd)
       end)
 
