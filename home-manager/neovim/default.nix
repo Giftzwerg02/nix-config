@@ -124,18 +124,8 @@ in {
         };
 
         extraPlugins = let
-          clingoSyntaxPlugin = pkgs.vimUtils.buildVimPlugin {
-            name = "vim-syntax-clingo";
-            src = pkgs.fetchFromGitHub {
-              owner = "rkaminsk";
-              repo = "vim-syntax-clingo";
-              rev = "9166d331ce66133716947ddabcd06a356807003c";
-              hash = "sha256-q/Q88NbK5krM9Z10cc84hhULYcovAE8Gqmu04yuda3Q=";
-            };
-          };
         in [
           pkgs.vimPlugins.go-nvim
-          clingoSyntaxPlugin
         ];
 
         extraConfigLua =
@@ -226,13 +216,6 @@ in {
 
         plugins = {
           lspconfig.enable = true;
-          neotest = {
-            enable = true;
-            adapters = {
-              playwright.enable = false;
-            };
-          };
-
           web-devicons.enable = true;
           lualine.enable = true;
           fugitive.enable = true;
@@ -392,10 +375,7 @@ in {
 
           treesitter = {
             enable = true;
-            grammarPackages =
-              pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars
-              ++ [
-              ];
+            grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
             settings = {
               indent.enable = true;
               highlight = {
@@ -423,6 +403,7 @@ in {
                 "ic" = "@class.inner";
               };
             };
+             
             move = {
               enable = true;
               gotoNextStart = {
@@ -455,19 +436,6 @@ in {
               };
             };
           };
-
-          rustaceanvim = {
-            enable = false;
-            settings.server = {
-              on_attach =
-                /*
-                lua
-                */
-                ''function(client, bufnr) ${lspKeymapsOnAttach} end '';
-            };
-          };
-
-          # typescript-tools.enable = true;
 
           conform-nvim = {
             settings = {
@@ -549,25 +517,6 @@ in {
               };
             };
             lua_ls.enable = true;
-            pylsp = {
-              enable = true;
-              settings.plugins = {
-                ruff.enabled = true;
-                flake8 = {
-                  enabled = true;
-                  maxLineLength = 120;
-                };
-                isort.enabled = true;
-                pylint.enabled = true;
-                pylsp_mypy.enabled = true;
-                jedi_hover.enabled = true;
-                jedi_symbols.enabled = true;
-                jedi_completion.enabled = true;
-                jedi_definition.enabled = true;
-                jedi_references.enabled = true;
-                jedi_signature_help.enabled = true;
-              };
-            };
             svelte.enable = true;
             gopls.enable = true;
             templ.enable = true;
