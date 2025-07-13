@@ -38,6 +38,11 @@ in {
         ws10 = "10";
       in {
         enable = true;
+      
+        extraConfig = ''
+          for_window [class="scratchy" move scratchpad]
+        '';
+
         config = {
           modifier = "${modifier}";
 
@@ -46,11 +51,11 @@ in {
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
             {command = "flameshot";}
-            {command = "--no-startup-id ${lib.getExe pkgs.wezterm} --class scratchy";}
+            {command = "--no-startup-id \"${lib.getExe pkgs.wezterm} start --class scratchy\"";}
           ];
 
           keybindings = {
-            "${modifier}+." = "[class=\"scratchy\"] scratchpad show; move position center";
+            "${modifier}+period" = "[class=\"scratchy\"] scratchpad show resize set width 80ppt height 80ppt; move position center";
 
             "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_i3status}";
             "XF86AudioLowerVolume" = "exec --no-startup-id pamixer --decrease 5 && ${refresh_i3status}";
