@@ -63,4 +63,8 @@ in {
     my-dunst-config.enable = true;
     my-mimeApps-config.enable = true;
   };
+
+  programs.wezterm = {
+    enable = true;
+  };
 }
