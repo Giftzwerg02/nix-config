@@ -46,9 +46,12 @@ in {
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
             {command = "flameshot";}
+            {command = "--no-startup-id ${lib.getExe pkgs.wezterm} --class scratchy";}
           ];
 
           keybindings = {
+            "${modifier}+." = "[class=\"scratchy\"] scratchpad show; move position center";
+
             "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer --increase 5 && ${refresh_i3status}";
             "XF86AudioLowerVolume" = "exec --no-startup-id pamixer --decrease 5 && ${refresh_i3status}";
             "XF86AudioMute" = "exec --no-startup-id pamixer --togle-mute && ${refresh_i3status}";
