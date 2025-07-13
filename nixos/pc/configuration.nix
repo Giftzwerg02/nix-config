@@ -58,19 +58,21 @@
     };
   };
 
-  boot.extraModulePackages = [
-    # Weird-ass stuff for obs-virtual-cam
-    config.boot.kernelPackages.v4l2loopback
-  ];
+  boot = {
+    extraModulePackages = [
+      # Weird-ass stuff for obs-virtual-cam
+      config.boot.kernelPackages.v4l2loopback
+    ];
 
-  boot.extraModprobeConfig = ''
-    options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
-  '';
+    extraModprobeConfig = ''
+      options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
+    '';
 
-  boot.kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc" "hid_nintendo"];
+    kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc" "hid_nintendo"];
 
-  # NTFS
-  boot.supportedFilesystems = ["ntfs"];
+    # NTFS
+    supportedFilesystems = ["ntfs"];
+  };
 
   users.users.benjamin = {
     isNormalUser = true;
@@ -198,10 +200,6 @@
     info.enable = true;
     doc.enable = true;
   };
-
-  environment.etc."ppp/options".text = ''
-    ipcp-accept-remote
-  '';
 
   programs = {
     gamemode = {
