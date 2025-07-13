@@ -69,8 +69,6 @@
 
   boot.kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc" "hid_nintendo"];
 
-  networking.hostName = "pc";
-
   # NTFS
   boot.supportedFilesystems = ["ntfs"];
 
@@ -79,20 +77,6 @@
     description = "Benjamin Komar";
     extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode"];
     shell = pkgs.nushell;
-  };
-
-  services.displayManager.sddm.enable = true;
-
-  services.xserver = {
-    displayManager.setupCommands = ''
-      ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x704 --rotate normal --output DP-0 --off --output DP-1 --primary --mode 1920x1080 --pos 3000x704 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 4920x704 --rotate normal --output DP-5 --off
-    '';
-    enable = true;
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [i3status i3lock i3blocks];
-    };
-    videoDrivers = ["nvidia"];
   };
 
   virtualisation = {
@@ -140,7 +124,6 @@
     toggle-redshift
     ffmpeg
     p7zip
-    julia
 
     # Gui (eww) Utils
     pavucontrol
@@ -163,7 +146,6 @@
     thunderbird
     remmina
     pandoc
-    pandoc-for-homework
     pdftk
     libreoffice
     unstable.dbeaver-bin
@@ -221,58 +203,70 @@
     ipcp-accept-remote
   '';
 
-  programs.gamemode = {
-    enable = true;
-    settings = {
-      custom = {
-        start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-        end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
-      };
-    }
-    ;
-  };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    gamescopeSession.enable = true;
-  };
-  programs.gamescope.enable = true;
-
-  programs.nix-ld.enable = true;
-
-  services.printing.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-
-  networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
-  networking.defaultGateway = {
-    address = "192.168.1.1";
-    interface = "enp0s31f6";
-  };
-  networking.interfaces = {
-    enp0s31f6.ipv4.addresses = [
-      {
-        address = "192.168.1.184";
-        prefixLength = 24;
+  programs = {
+    gamemode = {
+      enable = true;
+      settings = {
+        custom = {
+          start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+          end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+        };
       }
-    ];
-  };
-  networking.nat = {
-    enable = true;
-    internalInterfaces = ["enp0s31f6"];
-    externalInterface = "enp0s31f6";
+      ;
+    };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
+    gamescope.enable = true;
+
+    nix-ld.enable = true;
   };
 
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = lib.mkForce "performance";
+  services = {
+    displayManager.sddm.enable = true;
+    xserver = {
+      displayManager.setupCommands = ''
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x704 --rotate normal --output DP-0 --off --output DP-1 --primary --mode 1920x1080 --pos 3000x704 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 4920x704 --rotate normal --output DP-5 --off
+      '';
+      enable = true;
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [i3status i3lock i3blocks];
+      };
+      videoDrivers = ["nvidia"];
+    };
+    printing.enable = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+    thermald.enable = true;
   };
-  services.thermald.enable = true;
+
+  networking = {
+    hostName = "pc";
+    nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
+    defaultGateway = {
+      address = "192.168.1.1";
+      interface = "enp0s31f6";
+    };
+    interfaces = {
+      enp0s31f6.ipv4.addresses = [
+        {
+          address = "192.168.1.184";
+          prefixLength = 24;
+        }
+      ];
+    };
+    nat = {
+      enable = true;
+      internalInterfaces = ["enp0s31f6"];
+      externalInterface = "enp0s31f6";
+    };
+  };
 
   system.stateVersion = "23.05"; # Did you read the comment?
 }
