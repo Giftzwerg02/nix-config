@@ -67,6 +67,28 @@
         "type": "github"
       }
     },
+    "blender": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "dir": "blender",
+        "lastModified": 1752701743,
+        "narHash": "sha256-cQeX9PP5F7fgsuv0CrL16GtlU6MS0i9LLnkkITu8jA8=",
+        "owner": "edolstra",
+        "repo": "nix-warez",
+        "rev": "69acfebb3740542936f71775bcdf322dc328a655",
+        "type": "github"
+      },
+      "original": {
+        "dir": "blender",
+        "owner": "edolstra",
+        "repo": "nix-warez",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -465,6 +487,7 @@
     },
     "root": {
       "inputs": {
+        "blender": "blender",
         "home-manager": "home-manager",
         "nh": "nh",
         "nix-minecraft": "nix-minecraft",
