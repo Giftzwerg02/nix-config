@@ -153,6 +153,9 @@
     unstable.dbeaver-bin
 
     blender_with_cuda
+    shaderc
+    vulkan-headers
+    vulkan-loader
 
     # Compilers
     clang
