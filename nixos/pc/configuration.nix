@@ -195,7 +195,7 @@
     '')
   ];
   environment.sessionVariables = rec {
-    LD_LIBRARY_PATH = "${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib";
+    LD_LIBRARY_PATH = "''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib";
   };
 
   documentation = {
