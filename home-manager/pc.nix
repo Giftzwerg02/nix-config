@@ -50,6 +50,10 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
+  home.sessionVariables = {
+    LD_LIBRARY_PATH = ''''${LD_LIBRARY_PATH}:${inputs.pkgs.vulkan-loader}/lib'';
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
 }

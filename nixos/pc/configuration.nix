@@ -194,9 +194,6 @@
       exec ${pkgs.gale}/bin/gale "$@"
     '')
   ];
-  environment.sessionVariables = {
-    LD_LIBRARY_PATH = lib.mkForce ''''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib'';
-  };
 
   documentation = {
     enable = true;
