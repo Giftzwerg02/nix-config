@@ -3,6 +3,7 @@
 {
   inputs,
   outputs,
+  pkgs,
   ...
 }: {
   imports = [
@@ -51,7 +52,7 @@
   systemd.user.startServices = "sd-switch";
 
   home.sessionVariables = {
-    LD_LIBRARY_PATH = ''''${LD_LIBRARY_PATH}:${inputs.pkgs.vulkan-loader}/lib'';
+    LD_LIBRARY_PATH = ''''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib'';
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
