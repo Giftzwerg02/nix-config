@@ -152,7 +152,7 @@
     libreoffice
     unstable.dbeaver-bin
 
-    blender_4_5
+    blender_with_cuda
 
     # Compilers
     clang

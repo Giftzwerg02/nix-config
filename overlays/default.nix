@@ -22,7 +22,7 @@
         ]);
     });
 
-    blender_4_5 = inputs.blender.packages.x86_64-linux.blender_4_5;
+    blender_with_cuda = inputs.blender.packages.x86_64-linux.default;
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
