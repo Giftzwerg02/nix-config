@@ -194,8 +194,8 @@
       exec ${pkgs.gale}/bin/gale "$@"
     '')
   ];
-  environment.sessionVariables = rec {
-    LD_LIBRARY_PATH = "''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib";
+  environment.sessionVariables = {
+    LD_LIBRARY_PATH = ''''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib'';
   };
 
   documentation = {
