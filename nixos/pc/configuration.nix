@@ -156,6 +156,7 @@
     shaderc
     vulkan-headers
     vulkan-loader
+    vulkan-tools
 
     # Compilers
     clang
