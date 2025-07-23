@@ -222,6 +222,9 @@
     gamescope.enable = true;
 
     nix-ld.enable = true;
+    nix-ld.libraries = [
+      pkgs.vulkan-loader
+    ];
   };
 
   services = {
