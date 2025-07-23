@@ -152,9 +152,7 @@
     libreoffice
     unstable.dbeaver-bin
 
-    (blender.override {
-      cudaSupport = true;
-    })
+    blender_4_5
 
     # Compilers
     clang

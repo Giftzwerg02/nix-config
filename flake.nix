@@ -26,6 +26,12 @@
 
     # Nh
     nh.url = "github:nix-community/nh";
+
+    # Blender with CUDA
+    blender = {
+      url = "github:edolstra/nix-warez?dir=blender";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {
