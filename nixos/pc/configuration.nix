@@ -195,7 +195,7 @@
     '')
   ];
   environment.sessionVariables = {
-    LD_LIBRARY_PATH = ''''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib'';
+    LD_LIBRARY_PATH = lib.mkForce ''''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib'';
   };
 
   documentation = {
