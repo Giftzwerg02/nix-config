@@ -152,7 +152,7 @@
     libreoffice
     unstable.dbeaver-bin
 
-    inputs.blender.packages.default 
+    blender_4_5
 
     # Compilers
     clang
