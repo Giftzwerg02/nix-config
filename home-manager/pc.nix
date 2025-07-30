@@ -58,6 +58,9 @@
         "org.freedesktop.impl.portal.FileChooser" = "termfilepickers";
       };
     };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   programs.yazi.enable = true;
