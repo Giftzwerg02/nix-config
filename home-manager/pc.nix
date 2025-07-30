@@ -63,7 +63,7 @@
     force = true;
     text = ''
       [filechooser]
-      cmd=${pkgs.unstable.xdg-desktop-portal-termfilechooser}/contrib/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+      cmd=${pkgs.unstable.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
     '';
   };
 
