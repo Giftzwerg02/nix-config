@@ -50,7 +50,10 @@
   programs.nix-index.enable = true;
   programs.command-not-found.enable = false;
 
-  xdg.portal = true;
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+  };
 
   services.xdg-desktop-portal-termfilepickers = let
     termfilepickers = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
