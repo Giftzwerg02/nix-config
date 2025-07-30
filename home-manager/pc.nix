@@ -63,7 +63,7 @@
     enable = true;
     package = termfilepickers;
     config = {
-      terminal_command = ''${lib.getExe pkgs.wezterm} start --always-new-process'';
+      terminal_command = lib.getExe pkgs.kitty;
     };
   };
 
