@@ -53,6 +53,11 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
+    config = {
+      common = {
+        "org.freedesktop.impl.portal.FileChooser" = "termfilepickers";
+      };
+    };
   };
 
   programs.yazi.enable = true;
