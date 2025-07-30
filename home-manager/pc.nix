@@ -4,10 +4,12 @@
   inputs,
   outputs,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    inputs.xdp-termfilepickers.homeManagerModules.default
     ./you-definitely-want-this.nix
   ];
 
@@ -48,23 +50,14 @@
   programs.nix-index.enable = true;
   programs.command-not-found.enable = false;
 
-  xdg.portal = {
+  services.xdg-desktop-portal-termfilepickers = let
+    termfilepickers = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
+  in {
     enable = true;
-    extraPortals = [
-      pkgs.unstable.xdg-desktop-portal-termfilechooser
-    ];
-
-    config.common = {
-      "org.freedesktop.impl.portal.FileChooser" = "termfilechooser";
+    package = termfilepickers;
+    config = {
+      terminal_command = ''${lib.getExe pkgs.wezterm} start --always-new-process'';
     };
-  };
-
-  xdg.configFile."xdg-desktop-portal-termfilechooser/config" = {
-    force = true;
-    text = ''
-      [filechooser]
-      cmd=${pkgs.unstable.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/fzf-wrapper.sh
-    '';
   };
 
   # Nicely reload system units when changing configs
