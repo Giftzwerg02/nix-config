@@ -65,7 +65,7 @@
       [filechooser]
       cmd=${pkgs.unstable.xdg-desktop-portal-termfilechooser}/contrib/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
     '';
-  }
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
