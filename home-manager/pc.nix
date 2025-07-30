@@ -48,6 +48,25 @@
   programs.nix-index.enable = true;
   programs.command-not-found.enable = false;
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.unstable.xdg-desktop-portal-termfilechooser
+    ];
+
+    config.common = {
+      "org.freedesktop.impl.portal.FileChooser" = "termfilechooser";
+    };
+  };
+
+  xdg.configFile."xdg-desktop-portal-termfilechooser/config" = {
+    force = true;
+    text = ''
+      [filechooser]
+      cmd=${pkgs.unstable.xdg-desktop-portal-termfilechooser}/contrib/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+    '';
+  }
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
