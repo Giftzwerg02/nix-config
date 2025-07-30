@@ -55,6 +55,8 @@
     xdgOpenUsePortal = true;
   };
 
+  programs.yazi.enable = true;
+
   services.xdg-desktop-portal-termfilepickers = let
     termfilepickers = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
   in {
