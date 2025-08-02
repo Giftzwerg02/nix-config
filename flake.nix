@@ -33,10 +33,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    xdp-termfilepickers = {
-      url = "github:Guekka/xdg-desktop-portal-termfilepickers";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
@@ -83,6 +80,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/pc/configuration.nix
+          inputs.chaotic.nixosModules.default
         ];
       };
       laptop = nixpkgs.lib.nixosSystem {

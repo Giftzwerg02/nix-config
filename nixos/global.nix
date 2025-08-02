@@ -5,12 +5,16 @@
 }: {
   boot = {
     # Use latest Kernel
-    kernelPackages = pkgs.unstable.linuxPackages_latest;
+    # kernelPackages = pkgs.unstable.linuxPackages_latest;
+    # Use cachyos kernel
+    kernelPackages = pkgs.linuxPackages_cachyos;
 
     # Bootloader
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };
+
+  services.scx.enable = true;
 
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Vienna";
