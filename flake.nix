@@ -2,7 +2,7 @@
   description = "My nixos config";
 
   nixConfig = {
-    extra-substitutors = [
+    extra-substituters = [
       "https://chaotic-nyx.cachix.org/"
     ];
     extra-trusted-public-keys = [
