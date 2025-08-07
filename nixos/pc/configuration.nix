@@ -138,6 +138,7 @@
     flameshot
     obs-studio
     krita
+    grayjay
 
     # Dev and Work (as if)
     firefox-beta
