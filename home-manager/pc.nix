@@ -8,8 +8,7 @@
   ...
 }: {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-    inputs.xdp-termfilepickers.homeManagerModules.default
+    inputs.nixvim.homeModules.nixvim
     ./you-definitely-want-this.nix
   ];
 
