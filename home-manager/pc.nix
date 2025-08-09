@@ -49,31 +49,6 @@
   programs.nix-index.enable = true;
   programs.command-not-found.enable = false;
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      common = {
-        "org.freedesktop.impl.portal.FileChooser" = "termfilepickers";
-      };
-    };
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
-
-  programs.yazi.enable = true;
-
-  services.xdg-desktop-portal-termfilepickers = let
-    termfilepickers = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
-  in {
-    enable = true;
-    package = termfilepickers;
-    config = {
-      terminal_command = lib.getExe pkgs.kitty;
-    };
-  };
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
