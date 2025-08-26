@@ -159,6 +159,8 @@
     rmg
 
 	  adwaita-icon-theme
+
+    remmina
   ];
 
   services.openssh.enable = true;
