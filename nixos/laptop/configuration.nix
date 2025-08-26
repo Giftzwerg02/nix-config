@@ -76,8 +76,6 @@
   };
 
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -86,7 +84,6 @@
     kitty
     git
     rofi
-    rofi-wayland
     libnotify
     dunst
     home-manager
@@ -158,22 +155,7 @@
     rmg
 
 	  adwaita-icon-theme
-
-    # wayland
-    xdg-utils
-    glib
-    grim
-    slurp
-    wl-clipboard
   ];
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
-
-  programs.hyprland.enable = true;
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 
