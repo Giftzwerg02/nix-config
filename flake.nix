@@ -88,6 +88,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/laptop/configuration.nix
+          inputs.chaotic.nixosModules.default
         ];
       };
 
