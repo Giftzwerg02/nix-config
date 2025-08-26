@@ -252,6 +252,7 @@
       openFirewall = true;
     };
     thermald.enable = true;
+    openssh.enable = true;
   };
 
   networking = {
