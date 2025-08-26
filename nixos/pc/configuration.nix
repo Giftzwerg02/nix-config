@@ -188,7 +188,7 @@
     # linuxPackages.v4l2loopback
     rar
 
-    anki
+    anki-bin
 
     man-pages
     man-pages-posix
