@@ -65,7 +65,7 @@
   boot = {
     extraModulePackages = [
       # Weird-ass stuff for obs-virtual-cam
-      pkgs.linuxPackages_latest.v4l2loopback.out
+      config.boot.kernelPackages.v4l2loopback
     ];
 
     extraModprobeConfig = ''
