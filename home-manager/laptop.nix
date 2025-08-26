@@ -3,19 +3,13 @@
 {
   inputs,
   outputs,
+  pkgs,
+  lib,
   ...
 }: {
   imports = [
     inputs.nixvim.homeModules.nixvim
-    ./i3
-    ./sway
-    ./stylix
-    ./git
-    ./zoxide
-    ./neovim
-    ./dunst
-    ./mimeApps
-    ./wezterm
+    ./you-definitely-want-this.nix
   ];
 
   nixpkgs = {
@@ -32,25 +26,29 @@
     };
   };
 
-  home.username = "benjamin";
-  home.homeDirectory = "/home/benjamin";
-
-  my-i3-config = {
+  setup-this-thing = {
     enable = true;
-    wallpapers = [./imgs/background-laptop.jpg];
-  };
-  my-zoxide-config.enable = true;
-  my-neovim-config = {
-    enable = true;
+    wallpapers = [
+      ./imgs/background-laptop.jpg
+    ];
     nixosConfigName = "laptop";
     hmConfigName = "benjamin@laptop";
   };
 
+  services.arrpc.enable = true;
+
+  home.username = "benjamin";
+  home.homeDirectory = "/home/benjamin";
+
   programs.home-manager.enable = true;
+  programs.zathura.enable = true;
+
+  programs.nix-index.enable = true;
+  programs.command-not-found.enable = false;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "25.05";
 }
