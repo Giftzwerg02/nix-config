@@ -161,6 +161,8 @@
 	  adwaita-icon-theme
   ];
 
+  services.openssh.enable = true;
+
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
 
   system.stateVersion = "25.05"; # Did you read the comment?
