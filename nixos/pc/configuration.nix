@@ -185,7 +185,7 @@
 
     # extras
     # Used for obs virtual cam
-    linuxPackages.v4l2loopback
+    # linuxPackages.v4l2loopback
     rar
 
     anki
