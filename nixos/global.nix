@@ -5,9 +5,9 @@
 }: {
   boot = {
     # Use latest Kernel
-    kernelPackages = pkgs.unstable.linuxPackages_latest;
+    # kernelPackages = pkgs.unstable.linuxPackages_latest;
     # Use cachyos kernel
-    # kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_cachyos;
 
     # Bootloader
     loader.systemd-boot.enable = true;
