@@ -34,8 +34,6 @@
     };
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
-    walker.url = "github:abenz1267/walker";
   };
 
   outputs = {
@@ -43,7 +41,6 @@
     nixpkgs,
     home-manager,
     stylix,
-    walker,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -115,7 +112,6 @@
 
           # Stylix
           stylix.homeModules.stylix
-          walker.homeManagerModules.default
         ];
       };
 

@@ -56,11 +56,6 @@
     LD_LIBRARY_PATH = ''''${LD_LIBRARY_PATH}:${pkgs.vulkan-loader}/lib'';
   };
 
-  programs.walker = {
-    enable = true;
-    runAsService = true;
-  };
-
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
 }
