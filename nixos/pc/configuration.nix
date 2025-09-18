@@ -193,6 +193,8 @@
     man-pages
     man-pages-posix
 
+    android-studio-full
+
     gale
     (writeShellScriptBin "gale-wrapper" ''
       export WEBKIT_DISABLE_DMABUF_RENDERER=1
