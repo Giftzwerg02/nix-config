@@ -189,11 +189,10 @@
     rar
 
     anki-bin
+    appimage-run
 
     man-pages
     man-pages-posix
-
-    android-studio-full
 
     gale
     (writeShellScriptBin "gale-wrapper" ''
@@ -201,6 +200,14 @@
       exec ${pkgs.gale}/bin/gale "$@"
     '')
   ];
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+    package = pkgs.appimage-run.override { extraPkgs = pkgs: [
+      pkgs.lzo
+    ];
+  };
 
   documentation = {
     enable = true;
