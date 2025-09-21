@@ -161,6 +161,8 @@
 	  adwaita-icon-theme
 
     remmina
+
+    anki
   ];
 
   services.openssh.enable = true;
