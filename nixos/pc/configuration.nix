@@ -194,6 +194,8 @@
     man-pages
     man-pages-posix
 
+    zoom
+
     gale
     (writeShellScriptBin "gale-wrapper" ''
       export WEBKIT_DISABLE_DMABUF_RENDERER=1
