@@ -194,7 +194,7 @@
     man-pages
     man-pages-posix
 
-    zoom
+    zoom-us
 
     gale
     (writeShellScriptBin "gale-wrapper" ''
