@@ -98,6 +98,13 @@
           ./nixos/candy-crusher/configuration.nix
         ];
       };
+
+      liver-room = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs outputs;};
+          modules = [
+            ./nixos/liver-room/configuration.nix
+          ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
