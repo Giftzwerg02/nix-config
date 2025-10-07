@@ -76,6 +76,7 @@
     vim
     git
     libreoffice
+    google-chrome
   ];
 
   # Enable the OpenSSH daemon.
