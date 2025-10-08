@@ -191,6 +191,8 @@
     anki-bin
     appimage-run
 
+    rnote
+
     man-pages
     man-pages-posix
 
