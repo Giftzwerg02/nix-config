@@ -154,7 +154,7 @@
     remmina
     pandoc
     pdftk
-    libreoffice
+    libreoffice-qt6-fresh
     unstable.dbeaver-bin
 
     blender_with_cuda
