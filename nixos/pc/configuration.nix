@@ -205,6 +205,7 @@
     '')
 
     vscodium
+    vscode
   ];
 
   programs.appimage = {
