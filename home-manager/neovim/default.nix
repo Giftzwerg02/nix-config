@@ -469,7 +469,7 @@ in {
             sqls.enable = true;
             ts_ls = {
               enable = true;
-              settings = {
+              config = {
                 filetypes = ["js" "mjs" "templ" "html" "ts" "tsx" "jsx"];
                 typescript = {
                   tsserver = {
@@ -491,7 +491,7 @@ in {
             clangd.enable = true;
             rust_analyzer = {
               enable = true;
-              settings = {
+              config = {
                 cargo.features = "all";
                 check.command = "clippy";
                 diagnostics = {
@@ -502,7 +502,7 @@ in {
             };
             nixd = {
               enable = true;
-              settings = {
+              config = {
                 formatting = {
                   command = ["${pkgs.alejandra}/bin/alejandra"];
                 };
@@ -522,11 +522,11 @@ in {
             templ.enable = true;
             html = {
               enable = true;
-              settings.filetypes = ["html" "templ"];
+              config.filetypes = ["html" "templ"];
             };
             htmx = {
               enable = true;
-              settings.filetypes = ["html" "templ"];
+              config.filetypes = ["html" "templ"];
             };
           };
           onAttach = lspKeymapsOnAttach;
