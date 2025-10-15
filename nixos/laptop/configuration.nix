@@ -171,6 +171,8 @@
     remmina
 
     anki
+
+    rnote
   ];
 
   services.openssh.enable = true;
