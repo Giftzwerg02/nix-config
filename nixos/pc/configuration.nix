@@ -130,6 +130,8 @@
     toggle-redshift
     ffmpeg
     p7zip
+    man-pages
+    man-pages-posix
 
     # Gui (eww) Utils
     pavucontrol
@@ -139,11 +141,11 @@
     obs-studio
     krita
     grayjay
+    anki-bin
 
     # Dev and Work (as if)
     firefox-beta
-    unstable.xournalpp
-
+    rnote
     bitwarden
     zathura
     signal-desktop
@@ -156,12 +158,8 @@
     pdftk
     libreoffice-qt6-fresh
     unstable.dbeaver-bin
-
+    zoom-us
     blender_with_cuda
-    shaderc
-    vulkan-headers
-    vulkan-loader
-    vulkan-tools
 
     # Compilers
     clang
@@ -188,31 +186,12 @@
     # linuxPackages.v4l2loopback
     rar
 
-    anki-bin
-    appimage-run
-
-    rnote
-
-    man-pages
-    man-pages-posix
-
-    zoom-us
-
     gale
     (writeShellScriptBin "gale-wrapper" ''
       export WEBKIT_DISABLE_DMABUF_RENDERER=1
       exec ${pkgs.gale}/bin/gale "$@"
     '')
-
-    vscodium
-    vscode
   ];
-
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-    package = pkgs.appimage-run.override { extraPkgs = pkgs: [ pkgs.lzo ]; };
-  };
 
   documentation = {
     enable = true;
