@@ -30,7 +30,11 @@
     [ 
       {
         device = "/dev/disk/by-uuid/02e07d18-573e-43ca-a6ba-acffb6032c17"; 
-        encrypted.enable = true;
+        encrypted = {
+          enable = true;
+          blkDev = "/dev/disk/by-uuid/087f86ba-ec71-40f5-8e55-ffef7e419168";
+          label = "swap";
+        };
       }
     ];
 
