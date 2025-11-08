@@ -180,6 +180,7 @@
     lutris
     adwaita-icon-theme # needed for lutris
     vesktop
+    retroarch-full
 
     # extras
     # Used for obs virtual cam
