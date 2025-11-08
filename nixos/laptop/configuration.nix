@@ -127,7 +127,7 @@
     ripgrep
     openfortivpn
     imagemagick
-    xdragon
+    dragon-drop
     toggle-redshift
 
     # Gui (eww) Utils

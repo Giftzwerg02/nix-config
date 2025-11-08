@@ -126,7 +126,7 @@
     ripgrep
     openfortivpn
     imagemagick
-    xdragon
+    dragon-drop
     toggle-redshift
     ffmpeg
     p7zip
