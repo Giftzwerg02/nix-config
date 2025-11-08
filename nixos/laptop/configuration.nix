@@ -144,7 +144,7 @@
     #firefox-devedition
     firefox
     xournalpp
-    bitwarden
+    bitwarden-desktop
     zathura
     signal-desktop
     xfce.thunar

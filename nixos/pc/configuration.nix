@@ -146,7 +146,7 @@
     # Dev and Work (as if)
     firefox-beta
     rnote
-    bitwarden
+    bitwarden-desktop
     zathura
     signal-desktop
     xfce.thunar
