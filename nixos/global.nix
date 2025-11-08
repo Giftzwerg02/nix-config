@@ -14,10 +14,7 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
-  services.scx = {
-    enable = true;
-    package = pkgs.scx;
-  };
+  services.scx.enable = true;
 
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Vienna";
