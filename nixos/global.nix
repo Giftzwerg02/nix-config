@@ -82,7 +82,7 @@
     [
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       ubuntu_font_family
       liberation_ttf
       fira-code
