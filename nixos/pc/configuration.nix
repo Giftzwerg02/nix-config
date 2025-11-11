@@ -93,7 +93,6 @@
     };
   };
 
-  environment.etc.hosts.mode = "0700";
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)
     wget
