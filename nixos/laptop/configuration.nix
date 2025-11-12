@@ -90,6 +90,8 @@
   services.displayManager.sddm.enable = true;
   virtualisation.docker.enable = true;
 
+  services.libinput.enable = true;
+
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)
     wget
