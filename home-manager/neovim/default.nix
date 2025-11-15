@@ -468,6 +468,7 @@ in {
         lsp = {
           inlayHints.enable = true;
           servers = {
+            ruff.enable = true;
             sqls.enable = true;
             ts_ls = {
               enable = true;
