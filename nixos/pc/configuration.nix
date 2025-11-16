@@ -81,7 +81,7 @@
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode"];
+    extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode" "libvirtd"];
     shell = pkgs.nushell;
   };
 
@@ -90,6 +90,13 @@
     docker.rootless = {
       enable = true;
       setSocketVariable = true;
+    };
+
+    libvirtd = {
+      enable = true;
+      qemu = {
+        vhostUserPackages = [ pkgs.virtiofsd ];
+      };
     };
   };
 
@@ -224,6 +231,8 @@
     nix-ld.libraries = [
       pkgs.vulkan-loader
     ];
+
+    virt-manager.enable = true;
   };
 
   services = {
