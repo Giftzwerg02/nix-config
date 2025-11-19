@@ -79,11 +79,6 @@
 
   services.xserver = {
     enable = true;
-    synaptics = {
-      enable = true;
-      palmDetect = true;
-      twoFingerScroll = true;
-    };
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [i3status i3lock i3blocks];
@@ -94,8 +89,6 @@
 
   services.displayManager.sddm.enable = true;
   virtualisation.docker.enable = true;
-
-  services.libinput.enable = false;
 
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)
