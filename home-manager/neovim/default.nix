@@ -227,6 +227,12 @@ in {
           indent-blankline.enable = true;
           comment.enable = true;
           nvim-autopairs.enable = true;
+          typescript-tools = {
+            enable = true;
+            settings = {
+              on_attach = lspKeymapsOnAttach;
+            };
+          };
 
           vimtex = {
             enable = false;
@@ -465,13 +471,15 @@ in {
           };
         };
 
+        
+
         lsp = {
           inlayHints.enable = true;
           servers = {
             ruff.enable = true;
             sqls.enable = true;
             ts_ls = {
-              enable = true;
+              enable = false;
               config = {
                 filetypes = ["js" "mjs" "templ" "html" "ts" "tsx" "jsx"];
                 typescript = {
