@@ -230,7 +230,7 @@ in {
           typescript-tools = {
             enable = true;
             settings = {
-              on_attach = lspKeymapsOnAttach;
+              # on_attach = lspKeymapsOnAttach;
             };
           };
 

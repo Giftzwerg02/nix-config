@@ -167,6 +167,7 @@
     unstable.dbeaver-bin
     zoom-us
     blender_with_cuda
+    nodejs_latest
 
     # Compilers
     clang
