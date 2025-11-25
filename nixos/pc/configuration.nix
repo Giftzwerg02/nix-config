@@ -144,7 +144,7 @@
     pavucontrol
     networkmanagerapplet
     vlc
-    flameshot
+    ksnip
     obs-studio
     krita
     grayjay

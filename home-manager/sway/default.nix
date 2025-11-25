@@ -53,7 +53,6 @@ in {
             # {command = "sway";}
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
-            {command = "flameshot";}
           ];
 
           output = {
@@ -94,7 +93,7 @@ in {
             "${modifier}+Shift+a" = "exec \"toggle-redshift\"";
 
             # screenshot
-            "${modifier}+Shift+s" = "exec \"flameshot gui\"";
+            "${modifier}+Shift+s" = "exec \"${lib.getExe pkgs.ksnip}\"";
 
             # lock
             "${modifier}+Control+l" = "exec \"${pkgsBin "swaylock"} --color 181926\"";

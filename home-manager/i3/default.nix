@@ -50,7 +50,6 @@ in {
             {command = "i3";}
             {command = "nm-applet";}
             {command = "feh " + lib.concatMapStringsSep " " (p: "--bg-fill ${p}") cfg.wallpapers;}
-            {command = "flameshot";}
             {command = "--no-startup-id \"${lib.getExe pkgs.wezterm} start --class scratchy\"";}
           ];
 
@@ -75,7 +74,7 @@ in {
             "${modifier}+Shift+a" = "exec \"toggle-redshift\"";
 
             # screenshot
-            "${modifier}+Shift+s" = "exec \"flameshot gui\"";
+            "${modifier}+Shift+s" = "exec \"${lib.getExe pkgs.ksnip}\"";
 
             # lock
             "${modifier}+Control+l" = "exec \"i3lock --color 181926\"";

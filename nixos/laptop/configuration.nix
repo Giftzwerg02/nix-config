@@ -134,7 +134,7 @@
     pavucontrol
     networkmanagerapplet
     vlc
-    flameshot
+    ksnip
     lxappearance
     obs-studio
 
