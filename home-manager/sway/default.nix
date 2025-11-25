@@ -93,7 +93,7 @@ in {
             "${modifier}+Shift+a" = "exec \"toggle-redshift\"";
 
             # screenshot
-            "${modifier}+Shift+s" = "exec \"${lib.getExe pkgs.ksnip}\"";
+            "${modifier}+Shift+s" = "exec \"${lib.getExe pkgs.ksnip} -r\"";
 
             # lock
             "${modifier}+Control+l" = "exec \"${pkgsBin "swaylock"} --color 181926\"";
