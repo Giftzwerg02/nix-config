@@ -478,6 +478,7 @@ in {
           servers = {
             ruff.enable = true;
             sqls.enable = true;
+            ty.enable = true;
             ts_ls = {
               enable = false;
               config = {
