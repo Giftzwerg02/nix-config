@@ -195,11 +195,11 @@
     # linuxPackages.v4l2loopback
     rar
 
-    gale
-    (writeShellScriptBin "gale-wrapper" ''
-      export WEBKIT_DISABLE_DMABUF_RENDERER=1
-      exec ${pkgs.gale}/bin/gale "$@"
-    '')
+    # gale
+    # (writeShellScriptBin "gale-wrapper" ''
+    #   export WEBKIT_DISABLE_DMABUF_RENDERER=1
+    #   exec ${pkgs.gale}/bin/gale "$@"
+    # '')
   ];
 
   documentation = {
