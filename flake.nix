@@ -32,8 +32,6 @@
       url = "github:edolstra/nix-warez?dir=blender";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
@@ -80,7 +78,6 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/pc/configuration.nix
-          inputs.chaotic.nixosModules.default
         ];
       };
       laptop = nixpkgs.lib.nixosSystem {
@@ -88,7 +85,6 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/laptop/configuration.nix
-          inputs.chaotic.nixosModules.default
         ];
       };
 
