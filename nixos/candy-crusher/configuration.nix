@@ -76,7 +76,8 @@ in {
   };
 
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
-
+	
+  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
   networking.hostName = "giftzwerg02-nixos";
