@@ -53,6 +53,14 @@ in {
 
       # Force clean git-directory before rebuilding
       allow-dirty = false;
+
+      system-features = [
+        "nixos-test"
+        "benchmark"
+        "big-parallel"
+        "kvm"
+        "gccarch-x86-64-v3"
+      ];
     };
   };
 
