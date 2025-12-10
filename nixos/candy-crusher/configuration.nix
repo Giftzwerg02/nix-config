@@ -61,6 +61,8 @@ in {
         "kvm"
         "gccarch-x86-64-v3"
       ];
+
+      trusted-users = [ "root" "@wheel" ];
     };
   };
 
