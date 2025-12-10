@@ -55,7 +55,6 @@ in {
       allow-dirty = false;
 
       system-features = [
-        "nixos-test"
         "benchmark"
         "big-parallel"
         "kvm"
