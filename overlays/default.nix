@@ -29,7 +29,7 @@
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs-unstable {
-      stdenv.hostPlatform.system = final.system;
+      system = final.system;
       config.allowUnfree = true;
     };
   };
