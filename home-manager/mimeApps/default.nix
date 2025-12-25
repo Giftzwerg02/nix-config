@@ -5,8 +5,8 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/plain" = ["zathura.desktop"];
-      "application/pdf" = ["zathura.desktop"];
+      "text/plain" = ["firefox.desktop"];
+      "application/pdf" = ["firefox.desktop"];
       "image/*" = ["feh.desktop"];
       "video/*" = ["mpv.desktop"];
       "inode/directory" = ["thunar.desktop"];

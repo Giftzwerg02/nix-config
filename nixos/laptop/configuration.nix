@@ -1,5 +1,3 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
   outputs,
@@ -8,19 +6,7 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ../global.nix
   ];
@@ -30,7 +16,6 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-      # inputs.neovim-nightly-overlay.overlays.default
     ];
     config = {
       allowUnfree = true;
@@ -38,21 +23,11 @@
   };
 
   nix = {
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
     registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
     settings = {
-      # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
-      # Deduplicate and optimize nix store
       auto-optimise-store = true;
-
-      # Force clean git-directory before rebuilding
       allow-dirty = false;
     };
   };
@@ -100,7 +75,6 @@
     gtk4
     zip
     unzip
-    openssl
 
     # Cli Utils deez nuts
     pamixer
@@ -131,15 +105,10 @@
     networkmanagerapplet
     vlc
     ksnip
-    lxappearance
     obs-studio
 
     # Dev and Work (as if)
-    # neovim-nightly
-    # unstable.neovim
-    #firefox-devedition
-    firefox
-    xournalpp
+    firefox-beta
     bitwarden-desktop
     zathura
     signal-desktop
@@ -147,27 +116,15 @@
     xfce.thunar-archive-plugin
     xfce.thunar-volman
     thunderbird
-    unstable.mermaid-filter
-    pandoc-for-homework
-    pdftk
 
     # Compilers
     clang
     libgccjit
     gcc-unwrapped
-    python311
-    python311Packages.pip
-
-    #Gaming
-    mupen64plus
-    rmg
 
 	  adwaita-icon-theme
-
     remmina
-
     anki
-
     rnote
   ];
 

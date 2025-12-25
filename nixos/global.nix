@@ -4,7 +4,6 @@
   ...
 }: {
   boot = {
-    # Use latest Kernel
     kernelPackages = pkgs.unstable.linuxPackages_latest;
 
     # Bootloader
@@ -15,7 +14,6 @@
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Vienna";
 
-  # Select internationalisation properties.
   i18n = let
     # locale = "de_AT.UTF-8";
     locale = "sk_SK.UTF-8";
@@ -40,7 +38,6 @@
     };
   };
 
-  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "at";
     variant = "nodeadkeys";

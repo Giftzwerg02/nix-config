@@ -1,5 +1,3 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
   outputs,
@@ -8,19 +6,7 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
     ../global.nix
@@ -31,52 +17,27 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-      # inputs.neovim-nightly-overlay.overlays.default
     ];
     config = {
       allowUnfree = true;
     };
-
-    # hostPlatform = {
-    #   gcc.arch = "x86-64-v3";
-    #   gcc.tune = "x86-64-v3";
-    #   system = "x86_64-linux";
-    # };
   };
 
   nix = {
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
     registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
     settings = {
-      # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
-      # Deduplicate and optimize nix store
       auto-optimise-store = true;
-
-      # Force clean git-directory before rebuilding
       allow-dirty = false;
     };
   };
 
   boot = {
-    extraModulePackages = [
-      # Weird-ass stuff for obs-virtual-cam
-      # config.boot.kernelPackages.v4l2loopback
-    ];
-
     extraModprobeConfig = ''
       options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
     '';
-
     kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc" "hid_nintendo"];
-
-    # NTFS
     supportedFilesystems = ["ntfs"];
   };
 
@@ -92,13 +53,6 @@
     docker.rootless = {
       enable = true;
       setSocketVariable = true;
-    };
-
-    libvirtd = {
-      enable = true;
-      qemu = {
-        vhostUserPackages = [ pkgs.virtiofsd ];
-      };
     };
   };
 
@@ -122,14 +76,13 @@
     # Cli Utils deez nuts
     killall
     htop
-    pay-respects 
     zoxide
     fzf
     xclip
     feh
     mpv
     tldr
-    unstable.eza
+    eza
     bat
     fd
     ripgrep
@@ -156,20 +109,16 @@
     firefox-beta
     rnote
     bitwarden-desktop
-    zathura
     signal-desktop
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
     thunderbird
     remmina
-    pandoc
-    pdftk
     libreoffice-qt6-fresh
     unstable.dbeaver-bin
     zoom-us
     blender_with_cuda
-    nodejs_latest
 
     # Compilers
     clang
@@ -180,8 +129,6 @@
     alejandra
 
     # Gamer Girl :3
-    prismlauncher # mc launcher
-    jdk21 # for minecraft obviously
     heroic
     ## wine stuff
     wineWowPackages.staging
@@ -191,20 +138,6 @@
     adwaita-icon-theme # needed for lutris
     vesktop
     retroarch-full
-
-    # extras
-    # Used for obs virtual cam
-    # linuxPackages.v4l2loopback
-    rar
-
-    # (gale.overrideAttrs ({
-    #   version = "";
-    # }))
-    # (writeShellScriptBin "gale-wrapper" ''
-    #   export WEBKIT_DISABLE_DMABUF_RENDERER=1
-    #   exec ${pkgs.gale}/bin/gale "$@"
-    # '')
-    r2modman
   ];
 
   documentation = {
@@ -278,11 +211,6 @@
           prefixLength = 24;
         }
       ];
-    };
-    nat = {
-      enable = true;
-      internalInterfaces = ["enp0s31f6"];
-      externalInterface = "enp0s31f6";
     };
   };
 
