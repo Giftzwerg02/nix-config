@@ -113,8 +113,21 @@
       pkgs.xdg-desktop-portal-gtk 
       pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal
     ];
-    config.common.default = "gtk";
+    config = {
+      common = {
+        default = "gtk gnome";
+        "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+        "org.freedesktop.impl.portal.Screenshot" = "gnome";
+        "org.freedesktop.impl.portal.RemoteDesktop" = "gnome";
+      };
+      niri.default = [
+        "gtk"
+        "gnome"
+        "wlr"
+      ];
+    };
     wlr.enable = true;
   };
 

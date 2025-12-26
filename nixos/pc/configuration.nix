@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    inputs.niri.nixosModules.niri
     ./hardware-configuration.nix
 
     ../global.nix
@@ -17,6 +18,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      inputs.niri.overlays.niri
     ];
     config = {
       allowUnfree = true;
