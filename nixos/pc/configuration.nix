@@ -62,6 +62,8 @@
     kitty
     git
     rofi
+    fuzzel
+    alacritty
     libnotify
     dunst
     home-manager

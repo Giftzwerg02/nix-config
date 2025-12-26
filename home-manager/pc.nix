@@ -5,6 +5,7 @@
 }: {
   imports = [
     inputs.nixvim.homeModules.nixvim
+    inputs.niri.homeModules.niri
     ./you-definitely-want-this.nix
   ];
 
@@ -13,6 +14,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      inputs.niri.overlays.niri
     ];
     config = {
       allowUnfree = true;
@@ -41,6 +43,8 @@
   programs.nix-index.enable = true;
 
   systemd.user.startServices = "sd-switch";
+  
+  programs.niri.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";

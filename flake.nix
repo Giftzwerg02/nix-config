@@ -28,6 +28,8 @@
       url = "github:edolstra/nix-warez?dir=blender";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs = {
