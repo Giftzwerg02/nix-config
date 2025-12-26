@@ -47,7 +47,6 @@
 
   programs = {
     dconf.enable = true;
-    ssh.startAgent = true;
     nh = {
       enable = true;
       clean = {
