@@ -25,7 +25,11 @@ in {
       settings = {
         outputs = {
           "dvi-d-1" = {
-            mode = "1920x1080@60.000";
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.0;
+            };
             transform = "90";
             position = {
               x=0; 
@@ -34,7 +38,11 @@ in {
           };
 
           "dp-1" = {
-            mode = "1920x1080@60.000";
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.0;
+            };
             position = {
               x=0; 
               y=0;
@@ -42,7 +50,11 @@ in {
           };
 
           "dp-3" = {
-            mode = "1920x1080@60.000";
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.0;
+            };
             position = {
               x=0; 
               y=0;
