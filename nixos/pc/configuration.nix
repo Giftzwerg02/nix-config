@@ -140,6 +140,7 @@
     adwaita-icon-theme # needed for lutris
     vesktop
     retroarch-full
+    xwayland-satellite
   ];
 
   documentation = {
@@ -177,8 +178,13 @@
   };
 
   services = {
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+
+    # displayManager.sddm.enable = true;
+    # displayManager.sddm.wayland.enable = true;
     xserver = {
       displayManager.setupCommands = ''
         ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x704 --rotate normal --output DP-0 --off --output DP-1 --primary --mode 1920x1080 --pos 3000x704 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 4920x704 --rotate normal --output DP-5 --off

@@ -22,6 +22,11 @@ in {
   options = {
     setup-this-thing = {
       enable = lib.mkEnableOption "enable global stuff config";
+      wallpapers-map = lib.mkOption 
+      {
+          description = "a map from monitor-name to wallpaper-path";
+          default = null;
+      };
       wallpapers =
         lib.mkOption
         {
@@ -49,7 +54,7 @@ in {
     };
     my-niri-config = {
       enable = true;
-      wallpapers = cfg.wallpapers;
+      wallpapers-map = cfg.wallpapers-map;
     };
     my-neovim-config = {
       enable = true;
