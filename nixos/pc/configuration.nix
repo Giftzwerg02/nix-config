@@ -200,6 +200,8 @@
     openssh.enable = true;
   };
 
+  programs.niri.enable = true;
+
   networking = {
     hostName = "pc";
     nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
