@@ -30,7 +30,7 @@ in {
               height = 1080;
               refresh = 60.0;
             };
-            transform = "90";
+            transform.rotation = 90;
             position = {
               x=0; 
               y=0;
