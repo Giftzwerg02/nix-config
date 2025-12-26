@@ -43,8 +43,6 @@
   programs.nix-index.enable = true;
 
   systemd.user.startServices = "sd-switch";
-  
-  programs.niri.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
