@@ -16,6 +16,7 @@ in {
     ./dunst
     ./mimeApps
     ./wezterm
+    ./niri
   ];
 
   options = {
@@ -43,6 +44,10 @@ in {
 
   config = lib.mkIf cfg.enable {
     my-i3-config = {
+      enable = true;
+      wallpapers = cfg.wallpapers;
+    };
+    my-niri-config = {
       enable = true;
       wallpapers = cfg.wallpapers;
     };
