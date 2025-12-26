@@ -27,17 +27,26 @@ in {
           "dvi-d-1" = {
             mode = "1920x1080@60.000";
             transform = "90";
-            position = "x=0 y=0";
+            position = {
+              x=0; 
+              y=0;
+            };
           };
 
           "dp-1" = {
             mode = "1920x1080@60.000";
-            position = "x=0 y=0";
+            position = {
+              x=0; 
+              y=0;
+            };
           };
 
           "dp-3" = {
             mode = "1920x1080@60.000";
-            position = "x=0 y=0";
+            position = {
+              x=0; 
+              y=0;
+            };
           };
         };
       };
