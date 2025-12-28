@@ -51,7 +51,7 @@
   };
 
   virtualisation = {
-    docker.enable = true;
+    docker.enable = false;
     docker.rootless = {
       enable = true;
       setSocketVariable = true;
@@ -83,6 +83,7 @@
     zoxide
     fzf
     xclip
+    wl-clipboard
     feh
     mpv
     tldr

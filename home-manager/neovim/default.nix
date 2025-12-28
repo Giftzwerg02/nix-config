@@ -236,7 +236,7 @@ in {
 
           vimtex = {
             enable = false;
-            settings.view_method = "zathura";
+            settings.view_method = "firefox-beta";
           };
 
           telescope = {

@@ -18,9 +18,15 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    programs.fuzzel.enable = true;
+    services.mako.enable = true;
+    programs.swaylock.enable = true;
     services.swww.enable = true;
     programs.niri = {
       enable = true;
+      # use nixpkgs niri instead of niri-flake niri to make use of cache
+      package = pkgs.niri;
+
       settings = {
         environment."NIXOS_OZONE_WL" = "1";
 
@@ -149,6 +155,11 @@ in {
               y=0;
             };
           };
+        };
+
+        input = {
+          focus-follows-mouse.enable = false;
+          workspace-auto-back-and-forth = true;
         };
 
         spawn-at-startup = let 
