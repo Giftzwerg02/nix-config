@@ -47,8 +47,16 @@
     isNormalUser = true;
     description = "Benjamin Komar";
     extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode" "libvirtd"];
-    shell = pkgs.nushell;
   };
+
+  # Do not override login-shell
+  # https://wiki.nixos.org/wiki/Nushell#Installation
+  environment.shells = [ pkgs.nushell ];
+  programs.bash.interactiveShellInit = ''
+    if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
+      exec nu
+    fi
+  '';
 
   virtualisation = {
     docker.enable = false;
@@ -186,8 +194,6 @@
       wayland = true;
     };
 
-    # displayManager.sddm.enable = true;
-    # displayManager.sddm.wayland.enable = true;
     xserver = {
       displayManager.setupCommands = ''
         ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x704 --rotate normal --output DP-0 --off --output DP-1 --primary --mode 1920x1080 --pos 3000x704 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 4920x704 --rotate normal --output DP-5 --off

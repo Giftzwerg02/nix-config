@@ -56,8 +56,6 @@
     };
   };
 
-  users.defaultUserShell = pkgs.nushell;
-
   hardware = {
     graphics = {
       enable = true;
