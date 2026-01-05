@@ -64,6 +64,10 @@
       enable = true;
       setSocketVariable = true;
     };
+    libvirtd = {
+      enable = true;
+      qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -143,6 +147,8 @@
 
     # Gamer Girl :3
     heroic
+    prismlauncher
+
     ## wine stuff
     wineWowPackages.staging
     winetricks

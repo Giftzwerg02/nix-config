@@ -45,6 +45,7 @@
 
   programs.home-manager.enable = true;
 
+  programs.command-not-found.enable = false;
   programs.nix-index.enable = true;
 
   systemd.user.startServices = "sd-switch";

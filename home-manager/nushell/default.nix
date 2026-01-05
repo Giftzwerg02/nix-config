@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }: {
   programs = {
@@ -35,6 +36,10 @@
               job spawn { MY_WEZTERM_LOAD_LAYOUT=$"($target_dir)" wezterm start --always-new-process }
           }
         '';
+
+      extraConfig = ''
+        $env.config.hooks.command_not_found = source ${pkgs.nix-index}/etc/profile.d/command-not-found.nu
+      '';
     };
 
     starship = {
