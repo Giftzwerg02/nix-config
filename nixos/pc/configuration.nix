@@ -133,7 +133,7 @@
     thunderbird
     remmina
     libreoffice-qt6-fresh
-    unstable.dbeaver-bin
+    dbeaver-bin
     zoom-us
     blender_with_cuda
 
@@ -156,7 +156,6 @@
     lutris
     adwaita-icon-theme # needed for lutris
     vesktop
-    retroarch-full
     xwayland-satellite
   ];
 
