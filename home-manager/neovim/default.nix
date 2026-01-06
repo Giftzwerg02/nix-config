@@ -229,7 +229,7 @@ in {
 
           vimtex = {
             enable = false;
-            settings.view_method = "firefox-beta";
+            settings.view_method = "firefox";
           };
 
           telescope = {

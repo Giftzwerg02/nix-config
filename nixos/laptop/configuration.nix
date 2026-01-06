@@ -108,7 +108,6 @@
     obs-studio
 
     # Dev and Work (as if)
-    firefox-beta
     bitwarden-desktop
     zathura
     signal-desktop
@@ -127,6 +126,11 @@
     anki
     rnote
   ];
+
+  programs.firefox = {
+    enable = true;
+    languagePacks = [ "sk" "en-US" "de" ];
+  };
 
   services.openssh.enable = true;
 

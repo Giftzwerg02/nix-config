@@ -123,7 +123,6 @@
     anki-bin
 
     # Dev and Work (as if)
-    firefox-beta
     rnote
     bitwarden-desktop
     signal-desktop
@@ -191,6 +190,11 @@
     ];
 
     virt-manager.enable = true;
+
+    firefox = {
+      enable = true;
+      languagePacks = [ "sk" "en-US" "de" ];
+    };
   };
 
   services = {
