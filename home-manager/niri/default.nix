@@ -116,6 +116,12 @@ in {
           "Mod+V".action = toggle-window-floating;
 
           "Mod+Shift+S".action.screenshot = [];
+
+          "XF86AudioRaiseVolume".action = spawn ["${lib.getBin pkgs.wireplumber}/bin/wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"];
+          "XF86AudioLowerVolume".action = spawn ["${lib.getBin pkgs.wireplumber}/bin/wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"];
+          "XF86AudioMute".action = spawn ["${lib.getBin pkgs.wireplumber}/bin/wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+          "XF86AudioPlay".action = spawn ["${lib.getExe pkgs.playerctl}" "play-pause"];
+          "XF86AudioPause".action = spawn ["${lib.getExe pkgs.playerctl}" "play-pause"];        
         };
 
         outputs = {

@@ -123,30 +123,23 @@ in {
           };
         };
 
-        extraPlugins = let
-        in [
-          pkgs.vimPlugins.go-nvim
-        ];
-
         extraConfigLua =
           /*
           lua
           */
           ''
-                  vim.wo.relativenumber = true
-                  vim.wo.number = true
-            vim.filetype.add({ extension = { templ = "templ" }})
+          vim.wo.relativenumber = true
+          vim.wo.number = true
+          vim.filetype.add({ extension = { templ = "templ" }})
 
-                  -- Maybe remove this as it is ugly and not that necessary
-                  vim.keymap.set('n', '<leader>/', function()
-                    -- You can pass additional configuration to telescope to change theme, layout, etc.
-                    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-                      winblend = 10,
-                      previewer = false,
-                    })
-                  end, { desc = '[/] Fuzzily search in current buffer' })
-
-            require('go').setup()
+          -- Maybe remove this as it is ugly and not that necessary
+          vim.keymap.set('n', '<leader>/', function()
+            -- You can pass additional configuration to telescope to change theme, layout, etc.
+            require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+              winblend = 10,
+              previewer = false,
+            })
+          end, { desc = '[/] Fuzzily search in current buffer' })
           '';
 
         keymaps = [
