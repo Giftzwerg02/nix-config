@@ -17,6 +17,7 @@ in {
     ./mimeApps
     ./wezterm
     ./niri
+    ./firefox
   ];
 
   options = {
