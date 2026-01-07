@@ -68,7 +68,7 @@
         "type": "github"
       }
     },
-    "betterfox-nix": {
+    "betterfox": {
       "inputs": {
         "flake-parts": "flake-parts",
         "import-tree": "import-tree",
@@ -146,7 +146,7 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
-          "betterfox-nix",
+          "betterfox",
           "nixpkgs"
         ]
       },
@@ -581,7 +581,7 @@
     },
     "root": {
       "inputs": {
-        "betterfox-nix": "betterfox-nix",
+        "betterfox": "betterfox",
         "blender": "blender",
         "home-manager": "home-manager",
         "nh": "nh",
