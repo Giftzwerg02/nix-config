@@ -190,11 +190,6 @@
     ];
 
     virt-manager.enable = true;
-
-    firefox = {
-      enable = true;
-      languagePacks = [ "sk" "en-US" "de" ];
-    };
   };
 
   services = {
