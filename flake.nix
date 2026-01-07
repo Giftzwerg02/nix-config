@@ -31,7 +31,7 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    betterfox-nix.url = "github:HeitorAugustoLN/betterfox-nix";
+    betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
   };
 
   outputs = {
