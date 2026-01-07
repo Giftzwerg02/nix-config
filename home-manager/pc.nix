@@ -6,7 +6,7 @@
   imports = [
     inputs.nixvim.homeModules.nixvim
     inputs.niri.homeModules.niri
-    inputs.betterfox.modules.homeManager.betterfox
+    inputs.betterfox.homeModules.betterfox
     ./you-definitely-want-this.nix
   ];
 
