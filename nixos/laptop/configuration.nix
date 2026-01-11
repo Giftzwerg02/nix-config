@@ -88,7 +88,7 @@
     xclip
     feh
     mpv
-    tldr
+    tealdeer 
     networkmanager_dmenu
     unstable.eza
     bat

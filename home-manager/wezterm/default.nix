@@ -1,11 +1,14 @@
 {
   ...
 }: {
+  programs.foot.enable = true;
   programs.wezterm = {
-    enable = true;
+    enable = false;
     extraConfig = /* lua */ ''
       local mux = wezterm.mux
       local config = {}
+
+      config.enable_wayland = false
 
       local function add_to_package_path(dir)
           local path = package.path

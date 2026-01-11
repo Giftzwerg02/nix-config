@@ -33,8 +33,12 @@ in {
         # disable window title
         prefer-no-csd = true;
 
+        layout = {
+          default-column-width.proportion = 1.;
+        };
+
         binds = with config.lib.niri.actions; {
-          "Mod+Return".action = spawn "${lib.getExe pkgs.wezterm}";
+          "Mod+Return".action = spawn "${lib.getExe pkgs.foot}";
           "Mod+P".action = spawn "${lib.getExe pkgs.fuzzel}";
           "Super+Alt+L".action = spawn "${lib.getExe pkgs.swaylock}";
           "Mod+O" = {
@@ -162,6 +166,8 @@ in {
             };
           };
         };
+
+        animations.enable = false;
 
         input = {
           focus-follows-mouse.enable = false;

@@ -98,7 +98,7 @@
     wl-clipboard
     feh
     mpv
-    tldr
+    tealdeer
     eza
     bat
     fd
