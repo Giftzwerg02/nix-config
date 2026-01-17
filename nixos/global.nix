@@ -4,7 +4,8 @@
   ...
 }: {
   boot = {
-    kernelPackages = pkgs.unstable.linuxPackages_latest;
+    #kernelPackages = pkgs.unstable.linuxPackages_latest;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
     # Bootloader
     loader.systemd-boot.enable = true;

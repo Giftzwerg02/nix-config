@@ -32,6 +32,8 @@
     niri.url = "github:sodiboo/niri-flake";
 
     betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
+
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs = {

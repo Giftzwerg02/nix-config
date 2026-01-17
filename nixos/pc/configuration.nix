@@ -19,6 +19,7 @@
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
       inputs.niri.overlays.niri
+      inputs.nix-cachyos-kernel.overlays.pinned
     ];
     config = {
       allowUnfree = true;
@@ -32,6 +33,8 @@
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
       allow-dirty = false;
+      substituters = [ "https://attic.xuyh0120.win/lantian" ];
+      trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
     };
   };
 
