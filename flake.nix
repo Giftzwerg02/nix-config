@@ -60,7 +60,9 @@
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [ ./nixos/pc/configuration.nix ];
+        modules = [ 
+            ./nixos/pc/configuration.nix 
+          ];
       };
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
