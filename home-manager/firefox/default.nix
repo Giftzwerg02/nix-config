@@ -19,9 +19,9 @@
       Preferences = let
         ffVersion = config.programs.firefox.package.version;
       in {
-        "media.ffmpeg.vaapi.enabled" = lib.versionOlder ffVersion "137.0.0";
+        "media.ffmpeg.vaapi.enabled" = true;
         "media.hardware-video-decoding.force-enabled" = lib.versionAtLeast ffVersion "137.0.0";
-        "media.rdd-ffmpeg.enabled" = lib.versionOlder ffVersion "97.0.0";
+        "media.rdd-ffmpeg.enabled" = true;
 
         "gfx.x11-egl.force-enabled" = true;
         "widget.dmabuf.force-enabled" = true;

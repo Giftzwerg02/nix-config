@@ -162,6 +162,9 @@
     xwayland-satellite
   ];
 
+  programs.ydotool.enable = true;
+  programs.ydotool.group = "gamemode";
+
   documentation = {
     enable = true;
     dev.enable = true;
