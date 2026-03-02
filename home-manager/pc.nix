@@ -28,7 +28,7 @@
     enable = true;
     wallpapers-map = {
       "DVI-D-1" = ./imgs/left.jpg;
-      "DP-1" = ./imgs/middle.jpg;
+      "DP-2" = ./imgs/middle.jpg;
       "DP-3" = ./imgs/right.jpg;
     };
     wallpapers = [
