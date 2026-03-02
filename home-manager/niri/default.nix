@@ -141,8 +141,12 @@ in {
               y=-510;
             };
           };
-          "dp-2" = {};
-          "dp-3" = {};
+          "dp-2" = {
+            variable-refresh-rate = true;
+          };
+          "dp-3" = {
+            variable-refresh-rate = true;
+          };
         };
 
         animations.enable = false;
