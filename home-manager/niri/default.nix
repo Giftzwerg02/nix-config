@@ -154,7 +154,7 @@ in {
 
         spawn-at-startup = let 
           spawn-wallpapers = lib.mapAttrsToList (monitor: image: {
-            argv = [ (lib.getExe pkgs.swww) "${image}" "-o" "${monitor}" ];
+            argv = [ (lib.getExe pkgs.swww) "img" "${image}" "-o" "${monitor}" ];
           }) cfg.wallpapers-map;
         in [ 
             { argv = [ (lib.getExe pkgs.mako) ]; }
