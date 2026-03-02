@@ -138,33 +138,11 @@ in {
             transform.rotation = 90;
             position = {
               x=0; 
-              y=-715;
+              y=-510;
             };
           };
-
-          "dp-1" = {
-            mode = {
-              width = 1920;
-              height = 1080;
-              refresh = 60.0;
-            };
-            position = {
-              x=0; 
-              y=0;
-            };
-          };
-
-          "dp-3" = {
-            mode = {
-              width = 1920;
-              height = 1080;
-              refresh = 60.0;
-            };
-            position = {
-              x=0; 
-              y=0;
-            };
-          };
+          "dp-1" = {};
+          "dp-3" = {};
         };
 
         animations.enable = false;
