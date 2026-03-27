@@ -423,6 +423,7 @@ in {
             ruff.enable = true;
             sqls.enable = true;
             ty.enable = true;
+            jupytext.enable = true;
             ts_ls = {
               enable = false;
               config = {
