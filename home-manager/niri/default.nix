@@ -21,7 +21,7 @@ in {
     programs.fuzzel.enable = true;
     services.mako.enable = true;
     programs.swaylock.enable = true;
-    services.swww.enable = true;
+    services.awww.enable = true;
     programs.niri = {
       enable = true;
       # use nixpkgs niri instead of niri-flake niri to make use of cache
@@ -158,7 +158,7 @@ in {
 
         spawn-at-startup = let 
           spawn-wallpapers = lib.mapAttrsToList (monitor: image: {
-            argv = [ (lib.getExe pkgs.swww) "img" "${image}" "-o" "${monitor}" ];
+            argv = [ (lib.getExe pkgs.awww) "img" "${image}" "-o" "${monitor}" ];
           }) cfg.wallpapers-map;
         in [ 
             { argv = [ (lib.getExe pkgs.mako) ]; }
