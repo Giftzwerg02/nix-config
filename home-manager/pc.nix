@@ -51,6 +51,10 @@
 
   systemd.user.startServices = "sd-switch";
 
+  # legacy stateVersion stuff
+  gtk.gtk4.theme = null;
+  programs.git.signing.format = null;
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
 }
