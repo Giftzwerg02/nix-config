@@ -19,7 +19,6 @@
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
       inputs.niri.overlays.niri
-      inputs.nix-cachyos-kernel.overlays.pinned
     ];
     config = {
       allowUnfree = true;
