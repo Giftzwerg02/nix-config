@@ -152,7 +152,7 @@
     prismlauncher
 
     ## wine stuff
-    wineWowPackages.staging
+    wineWow64Packages.staging
     winetricks
     protontricks
     lutris
