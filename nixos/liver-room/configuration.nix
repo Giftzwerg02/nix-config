@@ -3,6 +3,14 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
+  # Nix settings
+  nix = {
+    settings = {
+      experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
+    };
+  };
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
