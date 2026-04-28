@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  config,
   ...
 }: {
   imports = [
@@ -54,6 +55,7 @@
   # legacy stateVersion stuff
   gtk.gtk4.theme = null;
   programs.git.signing.format = null;
+  programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
