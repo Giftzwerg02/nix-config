@@ -157,8 +157,9 @@
     protontricks
     lutris
     adwaita-icon-theme # needed for lutris
-    vesktop
     xwayland-satellite
+
+    discord
   ];
 
   programs.ydotool.enable = true;
