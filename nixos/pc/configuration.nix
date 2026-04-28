@@ -155,7 +155,6 @@
     wineWow64Packages.staging
     winetricks
     protontricks
-    lutris
     adwaita-icon-theme # needed for lutris
     xwayland-satellite
 
