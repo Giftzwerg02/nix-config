@@ -124,6 +124,7 @@
     krita
     grayjay
     anki-bin
+    zed-editor
 
     # Dev and Work (as if)
     rnote
