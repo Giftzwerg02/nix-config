@@ -420,6 +420,7 @@ in {
         lsp = {
           inlayHints.enable = true;
           servers = {
+            ols.enable = true;
             ruff.enable = true;
             sqls.enable = true;
             ty.enable = true;
