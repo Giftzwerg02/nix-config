@@ -159,6 +159,7 @@
     xwayland-satellite
 
     discord
+    animdl
   ];
 
   programs.ydotool.enable = true;
