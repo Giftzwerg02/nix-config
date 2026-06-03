@@ -127,7 +127,6 @@
 
     # Dev and Work (as if)
     rnote
-    bitwarden-desktop
     signal-desktop
     thunar
     thunar-archive-plugin
