@@ -53,7 +53,6 @@
   systemd.user.startServices = "sd-switch";
 
   # legacy stateVersion stuff
-  gtk.gtk4.theme = null;
   programs.git.signing.format = null;
   programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
 
