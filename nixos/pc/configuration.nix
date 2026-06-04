@@ -157,7 +157,7 @@
     adwaita-icon-theme # needed for lutris
     xwayland-satellite
 
-    discord
+    discord-canary
     animdl
   ];
 
