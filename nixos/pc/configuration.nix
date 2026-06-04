@@ -199,7 +199,8 @@
   };
 
   services = {
-    displayManager.gdm.enable = true;
+    # displayManager.gdm.enable = true;
+    displayManager.ly.enable = true;
 
     xserver = {
       displayManager.setupCommands = ''
