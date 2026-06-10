@@ -7,9 +7,9 @@
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
-      name = "rose-pine-cursor";
+      name = "BreezeX-RosePine-Linux";
       package = pkgs.rose-pine-cursor;
-      size = 40;
+      size = 24;
     };
     fonts = {
       sizes = {
