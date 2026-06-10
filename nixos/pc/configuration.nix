@@ -158,6 +158,7 @@
     xwayland-satellite
 
     discord-canary
+    vesktop
     animdl
   ];
 
