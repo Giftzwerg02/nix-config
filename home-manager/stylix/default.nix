@@ -7,8 +7,8 @@
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
-      name = "capitaine-cursors";
-      package = pkgs.capitaine-cursors;
+      name = "rose-pine-cursor";
+      package = pkgs.rose-pine-cursor;
       size = 40;
     };
     fonts = {
