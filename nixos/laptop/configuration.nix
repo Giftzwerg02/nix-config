@@ -32,21 +32,27 @@
     };
   };
 
+  environment.etc.hosts.enable = false;
+  environment.etc.hosts.mode = "0700";
+
   networking.hostName = "laptop";
 
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin Komar";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode" "libvirtd"];
   };
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      START_CHARGE_THRESH_BAT0 = 75;
-      STOP_CHARGE_THRESH_BAT0 = 80;
-    };
-  };
+  # services.tlp = {
+  #   enable = true;
+  #   settings = {
+  #     START_CHARGE_THRESH_BAT0 = 75;
+  #     STOP_CHARGE_THRESH_BAT0 = 80;
+  #   };
+  # };
+
+
+  services.desktopManager.plasma6.enable = true;
 
   services.xserver = {
     enable = true;
@@ -59,7 +65,20 @@
   };
 
   services.displayManager.sddm.enable = true;
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    docker.rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+
+    libvirtd = {
+      enable = true;
+      qemu = {
+        vhostUserPackages = [ pkgs.virtiofsd ];
+      };
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)
@@ -125,6 +144,7 @@
     remmina
     anki
     rnote
+    dbeaver-bin
   ];
 
   programs.firefox = {
