@@ -76,11 +76,9 @@
   environment.systemPackages = with pkgs; [
     # Core (Undertale reference!)
     wget
-    kitty
     git
     rofi
     fuzzel
-    alacritty
     libnotify
     dunst
     home-manager
