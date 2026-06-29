@@ -57,7 +57,10 @@
 
   services = {
     displayManager.ly.enable = true;
-    videoDrivers = ["modesetting" "nvidia"];
+    xserver = {
+      enable = true;
+      videoDrivers = ["modesetting" "nvidia"];
+    };
   };
   programs.niri.enable = true;
 
