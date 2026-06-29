@@ -67,7 +67,6 @@ in {
     lib.mkIf cfg.enable {
       programs.nixvim = {
         enable = true;
-        nixpkgs.useGlobalPackages = true;
 
         globals = {
           mapleader = " ";
