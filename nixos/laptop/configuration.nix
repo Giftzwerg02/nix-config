@@ -28,6 +28,8 @@
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
       allow-dirty = false;
+      substituters = [ "https://attic.xuyh0120.win/lantian" ];
+      trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
     };
   };
 
@@ -42,23 +44,18 @@
     extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode" "libvirtd"];
   };
 
-  # services.tlp = {
-  #   enable = true;
-  #   settings = {
-  #     START_CHARGE_THRESH_BAT0 = 75;
-  #     STOP_CHARGE_THRESH_BAT0 = 80;
-  #   };
-  # };
-
+  services.tlp = {
+    enable = true;
+    settings = {
+      START_CHARGE_THRESH_BAT0 = 75;
+      STOP_CHARGE_THRESH_BAT0 = 80;
+    };
+  };
 
   services.desktopManager.plasma6.enable = true;
 
   services.xserver = {
     enable = true;
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [i3status i3lock i3blocks];
-    };
 
     videoDrivers = ["modesetting" "nvidia"];
   };
@@ -84,7 +81,7 @@
     wget
     kitty
     git
-    rofi
+    fuzzel
     libnotify
     dunst
     home-manager
@@ -93,24 +90,22 @@
     gtk4
     zip
     unzip
+    dust
 
     # Cli Utils deez nuts
     pamixer
     killall
     htop
-    pay-respects
     zoxide
     fzf
     brightnessctl
     xclip
+    wl-clipboard
     feh
     mpv
     tealdeer 
-    networkmanager_dmenu
-    unstable.eza
     bat
     fd
-    btop
     ripgrep
     openfortivpn
     imagemagick
@@ -125,7 +120,6 @@
     obs-studio
 
     # Dev and Work (as if)
-    zathura
     signal-desktop
     xfce.thunar
     xfce.thunar-archive-plugin
@@ -136,6 +130,8 @@
     clang
     libgccjit
     gcc-unwrapped
+
+    xwayland-satellite
 
 	  adwaita-icon-theme
     remmina

@@ -77,7 +77,6 @@
     # Core (Undertale reference!)
     wget
     git
-    rofi
     fuzzel
     libnotify
     dunst
@@ -100,7 +99,6 @@
     feh
     mpv
     tealdeer
-    eza
     bat
     fd
     ripgrep
@@ -157,7 +155,6 @@
 
     discord-canary
     vesktop
-    animdl
   ];
 
   programs.ydotool.enable = true;
