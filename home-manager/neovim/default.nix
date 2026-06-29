@@ -373,7 +373,7 @@ in {
           };
 
           treesitter = {
-            enable = true;
+            enable = false;
             grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
             settings = {
               indent.enable = true;
