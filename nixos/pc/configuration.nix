@@ -195,7 +195,6 @@
   };
 
   services = {
-    # displayManager.gdm.enable = true;
     displayManager.ly.enable = true;
 
     xserver = {

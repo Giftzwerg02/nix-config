@@ -44,21 +44,22 @@
     extraGroups = ["networkmanager" "wheel" "adbusers" "gamemode" "libvirtd"];
   };
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      START_CHARGE_THRESH_BAT0 = 75;
-      STOP_CHARGE_THRESH_BAT0 = 80;
-    };
-  };
+  # Do not override login-shell
+  # https://wiki.nixos.org/wiki/Nushell#Installation
+  environment.shells = [ pkgs.nushell ];
+  programs.bash.interactiveShellInit = ''
+    if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
+      exec nu
+    fi
+  '';
 
   services.desktopManager.plasma6.enable = true;
 
-  services.xserver = {
-    enable = true;
-
+  services = {
+    displayManager.ly.enable = true;
     videoDrivers = ["modesetting" "nvidia"];
   };
+  programs.niri.enable = true;
 
   services.displayManager.sddm.enable = true;
   virtualisation = {
