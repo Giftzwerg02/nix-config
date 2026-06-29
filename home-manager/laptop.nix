@@ -5,6 +5,7 @@
 }: {
   imports = [
     inputs.nixvim.homeModules.nixvim
+    inputs.betterfox.homeModules.betterfox
     ./you-definitely-want-this.nix
   ];
 
