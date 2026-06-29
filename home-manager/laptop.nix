@@ -5,6 +5,7 @@
 }: {
   imports = [
     inputs.nixvim.homeModules.nixvim
+    inputs.niri.homeModules.niri
     inputs.betterfox.homeModules.betterfox
     ./you-definitely-want-this.nix
   ];
@@ -14,6 +15,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      inputs.niri.overlays.niri
     ];
     config = {
       allowUnfree = true;
