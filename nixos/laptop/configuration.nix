@@ -21,7 +21,6 @@
       allowUnfree = true;
     };
   };
-
   nix = {
     registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
@@ -102,7 +101,6 @@
     pay-respects
     zoxide
     fzf
-    neofetch
     brightnessctl
     xclip
     feh
@@ -127,7 +125,6 @@
     obs-studio
 
     # Dev and Work (as if)
-    bitwarden-desktop
     zathura
     signal-desktop
     xfce.thunar
