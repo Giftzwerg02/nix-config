@@ -154,6 +154,7 @@ in {
         input = {
           focus-follows-mouse.enable = false;
           workspace-auto-back-and-forth = true;
+          touchpad.natural-scroll = false;
         };
 
         spawn-at-startup = let 

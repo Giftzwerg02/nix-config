@@ -372,23 +372,6 @@ in {
             };
           };
 
-          treesitter = {
-            enable = false;
-            grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
-            settings = {
-              indent.enable = true;
-              highlight = {
-                additional_vim_regex_highlighting = true;
-                enable = true;
-              };
-
-              parser_install_dir = {
-                __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
-              };
-              sync_install = false;
-            };
-          };
-
           conform-nvim = {
             settings = {
               default_format_opts = {
