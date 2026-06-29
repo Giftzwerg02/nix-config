@@ -171,6 +171,7 @@
 #];
     };
     wlr.enable = true;
+};
 
 
   hardware = {
