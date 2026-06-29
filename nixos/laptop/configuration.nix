@@ -64,7 +64,6 @@
   };
   programs.niri.enable = true;
 
-  services.displayManager.sddm.enable = true;
   virtualisation = {
     docker.enable = true;
     docker.rootless = {
