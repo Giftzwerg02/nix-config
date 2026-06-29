@@ -164,14 +164,14 @@
         "org.freedesktop.impl.portal.Screenshot" = "gnome";
         "org.freedesktop.impl.portal.RemoteDesktop" = "gnome";
       };
-      niri.default = [
-        "gtk"
-        "gnome"
-        "wlr"
-      ];
+#      niri.default = [
+#        "gtk"
+#        "gnome"
+#        "wlr"
+#];
     };
     wlr.enable = true;
-  };
+
 
   hardware = {
     bluetooth = {
