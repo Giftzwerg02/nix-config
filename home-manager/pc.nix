@@ -44,6 +44,7 @@
 
   home.username = "benjamin";
   home.homeDirectory = "/home/benjamin";
+  home.pointerCursor.enable = true;
 
   programs.home-manager.enable = true;
 
