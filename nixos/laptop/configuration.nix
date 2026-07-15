@@ -148,6 +148,13 @@
     languagePacks = [ "sk" "en-US" "de" ];
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+
   services.openssh.enable = true;
 
   networking.nameservers = ["1.1.1.1" "8.8.8.8" "192.168.1.1"];
