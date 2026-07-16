@@ -501,6 +501,7 @@ in {
             htmx = {
               enable = true;
               config.filetypes = ["html" "templ"];
+              packageFallback = true;
             };
           };
           onAttach = lspKeymapsOnAttach;
