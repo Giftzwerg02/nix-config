@@ -27,9 +27,6 @@
 
   setup-this-thing = {
     enable = true;
-    wallpapers = [
-      ./imgs/background-laptop.jpg
-    ];
     wallpapers-map = {
       "eDP-1" = ./imgs/background-laptop.jpg;
     };

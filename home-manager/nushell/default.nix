@@ -30,11 +30,6 @@
             cd ~/nix-config
             nvim .
           }
-
-          def wezzy [dir?: string] {
-              let target_dir = ($dir | default $env.PWD)
-              job spawn { MY_WEZTERM_LOAD_LAYOUT=$"($target_dir)" wezterm start --always-new-process }
-          }
         '';
 
       extraConfig = ''

@@ -86,7 +86,6 @@
     git
     fuzzel
     libnotify
-    dunst
     home-manager
     gtk2
     gtk3
@@ -102,7 +101,6 @@
     zoxide
     fzf
     brightnessctl
-    xclip
     wl-clipboard
     feh
     mpv
@@ -113,13 +111,10 @@
     openfortivpn
     imagemagick
     dragon-drop
-    toggle-redshift
 
     # Gui (eww) Utils
     pavucontrol
-    networkmanagerapplet
     vlc
-    ksnip
     obs-studio
 
     # Dev and Work (as if)

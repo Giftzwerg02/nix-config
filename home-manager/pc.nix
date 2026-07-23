@@ -32,12 +32,6 @@
       "DP-2" = ./imgs/middle.jpg;
       "DP-3" = ./imgs/right.jpg;
     };
-    wallpapers = [
-      ./imgs/zeldafirst.jpg
-      ./imgs/left.jpg
-      ./imgs/middle.jpg
-      ./imgs/right.jpg
-    ];
     nixosConfigName = "pc";
     hmConfigName = "benjamin@pc";
   };

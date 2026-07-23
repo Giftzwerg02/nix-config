@@ -79,7 +79,6 @@
     git
     fuzzel
     libnotify
-    dunst
     home-manager
     gtk2
     gtk3
@@ -94,7 +93,6 @@
     htop
     zoxide
     fzf
-    xclip
     wl-clipboard
     feh
     mpv
@@ -105,7 +103,6 @@
     openfortivpn
     imagemagick
     dragon-drop
-    toggle-redshift
     ffmpeg
     p7zip
     man-pages
@@ -113,9 +110,7 @@
 
     # Gui (eww) Utils
     pavucontrol
-    networkmanagerapplet
     vlc
-    ksnip
     obs-studio
     krita
     grayjay
@@ -154,11 +149,7 @@
     xwayland-satellite
 
     discord-canary
-    vesktop
   ];
-
-  programs.ydotool.enable = true;
-  programs.ydotool.group = "gamemode";
 
   documentation = {
     enable = true;

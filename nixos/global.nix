@@ -5,7 +5,6 @@
 }: {
   boot = {
     kernelPackages = pkgs.unstable.linuxPackages_latest;
-    #kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
     # Bootloader
     loader.systemd-boot.enable = true;
@@ -64,9 +63,7 @@
     };
     nvidia = {
       modesetting.enable = true;
-      # package = config.boot.kernelPackages.nvidiaPackages.stable;
       package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-      # package = pkgs.linuxPackages.nvidiaPackages.legacy_580;
       open = false;
     };
   };
@@ -164,15 +161,9 @@
         "org.freedesktop.impl.portal.Screenshot" = "gnome";
         "org.freedesktop.impl.portal.RemoteDesktop" = "gnome";
       };
-#      niri.default = [
-#        "gtk"
-#        "gnome"
-#        "wlr"
-#];
     };
     wlr.enable = true;
-};
-
+  };
 
   hardware = {
     bluetooth = {
