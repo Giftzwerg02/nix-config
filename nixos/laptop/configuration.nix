@@ -139,6 +139,7 @@
 
     ares
     archipelago
+    lumafly
   ];
 
   programs.firefox = {
