@@ -136,6 +136,9 @@
     anki
     rnote
     dbeaver-bin
+
+    ares
+    archipelago
   ];
 
   programs.firefox = {
