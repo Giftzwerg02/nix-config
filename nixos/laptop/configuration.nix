@@ -33,6 +33,13 @@
     };
   };
 
+  boot = {
+    extraModprobeConfig = ''
+      options v4l2loopback exclusive_caps=1 video_nr=9 card_label=a7III
+    '';
+    kernelModules = ["kvm-intel" "v4l2loopback" "gcadapter_oc" "hid_nintendo"];
+  };
+
   environment.etc.hosts.enable = false;
   environment.etc.hosts.mode = "0700";
 
