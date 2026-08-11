@@ -147,6 +147,9 @@
     ares
     archipelago
     lumafly
+
+    yt-dlp
+    ani-cli
   ];
 
   programs.firefox = {
