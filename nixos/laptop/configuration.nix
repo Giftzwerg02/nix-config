@@ -86,10 +86,21 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
+  
+  environment.systemPackages = let 
+    ani-cli = pkgs.ani-cli.overrideAttrs (oldAttrs: rec {
+    version = "5.0";
+    src = pkgs.fetchFromGitHub {
+    owner = "pystardust";
+    repo = "ani-cli";
+    rev = "v${version}";
+    sha256 = "sha256-rRQESi0Skoyf1jy/dRRK6ooKRPQhkak107kk5ulwZYI=";
+    };
+    });
+  in
+  with pkgs; [
     # Core (Undertale reference!)
     wget
-    kitty
     git
     fuzzel
     libnotify
@@ -150,6 +161,13 @@
 
     yt-dlp
     ani-cli
+
+    go
+    templ
+    air
+    gopls
+    typescript
+    gcc
   ];
 
   programs.firefox = {
