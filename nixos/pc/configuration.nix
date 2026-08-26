@@ -149,6 +149,10 @@
     xwayland-satellite
 
     discord-canary
+
+
+    ares
+    archipelago
   ];
 
   documentation = {
@@ -227,6 +231,11 @@
           prefixLength = 24;
         }
       ];
+    };
+    nat = {
+      enable = true;
+      internalInterfaces = [ "enp0s31f6" ];
+      externalInterface = "enp0s31f6";
     };
   };
 

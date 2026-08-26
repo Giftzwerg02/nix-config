@@ -19,9 +19,12 @@ in {
 
   config = lib.mkIf cfg.enable {
     programs.fuzzel.enable = true;
-    services.mako.enable = true;
     programs.swaylock.enable = true;
+    programs.foot.enable = true;
+
+    services.mako.enable = true;
     services.awww.enable = true;
+    
     programs.niri = {
       enable = true;
       # use nixpkgs niri instead of niri-flake niri to make use of cache
