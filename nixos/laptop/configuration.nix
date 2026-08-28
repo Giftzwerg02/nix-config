@@ -161,13 +161,6 @@
 
     yt-dlp
     ani-cli
-
-    go
-    templ
-    air
-    gopls
-    typescript
-    gcc
   ];
 
   programs.firefox = {
