@@ -150,7 +150,9 @@
 
     ares
     archipelago
-    retroarch-full
+    (retroarch.withCores (cores: with cores; [
+      mupen64plus 
+    ]))
     mupen64plus
   ];
 
