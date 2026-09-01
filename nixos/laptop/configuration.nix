@@ -69,7 +69,6 @@
       videoDrivers = ["modesetting" "nvidia"];
     };
   };
-  programs.niri.enable = true;
 
   virtualisation = {
     docker.enable = true;

@@ -7,9 +7,7 @@
   ...
 }: {
   imports = [
-    inputs.niri.nixosModules.niri
     ./hardware-configuration.nix
-
     ../global.nix
   ];
 
@@ -18,7 +16,6 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-      inputs.niri.overlays.niri
     ];
     config = {
       allowUnfree = true;
@@ -153,6 +150,8 @@
 
     ares
     archipelago
+    retroarch-full
+    mupen64plus
   ];
 
   documentation = {
@@ -211,11 +210,8 @@
       nssmdns4 = true;
       openFirewall = true;
     };
-    thermald.enable = true;
     openssh.enable = true;
   };
-
-  programs.niri.enable = true;
 
   networking = {
     hostName = "pc";
@@ -238,6 +234,10 @@
       externalInterface = "enp0s31f6";
     };
   };
+
+  services.tailscale.enable = true;
+  
+  programs.niri.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
 }

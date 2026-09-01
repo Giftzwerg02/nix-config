@@ -28,8 +28,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    niri.url = "github:sodiboo/niri-flake";
-
     betterfox.url = "github:HeitorAugustoLN/betterfox-nix";
   };
 

@@ -24,8 +24,140 @@ in {
 
     services.mako.enable = true;
     services.awww.enable = true;
+
+    wayland.windowManager.niri = {
+      enable = true;
+      settings = let
+        spawn-at-startups = let 
+          spawn-wallpapers = lib.mapAttrsToList (monitor: image: {
+            spawn-at-startup._args = [ (lib.getExe pkgs.awww) "img" "${image}" "-o" "${monitor}" ];
+          }) cfg.wallpapers-map;
+        in [ 
+            { spawn-at-startup._args = [ (lib.getExe pkgs.mako) ]; }
+        ] ++ spawn-wallpapers;
+      in {
+        prefer-no-csd = {};
+        layout = {
+          default-column-width.proportion = 1.;
+        };
+
+
+        binds = {
+          "Mod+Return".spawn =  "${lib.getExe pkgs.foot}";
+          "Mod+P".spawn = "${lib.getExe pkgs.fuzzel}";
+          "Super+Alt+L".spawn = "${lib.getExe pkgs.swaylock}";
+          "Mod+O" = {
+            _props.repeat = false;
+            toggle-overview = {};
+          };
+          "Mod+Shift+Q" = {
+            _props.repeat = false;
+            close-window = {};
+          };
+
+          "Mod+Left".focus-column-left = {};
+          "Mod+Down".focus-window-down = {};
+          "Mod+Up".focus-window-up = {};
+          "Mod+Right".focus-column-right = {};
+          "Mod+H".focus-column-left = {};
+          "Mod+J".focus-window-down = {};
+          "Mod+K".focus-window-up = {};
+          "Mod+L".focus-column-right = {};
+
+          "Mod+Ctrl+Left".move-column-left = {};
+          "Mod+Ctrl+Down".move-window-down = {};
+          "Mod+Ctrl+Up".move-window-up = {};
+          "Mod+Ctrl+Right".move-column-right = {};
+          "Mod+Ctrl+H".move-column-left = {};
+          "Mod+Ctrl+J".move-window-down = {};
+          "Mod+Ctrl+K".move-window-up = {};
+          "Mod+Ctrl+L".move-column-right = {};
+
+          "Mod+Shift+Left".focus-monitor-left = {};
+          "Mod+Shift+Down".focus-monitor-down = {};
+          "Mod+Shift+Up".focus-monitor-up = {};
+          "Mod+Shift+Right".focus-monitor-right = {};
+          "Mod+Shift+H".focus-monitor-left = {};
+          "Mod+Shift+J".focus-monitor-down = {};
+          "Mod+Shift+K".focus-monitor-up = {};
+          "Mod+Shift+L".focus-monitor-right = {};
+
+          "Mod+Shift+Ctrl+Left".move-column-to-monitor-left = {};
+          "Mod+Shift+Ctrl+Down".move-column-to-monitor-down = {};
+          "Mod+Shift+Ctrl+Up".move-column-to-monitor-up = {};
+          "Mod+Shift+Ctrl+Right".move-column-to-monitor-right = {};
+          "Mod+Shift+Ctrl+H".move-column-to-monitor-left = {};
+          "Mod+Shift+Ctrl+J".move-column-to-monitor-down = {};
+          "Mod+Shift+Ctrl+K".move-column-to-monitor-up = {};
+          "Mod+Shift+Ctrl+L".move-column-to-monitor-right = {};
+
+          "Mod+Page_Down".focus-workspace-down = {};
+          "Mod+Page_Up".focus-workspace-up = {};
+          "Mod+U".focus-workspace-down = {};
+          "Mod+I".focus-workspace-up = {};
+          "Mod+Ctrl+Page_Down".move-column-to-workspace-down = {};
+          "Mod+Ctrl+Page_Up".move-column-to-workspace-up = {};
+          "Mod+Ctrl+U".move-column-to-workspace-down = {};
+          "Mod+Ctrl+I".move-column-to-workspace-up = {};
+
+          "Mod+1".focus-workspace = 1;
+          "Mod+2".focus-workspace = 2;
+          "Mod+3".focus-workspace = 3;
+          "Mod+4".focus-workspace = 4;
+          "Mod+5".focus-workspace = 5;
+          "Mod+6".focus-workspace = 6;
+          "Mod+7".focus-workspace = 7;
+          "Mod+8".focus-workspace = 8;
+          "Mod+9".focus-workspace = 9;
+
+          "Mod+Comma".consume-window-into-column = {};
+          "Mod+Period".expel-window-from-column = {};
+          "Mod+R".switch-preset-column-width = {};
+          "Mod+Shift+R".switch-preset-window-height = {};
+          "Mod+Ctrl+R".reset-window-height = {};
+          "Mod+F".maximize-column = {};
+          "Mod+Shift+F".fullscreen-window = {};
+          "Mod+Ctrl+F".expand-column-to-available-width = {};
+
+          "Mod+Minus".set-column-width = "-10%";
+          "Mod+Plus".set-column-width = "+10%";
+
+          "Mod+V".toggle-window-floating = {};
+
+          "Mod+Shift+S".screenshot = [];
+
+          "XF86AudioRaiseVolume".spawn = ["${lib.getBin pkgs.wireplumber}/bin/wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"];
+          "XF86AudioLowerVolume".spawn = ["${lib.getBin pkgs.wireplumber}/bin/wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"];
+          "XF86AudioMute".spawn = ["${lib.getBin pkgs.wireplumber}/bin/wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+          "XF86AudioPlay".spawn = ["${lib.getExe pkgs.playerctl}" "play-pause"];
+          "XF86AudioPause".spawn = ["${lib.getExe pkgs.playerctl}" "play-pause"];        
+        };
+
+
+        _children = [
+          { 
+            output = { 
+              _args = ["dvi-d-1"]; 
+              mode = "1920x1080@60.000000";
+              transform = "90";
+              position._props = { x=0; y=-510; };
+            }; 
+          }
+          { output = { _args = ["dp-2"]; variable-refresh-rate = {}; }; } 
+          { output = { _args = ["dp-3"]; variable-refresh-rate = {}; }; } 
+        ] ++ spawn-at-startups;
+
+        animations.off = {};
+
+        input = {
+          # focus-follows-mouse.enable = false;
+          workspace-auto-back-and-forth = {};
+          # touchpad.natural-scroll = false;
+        };
+      };
+    };
     
-    programs.niri = {
+    /*programs.niri = {
       enable = true;
       # use nixpkgs niri instead of niri-flake niri to make use of cache
       package = pkgs.niri;
@@ -168,6 +300,6 @@ in {
             { argv = [ (lib.getExe pkgs.mako) ]; }
         ] ++ spawn-wallpapers;
       };
-    };
+    };*/
   };
 }
