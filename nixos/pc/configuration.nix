@@ -154,6 +154,8 @@
       mupen64plus 
     ]))
     mupen64plus
+
+    freac
   ];
 
   documentation = {
