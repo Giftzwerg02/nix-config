@@ -20,7 +20,12 @@ in {
   config = lib.mkIf cfg.enable {
     programs.fuzzel.enable = true;
     programs.swaylock.enable = true;
-    programs.foot.enable = true;
+    programs.foot = {
+      enable = true;
+      settings = {
+        scrollback.lines = 10000;
+      };
+    };
 
     services.mako.enable = true;
     services.awww.enable = true;
