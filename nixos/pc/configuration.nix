@@ -156,6 +156,8 @@
     mupen64plus
 
     freac
+    libopus
+    picard
   ];
 
   documentation = {
