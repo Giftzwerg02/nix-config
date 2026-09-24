@@ -158,6 +158,9 @@
     freac
     libopus
     picard
+    kdePackages.dolphin
+    kdePackages.kio-extras
+    kdePackages.audiocd-kio
   ];
 
   documentation = {
