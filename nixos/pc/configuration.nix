@@ -158,6 +158,8 @@
     kdePackages.dolphin
     kdePackages.kio-extras
     kdePackages.audiocd-kio
+
+    discord
   ];
 
   documentation = {
