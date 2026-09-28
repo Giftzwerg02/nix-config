@@ -145,9 +145,6 @@
     adwaita-icon-theme # needed for lutris
     xwayland-satellite
 
-    discord-canary
-
-
     ares
     archipelago
     (retroarch.withCores (cores: with cores; [
