@@ -160,6 +160,8 @@
     kdePackages.audiocd-kio
 
     discord
+
+    raddbg
   ];
 
   documentation = {

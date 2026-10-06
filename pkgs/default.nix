@@ -13,4 +13,6 @@
         fi
       '';
     };
+
+  raddbg = pkgs.callPackage ./raddbg { };
 }
