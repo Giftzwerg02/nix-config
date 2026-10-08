@@ -70,6 +70,9 @@
     };
   };
 
+  programs.niri.enable = true;
+  services.displayManager.defaultSession = "niri";
+
   virtualisation = {
     docker.enable = true;
     docker.rootless = {
