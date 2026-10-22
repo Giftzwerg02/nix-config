@@ -163,6 +163,8 @@
 
     yt-dlp
     ani-cli
+
+    raddbg
   ];
 
   programs.firefox = {
