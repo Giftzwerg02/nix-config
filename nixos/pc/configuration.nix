@@ -160,6 +160,8 @@
     discord
 
     raddbg
+
+    jetbrains.idea
   ];
 
   documentation = {
