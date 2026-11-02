@@ -107,7 +107,6 @@
     fuzzel
     libnotify
     home-manager
-    gtk2
     gtk3
     gtk4
     zip
