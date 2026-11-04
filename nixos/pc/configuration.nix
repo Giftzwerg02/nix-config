@@ -127,6 +127,7 @@
     clang
     libgccjit
     gcc
+    odin
 
     # Formatters
     alejandra

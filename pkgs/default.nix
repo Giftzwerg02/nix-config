@@ -15,4 +15,5 @@
     };
 
   raddbg = pkgs.callPackage ./raddbg { };
+  odin = pkgs.callPackage ./odin { };
 }
