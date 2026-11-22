@@ -128,6 +128,7 @@
     libgccjit
     gcc
     odin
+    python3
 
     # Formatters
     alejandra
