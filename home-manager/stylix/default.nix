@@ -27,5 +27,8 @@
     targets.firefox = {
       profileNames = ["default"];
     };
+
+    # Until this is resolved: https://github.com/nix-community/stylix/issues/2556
+    targets.wayprompt.enable = false;
   };
 }
