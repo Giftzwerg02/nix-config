@@ -33,14 +33,9 @@
   programs.librewolf = {
     enable = true;
     languagePacks = [ "sk" "en-US" "de" ];
-    betterfox = {
-      enable = true;
-      profiles.default.enableAllSections = true;
-    };
-
     policies = {
       Preferences = let
-        ffVersion = config.programs.firefox.package.version;
+        ffVersion = config.programs.librewolf.package.version;
       in {
         "media.ffmpeg.vaapi.enabled" = true;
         "media.hardware-video-decoding.force-enabled" = lib.versionAtLeast ffVersion "137.0.0";
