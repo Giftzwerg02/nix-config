@@ -44,6 +44,7 @@
   # legacy stateVersion stuff
   programs.git.signing.format = null;
   programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
+  programs.nushell.loadSessionVariables = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";
